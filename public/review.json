@@ -1,0 +1,82 @@
+[
+    {
+        "patientId": 1,
+        "patientName": "Alice Johnson",
+        "rating": 5,
+        "image": "https://imgur.com/ymescIB.jpg",
+        "occupation": "Teacher",
+        "reviewText": "Dr. Smith was truly remarkable. His deep understanding of cardiovascular issues and compassionate approach made all the difference in my treatment. His thorough explanations and attention to detail gave me confidence in the care I was receiving. I am incredibly grateful for his expertise and would highly recommend him to anyone in need of a top-notch cardiologist."
+    },
+    {
+        "patientId": 2,
+        "patientName": "Bob Brown",
+        "rating": 4,
+        "image": "https://imgur.com/cecAnKV.jpg",
+        "occupation": "Engineer",
+        "reviewText": "I had a great experience with Dr. Johnson. His knowledge and expertise in managing cardiovascular conditions were evident throughout my visits. While the wait times were occasionally long, the quality of care provided was worth the wait. Dr. Johnson took the time to address all my concerns and made sure I felt comfortable with the treatment plan. Overall, I would recommend him for his professionalism and skill."
+    },
+    {
+        "patientId": 3,
+        "patientName": "Carol White",
+        "rating": 4.5,
+        "image": "https://imgur.com/Eojk9Zl.jpg",
+        "occupation": "Nurse",
+        "reviewText": "Dr. Johnson demonstrated a high level of expertise and compassion in managing my heart condition. Her approach was both thorough and empathetic, which made a significant difference in my treatment experience. She carefully explained every aspect of the process, ensuring that I was well-informed and comfortable with the treatment plan. I appreciate her dedication to her patients and would definitely consider her for future care."
+    },
+    {
+        "patientId": 4,
+        "patientName": "Dave Wilson",
+        "rating": 5,
+        "image": "https://imgur.com/vxKCMmc.jpg",
+        "occupation": "Designer",
+        "reviewText": "Dr. Johnson's care was outstanding from start to finish. She provided an in-depth explanation of my condition and treatment options, which helped me make informed decisions about my health. Her follow-up care was also exemplary, ensuring that all my questions were answered and that I was on track with my recovery. Her expertise and patient-centered approach were truly impressive, and I highly recommend her to anyone seeking expert care."
+    },
+    {
+        "patientId": 5,
+        "patientName": "Eva Green",
+        "rating": 3.5,
+        "image": "https://imgur.com/HoUKHRN.jpg",
+        "occupation": "Writer",
+        "reviewText": "Dr. Lee’s expertise in cardiology was evident during my treatment. He took the time to explain the complexities of my condition and the procedures involved, which made me feel more at ease. His professional demeanor and commitment to patient care were commendable. Although there were some minor delays, the overall quality of care was worth it. I appreciate Dr. Lee's dedication and would recommend him to others."
+    },
+    {
+        "patientId": 6,
+        "patientName": "Frank Smith",
+        "rating": 5,
+        "image": "https://imgur.com/hOdtLjJ.jpg",
+        "occupation": "Chef",
+        "reviewText": "Dr. Lee is a highly skilled cardiologist who provided exceptional care for my heart condition. His advanced knowledge and hands-on approach made me feel confident in the treatment plan. He was attentive to my needs and took the time to explain each step of the process thoroughly. His ability to handle complex cases with such expertise is truly admirable. I am very satisfied with his care and would recommend him without hesitation."
+    },
+    {
+        "patientId": 7,
+        "patientName": "Grace Davis",
+        "rating": 4,
+        "image": "https://imgur.com/QwK0LuR.jpg",
+        "occupation": "Artist",
+        "reviewText": "My experience with Dr. Martinez was positive overall. She is knowledgeable and professional, with a strong focus on accurate diagnostics. Her approach to managing my condition was thorough, and she provided clear explanations about the necessary tests and procedures. While there was some waiting involved, the quality of care and the depth of her expertise made it worthwhile. I would recommend her for her competence and patient care."
+    },
+    {
+        "patientId": 8,
+        "patientName": "Henry Allen",
+        "rating": 4.5,
+        "image": "https://imgur.com/oJ0lgEQ.jpg",
+        "occupation": "Photographer",
+        "reviewText": "Dr. Martinez provided good care and was detailed in her explanations of my condition. Although the process had some delays, her professional and detailed approach to my treatment was commendable. She made sure that I was comfortable with the treatment options and answered all my questions thoroughly. I appreciate her dedication and the care provided."
+    },
+    {
+        "patientId": 9,
+        "patientName": "Ivy Johnson",
+        "rating": 5,
+        "image": "https://imgur.com/WybGMVK.jpg",
+        "occupation": "Software Developer",
+        "reviewText": "Dr. Taylor is an exceptional cardiologist with a remarkable ability to handle complex cardiac issues. His expertise and dedication were evident throughout my treatment. He provided a comprehensive explanation of my condition and the advanced treatments available, which gave me great confidence. His care was outstanding, and I am grateful for his support. I highly recommend Dr. Taylor to anyone in need of advanced cardiovascular care."
+    },
+    {
+        "patientId": 10,
+        "patientName": "Jack Miller",
+        "rating": 5,
+        "image": "https://imgur.com/9ysUiKh.jpg",
+        "occupation": "Accountant",
+        "reviewText": "Dr. Taylor’s care was exemplary. His approach to managing my complex case was both thorough and compassionate. He took the time to explain each aspect of my treatment and provided excellent follow-up care. His expertise in handling challenging cases is impressive, and I am very pleased with the outcomes. Dr. Taylor is a highly skilled professional, and I would recommend him to anyone seeking top-tier cardiovascular care."
+    }
+]
