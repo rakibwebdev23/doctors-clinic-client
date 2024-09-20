@@ -6,6 +6,7 @@ const Navbar = () => {
     const navLink = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
+        <li><Link to="/service">Our Services</Link></li>
     </>
 
     return (
@@ -34,7 +35,7 @@ const Navbar = () => {
                 </div>
                 <Link to="/" className="w-16 flex items-center">
                     <img src={logo} alt="" />
-                    <h2 className=' text-white'>Doctors <br /><span className='text-orange-500'>Clinic</span></h2>
+                    <h2 className=' text-blue-500'><span className='font-bold'>Doctors</span> <br /><span className='text-orange-500'>Clinic</span></h2>
                 </Link>
             </div>
             <div className="navbar-end hidden lg:flex">

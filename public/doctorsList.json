@@ -481,7 +481,7 @@
     },
     {
       "id": 31,
-      "category": "special",
+      "category": "Special",
       "name": "Dr. Emily Carter",
       "specialist": "MBBS, MD Cardiology",
       "experience": "20 years (Heart Failure and Transplant)",
@@ -497,7 +497,7 @@
     },
     {
       "id": 32,
-      "category": "special",
+      "category": "Special",
       "name": "Dr. Michael Lee",
       "specialist": "MBBS, MD Oncology",
       "experience": "18 years (Oncological Surgery and Chemotherapy)",
@@ -513,7 +513,7 @@
     },
     {
       "id": 33,
-      "category": "special",
+      "category": "Special",
       "name": "Dr. Sophia Martinez",
       "specialist": "MBBS, MD Pulmonology",
       "experience": "12 years (Interstitial Lung Disease and Pulmonary Fibrosis)",
@@ -529,7 +529,7 @@
     },
     {
       "id": 34,
-      "category": "special",
+      "category": "Special",
       "name": "Dr. David Nguyen",
       "specialist": "MBBS, MD Rheumatology",
       "experience": "14 years (Autoimmune Disorders and Vasculitis)",
@@ -545,7 +545,7 @@
     },
     {
       "id": 35,
-      "category": "special",
+      "category": "Special",
       "name": "Dr. Olivia Green",
       "specialist": "MBBS, MD Infectious Diseases",
       "experience": "16 years (Emerging Infectious Diseases)",
@@ -561,7 +561,7 @@
     },
     {
       "id": 36,
-      "category": "special",
+      "category": "Special",
       "name": "Dr. William Harris",
       "specialist": "MBBS, MD Gastroenterology",
       "experience": "15 years (Liver Disease and Transplantation)",

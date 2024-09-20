@@ -3,10 +3,11 @@ import '@smastrom/react-rating/style.css'
 import { AiOutlineDollarCircle } from 'react-icons/ai';
 import { FaRegAddressBook } from 'react-icons/fa';
 import { IoLocationOutline } from 'react-icons/io5';
+import { Link } from 'react-router-dom';
 
 const DoctorDetails = ({ doctor }) => {
 
-    const { name, image, specialist, location, email, visitFee, rating } = doctor;
+    const { id,name, image, specialist, location, email, visitFee, rating } = doctor;
 
     return (
         <div className="card bg-base-100 w-96 shadow-xl">
@@ -30,7 +31,7 @@ const DoctorDetails = ({ doctor }) => {
                     <p className='flex items-center gap-4'><AiOutlineDollarCircle className='font-bold text-xl'></AiOutlineDollarCircle> $ {visitFee}</p>
                 </div>
                 <div className="card-actions">
-                    <button className="btn btn-outline btn-warning text-white w-full">View Profile</button>
+                    <Link to={`doctor/${id}`}><button className="btn btn-outline btn-warning text-white w-full">View Profile</button></Link>
                 </div>
             </div>
         </div>

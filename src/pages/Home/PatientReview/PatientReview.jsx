@@ -29,7 +29,6 @@ const PatientReview = () => {
                 >
                     {
                         reviews.map(item => <SwiperSlide
-                            className=""
                             key={item.patientId}>
                             <div className="px-80 space-y-2">
                                 <div className="flex items-center justify-between ">
