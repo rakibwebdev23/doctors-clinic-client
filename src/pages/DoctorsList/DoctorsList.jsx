@@ -5,7 +5,7 @@ const DoctorsList = ({ doctors }) => {
     return (
 
         <div>
-            <div className="grid grid-cols-3 gap-3 mt-10">
+            <div className="grid md:grid-cols-3 gap-3 mt-10">
                 {
                     doctors.map(doctor => <DoctorDetails
                         key={doctor.id}

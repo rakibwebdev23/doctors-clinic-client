@@ -4,7 +4,7 @@ export const useDoctorsList = () => {
     const [doctors, setDoctors] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
-        fetch("../../public/doctorsList.json")
+        fetch("http://localhost:5000/doctors")
             .then(res => res.json())
             .then(data => {
                 setLoading(false)

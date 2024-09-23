@@ -1,14 +1,24 @@
+import { BsTelephoneInbound } from "react-icons/bs";
+import { CiLocationOn } from "react-icons/ci";
 
 const Appointment = () => {
     return (
         <div className="hero min-h-screen mt-16">
             <div className="hero-content flex-row rounded-xl bg-blue-300">
-                <div className="lg:text-left md:w-1/2">
-                    <h1 className="text-5xl font-bold">Contact Us</h1>
+                <div className="lg:text-left md:w-1/2 pl-4">
+                    <h1 className="text-5xl font-bold">Contact With Us</h1>
                     <p className="py-6">
                         Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                         quasi. In deleniti eaque aut repudiandae et a id nisi.
                     </p>
+                    <div className="flex items-center gap-6 mb-2">
+                        <BsTelephoneInbound className="text-4xl"></BsTelephoneInbound>
+                        <p>+0143484888934 <br /> +0829497414394</p>
+                    </div>
+                    <div className="flex items-center gap-6 mt-2">
+                        <CiLocationOn className="text-5xl"></CiLocationOn>
+                        <p>Dhanmondi 17, Dhaka -1200, <br /> Bangladesh</p>
+                    </div>
                 </div>
                 <div className="card md:w-3/4 shadow-2xl">
                     <form className="card-body">
