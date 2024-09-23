@@ -4,7 +4,7 @@ const HelmetProvide = ({helmetTitle}) => {
     return (
         <div>
             <Helmet>
-                <title>Doctors Chamber | { helmetTitle }</title>
+                <title>Doctors Clinic | { helmetTitle }</title>
             </Helmet>
         </div>
     );

@@ -4,6 +4,7 @@ import Home from "../pages/Home/Home";
 import About from "../pages/Home/About/About";
 import Services from "../pages/Services/Services/Services";
 import DoctorInformation from "../pages/DoctorsList/DoctorInformation/DoctorInformation";
+import Doctors from "../pages/DoctorsList/Doctors/Doctors";
 
 export const router = createBrowserRouter([
     {
@@ -23,8 +24,13 @@ export const router = createBrowserRouter([
                 element: <Services></Services>
             },
             {
-                path: 'doctor/:id',
-                element: <DoctorInformation></DoctorInformation>
+                path: "/doctors",
+                element: <Doctors></Doctors>,
+            },
+            {
+                path: '/doctors/:id',
+                element: <DoctorInformation></DoctorInformation>,
+                // loader: () => fetch("doctorsList.json")
             }
         ]
     }

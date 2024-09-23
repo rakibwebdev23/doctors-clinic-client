@@ -8,7 +8,7 @@ import Address from './Address/Address';
 import PatientReview from './PatientReview/PatientReview';
 
 const Home = () => {
-    const [doctorsSpecial] = useDoctorsList();
+    const [,doctorsSpecial] = useDoctorsList();
     return (
         <div>
             <HelmetProvide
@@ -26,6 +26,7 @@ const Home = () => {
             </div>
             <DoctorsList doctors={doctorsSpecial}></DoctorsList>
         </div>
+    
     );
 };
 

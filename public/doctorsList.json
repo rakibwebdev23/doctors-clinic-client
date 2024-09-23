@@ -12,7 +12,7 @@
       "overview": "Expert in heart disease, hypertension, and cardiac procedures.",
       "phone": "+1-555-555-1234",
       "email": "johnsmith@example.com",
-      "image": "https://imgur.com/Q6fO32Q.jpg",
+      "image": "https://imgur.com/HPmYS4w.jpg",
       "visitFee": 10
     },
     {
@@ -28,7 +28,7 @@
       "overview": "Specializes in heart failure, coronary artery disease, and preventive cardiology.",
       "phone": "+1-555-555-2234",
       "email": "alicejohnson@example.com",
-      "image": "https://imgur.com/9xPl6ko.jpg",
+      "image": "https://imgur.com/cowwYuy.jpg",
       "visitFee": 10
     },
     {
@@ -44,7 +44,7 @@
       "overview": "Expert in angioplasty, stenting, and complex cardiovascular procedures.",
       "phone": "+1-555-555-3345",
       "email": "robertlee@example.com",
-      "image": "https://imgur.com/S5Yd12w.jpg",
+      "image": "https://imgur.com/xprPSd3.jpg",
       "visitFee": 10
     },
     {
@@ -76,7 +76,7 @@
       "overview": "Specializes in complex cardiac cases, electrophysiology, and heart rhythm disorders.",
       "phone": "+1-555-555-5566",
       "email": "michaeltaylor@example.com",
-      "image": "https://imgur.com/2AwGfpC.jpg",
+      "image": "https://imgur.com/oNa8hVG.jpg",
       "visitFee": 10
     },
     {
@@ -92,7 +92,7 @@
       "overview": "Focuses on acne, eczema, and skin cancer detection.",
       "phone": "+1-555-555-2345",
       "email": "emilydavis@example.com",
-      "image": "https://imgur.com/GiCZ1j9.jpg",
+      "image": "https://imgur.com/70G6BdD.jpg",
       "visitFee": 10
     },
     {
@@ -108,7 +108,7 @@
       "overview": "Specializes in skin cancer surgery, laser treatments, and Mohs micrographic surgery.",
       "phone": "+1-555-555-3456",
       "email": "andrewclark@example.com",
-      "image": "https://imgur.com/2AwGfpC.jpg",
+      "image": "https://imgur.com/FjhZ0EL.jpg",
       "visitFee": 10
     },
     {
@@ -172,7 +172,7 @@
       "overview": "Expert in joint replacement, spinal surgery, and sports injuries.",
       "phone": "+1-555-555-3456",
       "email": "michaeljohnson@example.com",
-      "image": "https://imgur.com/S5Yd12w.jpg",
+      "image": "https://imgur.com/ZZx5VDb.jpg",
       "visitFee": 10
     },
     {
@@ -246,13 +246,13 @@
       "specialist": "MBBS, MD Neurology",
       "experience": "14 years (Neurological Disorders and Treatments)",
       "location": "San Francisco, CA",
-      "rating": 4.8,
+      "rating": 4.5,
       "about": "Dr. James Anderson specializes in neurological disorders and treatments, focusing on epilepsy, multiple sclerosis, and neurodegenerative diseases.",
       "education": "MBBS, MD Neurology - UCSF School of Medicine",
       "overview": "Expert in epilepsy, multiple sclerosis, and neurodegenerative diseases.",
       "phone": "+1-555-555-3456",
       "email": "jamesanderson@example.com",
-      "image": "https://imgur.com/2AwGfpC.jpg",
+      "image": "https://imgur.com/trnXtcf.jpg",
       "visitFee": 10
     },
     {
@@ -262,7 +262,7 @@
       "specialist": "MBBS, MD Neurology",
       "experience": "11 years (Stroke and Neurovascular Disorders)",
       "location": "Chicago, IL",
-      "rating": 4.7,
+      "rating": 5,
       "about": "Dr. Olivia Wilson focuses on stroke and neurovascular disorders, specializing in acute stroke treatment, stroke prevention, and neuroimaging.",
       "education": "MBBS, MD Neurology - Northwestern University Feinberg School of Medicine",
       "overview": "Specializes in acute stroke treatment, stroke prevention, and neuroimaging.",
@@ -278,13 +278,13 @@
       "specialist": "MBBS, MD Neurology",
       "experience": "13 years (Movement Disorders)",
       "location": "New York, NY",
-      "rating": 4.8,
+      "rating": 5,
       "about": "Dr. Robert White specializes in movement disorders, focusing on Parkinson's disease, dystonia, and tremors, with expertise in deep brain stimulation.",
       "education": "MBBS, MD Neurology - NYU Grossman School of Medicine",
       "overview": "Expert in Parkinson's disease, dystonia, tremors, and deep brain stimulation.",
       "phone": "+1-555-555-5678",
       "email": "robertwhite@example.com",
-      "image": "https://imgur.com/0oyYZrR.jpg",
+      "image": "https://imgur.com/xprPSd3.jpg",
       "visitFee": 10
     },
     {
@@ -294,7 +294,7 @@
       "specialist": "MBBS, MD Neurology",
       "experience": "9 years (Headache and Migraine Specialist)",
       "location": "Boston, MA",
-      "rating": 4.7,
+      "rating": 4.8,
       "about": "Dr. Emma Harris specializes in headaches and migraines, focusing on advanced diagnostic techniques and personalized treatment plans.",
       "education": "MBBS, MD Neurology - Harvard Medical School",
       "overview": "Focuses on advanced diagnostic techniques and personalized treatment plans for headaches and migraines.",
@@ -364,7 +364,7 @@
       "overview": "Expert in infertility, PCOS, and hormonal therapies.",
       "phone": "+1-555-555-4567",
       "email": "jenniferlewis@example.com",
-      "image": "https://imgur.com/GiCZ1j9.jpg",
+      "image": "https://imgur.com/SKXiyN8.jpg",
       "visitFee": 10
     },
     {
@@ -396,7 +396,7 @@
       "overview": "Specializes in Cushing's syndrome, Addison's disease, and metabolic syndrome.",
       "phone": "+1-555-555-6789",
       "email": "lauraturner@example.com",
-      "image": "https://imgur.com/KSfLVuU.jpg",
+      "image": "https://imgur.com/EzbYftU.jpg",
       "visitFee": 10
     },
     {
@@ -412,7 +412,7 @@
       "overview": "Expert in gynecological conditions, prenatal care, and menopause management.",
       "phone": "+1-555-555-2345",
       "email": "lindagreen@example.com",
-      "image": "https://imgur.com/yUkmNyI.jpg",
+      "image": "https://imgur.com/F1dc1eb.jpg",
       "visitFee": 10
     },
     {
@@ -428,7 +428,7 @@
       "overview": "Specializes in managing complex pregnancies and prenatal screening.",
       "phone": "+1-555-555-3456",
       "email": "michaelthompson@example.com",
-      "image": "https://imgur.com/Q6fO32Q.jpg",
+      "image": "https://imgur.com/HPmYS4w.jpg",
       "visitFee": 10
     },
     {
@@ -444,7 +444,7 @@
       "overview": "Specializes in managing menopausal symptoms and hormone-related disorders.",
       "phone": "+1-555-555-4567",
       "email": "racheladams@example.com",
-      "image": "https://imgur.com/9xPl6ko.jpg",
+      "image": "https://imgur.com/cowwYuy.jpg",
       "visitFee": 10
     },
     {
@@ -460,7 +460,7 @@
       "overview": "Expert in pelvic organ prolapse, urinary incontinence, and minimally invasive surgical techniques.",
       "phone": "+1-555-555-5678",
       "email": "davidjohnson@example.com",
-      "image": "https://imgur.com/S5Yd12w.jpg",
+      "image": "https://imgur.com/oNa8hVG.jpg",
       "visitFee": 10
     },
     {

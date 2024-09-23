@@ -12,8 +12,7 @@ import '@smastrom/react-rating/style.css'
 
 const PatientReview = () => {
     const [reviews] = useReview();
-    console.log(reviews);
-
+    
     return (
         <div>
             <SectionTitle

@@ -7,10 +7,12 @@ import { LuBone } from "react-icons/lu";
 import { RiWomenLine } from "react-icons/ri";
 import { BiDonateBlood } from "react-icons/bi";
 import Appointment from "../../Shared/Appointment/Appointment";
+import HelmetProvide from "../../../component/HelmetProvide";
 
 const Services = () => {
     return (
         <div>
+            <HelmetProvide helmetTitle={"Services"}></HelmetProvide>
             <BannerShared
                 img={serviceImg}
                 subTitle={"Our Services"}

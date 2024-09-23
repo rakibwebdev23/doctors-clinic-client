@@ -7,6 +7,7 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
         <li><Link to="/service">Our Services</Link></li>
+        <li><Link to="/doctors">Our Doctors</Link></li>
     </>
 
     return (
@@ -43,9 +44,7 @@ const Navbar = () => {
                     {navLink}
                 </ul>
             </div>
-            {/* <div className="navbar-end">
-                <a className="btn">Button</a>
-            </div> */}
+
         </div>
     );
 };
