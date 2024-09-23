@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import img1 from "../../../../assets/images/medical1.jpg";
-import img2 from "../../../../assets/images/medical6.jpg";
+import img2 from "../../../../assets/images/medical1.jpg";
+import img1 from "../../../../assets/images/medical4.jpg";
 
 const AboutInfo = () => {
     return (
