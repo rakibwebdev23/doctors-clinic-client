@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const DoctorDetails = ({ doctor }) => {
 
-    const { id,name, image, specialist, location, email, visitFee, rating } = doctor;
+    const { _id,name, image, specialist, location, email, visitFee, rating } = doctor;
 
     return (
         <div className="card bg-base-100 w-96 shadow-xl">
@@ -31,7 +31,7 @@ const DoctorDetails = ({ doctor }) => {
                     <p className='flex items-center gap-4'><AiOutlineDollarCircle className='font-bold text-xl'></AiOutlineDollarCircle> $ {visitFee}</p>
                 </div>
                 <div className="card-actions ">
-                    <Link to={`/doctors/${id}`}><button className="btn btn-outline btn-warning">View Profile</button></Link>
+                    <Link to={`/doctor/${_id}`}><button className="btn btn-outline btn-warning">View Profile</button></Link>
                 </div>
             </div>
         </div>
