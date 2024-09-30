@@ -6,15 +6,12 @@ import BannerShared from '../../Shared/BannerShared/BannerShared';
 import img from "../../../assets/images/doctor4 (2).jpg"
 import { useState } from 'react';
 import HelmetProvide from '../../../component/HelmetProvide';
-// import { useParams } from 'react-router-dom';
 
 const Doctors = () => {
-    // const categories = [doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist];
-    // const { category } = useParams();
-    // const initialIndex = categories.indexOf(category);
+
     const [tabIndex, setTabIndex] = useState(0);
-    
-    const [,doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist] = useDoctorsList();
+
+    const [, doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist] = useDoctorsList();
 
     return (
         <div>
@@ -27,18 +24,18 @@ const Doctors = () => {
             <div>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)
                 } className="text-center border-none">
-                    <TabList>
-                        <Tab>Expert</Tab>
-                        <Tab>Cardiologist</Tab>
-                        <Tab>Dermatologist</Tab>
-                        <Tab>Orthopedic Surgeon</Tab>
-                        <Tab>Neurologist</Tab>
-                        <Tab>Endocrinologist</Tab>
-                        <Tab>Gynecologist</Tab>
+                    <TabList className="uppercase">
+                        <Tab>expert</Tab>
+                        <Tab>cardiologist</Tab>
+                        <Tab>dermatologist</Tab>
+                        <Tab>orthopedic Surgeon</Tab>
+                        <Tab>neurologist</Tab>
+                        <Tab>endocrinologist</Tab>
+                        <Tab>gynecologist</Tab>
                     </TabList>
                     <TabPanel>
                         <div>
-                           <DoctorsList doctors={doctorsSpecial}></DoctorsList>
+                            <DoctorsList doctors={doctorsSpecial}></DoctorsList>
                         </div>
                     </TabPanel>
                     <TabPanel>

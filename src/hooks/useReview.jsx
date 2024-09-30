@@ -6,12 +6,13 @@ export const useReview = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch("http://localhost:5000/reviews")
             .then(res => res.json())
-            .then(data => { 
-                setLoading(false)
-                setReviews(data)
+            .then(data => {
+                setLoading(false);
+                setReviews(data);
             })
     }, [])
+
     return [reviews, loading];
 };

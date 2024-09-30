@@ -3,10 +3,10 @@ import Main from "../Layouts/Main";
 import Home from "../pages/Home/Home";
 import About from "../pages/Home/About/About";
 import Services from "../pages/Services/Services/Services";
-import Doctors from "../pages/DoctorsList/Doctors/Doctors";
 import SignUp from "../pages/SignUp/SignUp";
 import SignIn from "../pages/SignIn/SignIn";
 import Secret from "../pages/Secret/Secret";
+import Doctors from "../pages/DoctorsList/Doctors/Doctors";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([

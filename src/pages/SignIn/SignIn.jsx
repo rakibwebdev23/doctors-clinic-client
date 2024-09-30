@@ -1,17 +1,16 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import img from "../../assets/images/log.jpg"
-import { AuthContext } from "../../providers/AuthProviders";
 import HelmetProvide from "../../component/HelmetProvide";
 import Swal from "sweetalert2";
+import { FaGoogle } from "react-icons/fa";
+import useAuth from "../../hooks/useAuth";
 
 const SignIn = () => {
 
-    const { signInUser } = useContext(AuthContext);
+    const { signInUser, googleSignUser } = useAuth();
     const [disabled, setDisabled] = useState(true);
-
-    // login private route set
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname || "/";
@@ -27,7 +26,7 @@ const SignIn = () => {
                 const user = result.user;
                 console.log(user);
                 Swal.fire({
-                    title: "User Login Successfully",
+                    title: `${user.displayName} Sign In  Successfully`,
                     showClass: {
                         popup: `
                         animate__animated
@@ -47,14 +46,14 @@ const SignIn = () => {
             })
     }
 
-    // const handleGoogleSignIn = () => {
-    //     googleSignUser()
-    //         .then(result => {
-    //             const loggedUser = result.user;
-    //             console.log(loggedUser);
-    //             navigate(from, { replace: true });
-    //         })
-    // }
+    const handleGoogleSignIn = () => {
+        googleSignUser()
+            .then(result => {
+                const loggedUser = result.user;
+                console.log(loggedUser);
+                navigate(from, { replace: true });
+            })
+    }
 
     const handleValidateCaptcha = (e) => {
         const user_captcha_value = e.target.value;
@@ -64,7 +63,7 @@ const SignIn = () => {
             setDisabled(false);
         }
         else {
-            setDisabled(false);
+            setDisabled(true);
         }
     }
 
@@ -107,9 +106,9 @@ const SignIn = () => {
                                 <input disabled={disabled} className="btn btn-primary" type="submit" value="SignIn" />
                             </div>
                         </form>
-                        {/* <div className="card-body mt-[-50px]">
+                        <div className="card-body mt-[-50px]">
                             <button className="btn btn-ghost text-center" onClick={handleGoogleSignIn}><FaGoogle className="text-blue-600 font-bold text-xl"></FaGoogle></button>
-                        </div> */}
+                        </div>
                         <small className="text-center pb-6">Please register at first. Go to <Link to="/signup" className="font-bold text-blue-600 uppercase">Sign Up</Link></small>
                     </div>
                 </div>

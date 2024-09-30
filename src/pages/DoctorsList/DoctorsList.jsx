@@ -8,7 +8,7 @@ const DoctorsList = ({ doctors }) => {
             <div className="grid md:grid-cols-3 gap-3 mt-10">
                 {
                     doctors.map(doctor => <DoctorDetails
-                        key={doctor.id}
+                        key={doctor._id}
                         doctor={doctor}
                     ></DoctorDetails>)
                 }

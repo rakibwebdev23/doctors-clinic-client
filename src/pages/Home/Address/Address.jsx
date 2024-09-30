@@ -4,8 +4,8 @@ import { LuClock4 } from "react-icons/lu";
 
 const Address = () => {
     return (
-        <div className="flex items-center justify-between gap-6 my-32">
-            <div className="card bg-blue-900 text-neutral-content w-80">
+        <div className="md:flex items-center justify-between gap-6 my-32">
+            <div className="card bg-blue-900  text-neutral-content w-80">
                 <div className="card-body items-center text-left">
                     <div className="flex items-center gap-2">
                         <LuClock4 className="text-6xl"></LuClock4>

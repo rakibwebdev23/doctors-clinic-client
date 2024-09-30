@@ -1,17 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/images/log.jpg"
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProviders";
 import HelmetProvide from "../../component/HelmetProvide";
 import { useForm } from "react-hook-form";
 import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
+import useAuth from "../../hooks/useAuth";
+// import Swal from "sweetalert2";
 
 
 const SignUp = () => {
 
-    const { createUser, googleSignUser, updateUserProfile, logOut } = useContext(AuthContext);
+    const { createUser, googleSignUser, updateUserProfile, logOut } = useAuth();
+    
     const navigate = useNavigate();
+
     const {
         register,
         reset,
@@ -25,37 +27,28 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                // user email, password er sathe name, photoURL send system
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log('User info updated');
+                        console.log("User sign up successfully");
                         reset();
                         Swal.fire({
-                            title: "User Created Successfully",
-                            showClass: {
-                                popup: `
-                                animate__animated
-                                animate__fadeInUp
-                                animate__faster
-                              `
-                            },
-                            hideClass: {
-                                popup: `
-                                animate__animated
-                                animate__fadeOutDown
-                                animate__faster
-                              `
-                            }
+                            position: "top-end",
+                            icon: "success",
+                            title: `${data.email} sign up successfully`,
+                            showConfirmButton: false,
+                            timer: 2000
                         });
-
                         logOut()
                             .then(() => {
-                                navigate("/");
+                                navigate('/')
                             })
                             .catch(error => console.log(error)
                             )
                     })
-                    .catch(error => console.log(error))
             })
+            .catch(error => console.log(error)
+            )
 
     }
 
@@ -64,9 +57,14 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate('/');
-            })
+                logOut()
+                    .then(() => {
+                        navigate('/')
+                    })
+                    .catch(error => console.log(error)
+                    )
 
+            })
             .catch(error => console.log(error)
             )
     }

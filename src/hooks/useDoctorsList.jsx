@@ -3,14 +3,15 @@ import { useEffect, useState } from "react";
 export const useDoctorsList = () => {
     const [doctors, setDoctors] = useState([]);
     const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         fetch("http://localhost:5000/doctors")
             .then(res => res.json())
             .then(data => {
-                setLoading(false)
+                setLoading(false);
                 setDoctors(data)
             })
-    }, []);
+    }, [])
 
     const doctorsCardiologist = doctors.filter(doctor => doctor.category === "Cardiologist");
     const doctorsDermatologist = doctors.filter(doctor => doctor.category === "Dermatologist");
@@ -20,5 +21,5 @@ export const useDoctorsList = () => {
     const doctorsGynecologist = doctors.filter(doctor => doctor.category === "Gynecologist");
     const doctorsSpecial = doctors.filter(doctor => doctor.category === "Special");
 
-    return [doctors,doctorsSpecial,doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist,  loading];
+    return [doctors, doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist, loading];
 };
