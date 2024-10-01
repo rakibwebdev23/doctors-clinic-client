@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import Swal from 'sweetalert2';
 import { useAxiosSecure } from '../../hooks/useAxiosSecure';
+import useAppointment from '../../hooks/useAppointment';
 
 const DoctorDetails = ({ doctor }) => {
     const { _id, name, image, specialist, email, visitFee, rating, chamberLocation, category } = doctor;
@@ -14,9 +15,9 @@ const DoctorDetails = ({ doctor }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const axiosSecure = useAxiosSecure();
+    const [, refetch] = useAppointment();
 
-    const handleDoctorAppointment = appointment => {
-        console.log("Doctor appointment", appointment);
+    const handleDoctorAppointment = () => {
         if (user && user.email) {
             // Send to appointment to the database
             console.log(user, user.email);
@@ -32,7 +33,6 @@ const DoctorDetails = ({ doctor }) => {
             }
             axiosSecure.post('/appointment', doctorAppointment)
                 .then(res => {
-                    console.log(res.data);
                     if (res.data.insertedId) {
                         Swal.fire({
                             title: `${name} appointment added`,
@@ -51,6 +51,7 @@ const DoctorDetails = ({ doctor }) => {
                               `
                             }
                         });
+                        refetch();
                     }
                 })
         }
@@ -94,9 +95,8 @@ const DoctorDetails = ({ doctor }) => {
                     <p className='flex items-center gap-4'><AiOutlineDollarCircle className='font-bold text-xl'></AiOutlineDollarCircle> $ {visitFee}</p>
                 </div>
                 <div className="card-actions flex items-center justify-between">
-                    <Link><button className="btn btn-outline btn-warning">View Profile</button></Link>
-
-                    <Link><button onClick={() => handleDoctorAppointment(doctor)} className="btn btn-success hover:btn-primary">Appointment</button></Link>
+                    <Link to={`/doctors/${_id}`}><button className="btn btn-outline btn-warning">View Profile</button></Link>
+                    <Link><button onClick={handleDoctorAppointment} className="btn btn-success hover:btn-primary">Appointment</button></Link>
                 </div>
             </div>
         </div>

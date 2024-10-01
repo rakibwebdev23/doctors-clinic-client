@@ -5,9 +5,10 @@ import About from "../pages/Home/About/About";
 import Services from "../pages/Services/Services/Services";
 import SignUp from "../pages/SignUp/SignUp";
 import SignIn from "../pages/SignIn/SignIn";
-import Secret from "../pages/Secret/Secret";
 import Doctors from "../pages/DoctorsList/Doctors/Doctors";
-import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layouts/Dashboard";
+import DoctorAppointment from "../pages/Dashboard/DoctorAppointment/DoctorAppointment";
+import DoctorProfileView from "../pages/DoctorsList/Doctors/DoctorProfileView/DoctorProfileView";
 
 export const router = createBrowserRouter([
     {
@@ -31,16 +32,27 @@ export const router = createBrowserRouter([
                 element: <Doctors></Doctors>,
             },
             {
+                path: "/doctors/:id",
+                element: <DoctorProfileView></DoctorProfileView>,
+                loader: ({params}) => fetch(`http://localhost:5000/doctors/${params.id}`)
+            },
+            {
                 path: "/signup",
                 element: <SignUp></SignUp>
             },
             {
                 path: "/signin",
                 element: <SignIn></SignIn>
-            },
+            }
+        ]
+    },
+    {
+        path: "dashboard",
+        element: <Dashboard></Dashboard>,
+        children: [
             {
-                path: "/secret",
-                element: <PrivateRoute><Secret></Secret></PrivateRoute>
+                path: "appointment",
+                element: <DoctorAppointment></DoctorAppointment>
             }
         ]
     }

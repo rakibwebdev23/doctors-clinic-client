@@ -19,7 +19,7 @@ const Navbar = () => {
         <li><Link to="/about">About</Link></li>
         <li><Link to="/service">Our Services</Link></li>
         <li><Link to="/doctors">Our Doctors</Link></li>
-        <li><Link to="/secret">Secret</Link></li>
+        <li><Link to="/dashboard/appointment">Appointment</Link></li>
         {
             user ? <>
                 {/* <li><img className='rounded-full w-20' src={user?.photoURL} alt="" /></li> */}
