@@ -22,7 +22,6 @@ const SignUp = () => {
     } = useForm();
 
     const onSubmit = data => {
-        console.log(data);
         createUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
@@ -57,6 +56,7 @@ const SignUp = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                
                 logOut()
                     .then(() => {
                         navigate('/')

@@ -3,75 +3,74 @@ import '@smastrom/react-rating/style.css'
 import { AiOutlineDollarCircle } from 'react-icons/ai';
 import { FaRegAddressBook } from 'react-icons/fa';
 import { IoLocationOutline } from 'react-icons/io5';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth';
-import Swal from 'sweetalert2';
-import { useAxiosSecure } from '../../hooks/useAxiosSecure';
-import useAppointment from '../../hooks/useAppointment';
+import { Link } from 'react-router-dom';
+// import useAuth from '../../hooks/useAuth';
+// import Swal from 'sweetalert2';
+// import useAppointment from '../../hooks/useAppointment';
+// import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 const DoctorDetails = ({ doctor }) => {
-    const { _id, name, image, specialist, email, visitFee, rating, chamberLocation, category } = doctor;
-    const { user } = useAuth();
-    const navigate = useNavigate();
-    const location = useLocation();
-    const axiosSecure = useAxiosSecure();
-    const [, refetch] = useAppointment();
+    const { _id, name, image, specialist, email, visitFee, rating, chamberLocation } = doctor;
+    // const { user } = useAuth();
+    // const navigate = useNavigate();
+    // const location = useLocation();
+    // const axiosSecure = useAxiosSecure();
+    // const [, refetch] = useAppointment();
 
-    const handleDoctorAppointment = () => {
-        if (user && user.email) {
-            // Send to appointment to the database
-            console.log(user, user.email);
-            const doctorAppointment = {
-                doctorId: _id,
-                doctorName: name,
-                patientEmail: user.email,
-                image,
-                category,
-                patientName: user.displayName,
-                specialist,
-                visitFee
-            }
-            axiosSecure.post('/appointment', doctorAppointment)
-                .then(res => {
-                    if (res.data.insertedId) {
-                        Swal.fire({
-                            title: `${name} appointment added`,
-                            showClass: {
-                                popup: `
-                                animate__animated
-                                animate__fadeInUp
-                                animate__faster
-                              `
-                            },
-                            hideClass: {
-                                popup: `
-                                animate__animated
-                                animate__fadeOutDown
-                                animate__faster
-                              `
-                            }
-                        });
-                        refetch();
-                    }
-                })
-        }
-        else {
-            Swal.fire({
-                title: "You are not Sign In",
-                text: "Please Sign In to confirm appointment!",
-                icon: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Yes, Sign In!"
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    navigate("/signin", { state: { from: location } })
-                }
-            });
-        }
+    // const handleDoctorAppointment = () => {
+    //     if (user && user.email) {
+    //         // Send to appointment to the database
+    //         const doctorAppointment = {
+    //             doctorId: _id,
+    //             doctorName: name,
+    //             patientEmail: user.email,
+    //             image,
+    //             category,
+    //             patientName: user.displayName,
+    //             specialist,
+    //             visitFee
+    //         }
+    //         axiosSecure.post('/appointment', doctorAppointment)
+    //             .then(res => {
+    //                 if (res.data.insertedId) {
+    //                     Swal.fire({
+    //                         title: `${name} appointment added`,
+    //                         showClass: {
+    //                             popup: `
+    //                             animate__animated
+    //                             animate__fadeInUp
+    //                             animate__faster
+    //                           `
+    //                         },
+    //                         hideClass: {
+    //                             popup: `
+    //                             animate__animated
+    //                             animate__fadeOutDown
+    //                             animate__faster
+    //                           `
+    //                         }
+    //                     });
+    //                     refetch();
+    //                 }
+    //             })
+    //     }
+    //     else {
+    //         Swal.fire({
+    //             title: "You are not Sign In",
+    //             text: "Please Sign In to confirm appointment!",
+    //             icon: "warning",
+    //             showCancelButton: true,
+    //             confirmButtonColor: "#3085d6",
+    //             cancelButtonColor: "#d33",
+    //             confirmButtonText: "Yes, Sign In!"
+    //         }).then((result) => {
+    //             if (result.isConfirmed) {
+    //                 navigate("/signin", { state: { from: location } })
+    //             }
+    //         });
+    //     }
 
-    }
+    // }
 
     return (
         <div className="card bg-base-100 w-96 shadow-xl">
@@ -96,7 +95,7 @@ const DoctorDetails = ({ doctor }) => {
                 </div>
                 <div className="card-actions flex items-center justify-between">
                     <Link to={`/doctors/${_id}`}><button className="btn btn-outline btn-warning">View Profile</button></Link>
-                    <Link><button onClick={handleDoctorAppointment} className="btn btn-success hover:btn-primary">Appointment</button></Link>
+                    {/* <Link><button onClick={handleDoctorAppointment} className="btn btn-success hover:btn-primary">Appointment</button></Link> */}
                 </div>
             </div>
         </div>

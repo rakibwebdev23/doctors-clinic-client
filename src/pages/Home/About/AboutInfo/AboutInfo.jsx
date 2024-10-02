@@ -14,9 +14,9 @@ const AboutInfo = () => {
                     <h2 className="text-3xl font-bold text-orange-500">About Us</h2>
                     <h1 className="text-5xl  font-bold">Expert Care, Trusted Service</h1>
                     <p className="text-balance text-lg">Doctors Clinic is a leading healthcare provider dedicated to delivering high-quality medical services with a personal touch. Our team of experienced and compassionate doctors, nurses, and support staff is committed to providing comprehensive care to patients of all ages.
-                    We understand that every patient is unique, and our approach is centered around personalized treatment plans that cater to individual needs. Whether you need routine check-ups, specialized care, or emergency services, we are here to ensure your health and well-being.
+                        We understand that every patient is unique, and our approach is centered around personalized treatment plans that cater to individual needs. Whether you need routine check-ups, specialized care, or emergency services, we are here to ensure your health and well-being.
                     </p>
-                    <Link to="/about"><button className="mt-6 px-2 w-36 py-2 bg-orange-500 text-white font-semibold rounded hover:bg-orange-400">
+                    <Link to="/about"><button className="mt-6 px-2 w-36 py-2 bg-orange-500 text-white font-semibold rounded hover:bg-orange-400 zoom transition-transform duration-200 hover:scale-125">
                         Get More Info
                     </button></Link>
                 </div>

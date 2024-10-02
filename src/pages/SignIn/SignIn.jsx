@@ -24,7 +24,6 @@ const SignIn = () => {
         signInUser(email, password)
             .then(result => {
                 const user = result.user;
-                console.log(user);
                 Swal.fire({
                     title: `${user.displayName} Sign In  Successfully`,
                     showClass: {
@@ -57,7 +56,6 @@ const SignIn = () => {
 
     const handleValidateCaptcha = (e) => {
         const user_captcha_value = e.target.value;
-        console.log(user_captcha_value);
 
         if (validateCaptcha(user_captcha_value)) {
             setDisabled(false);

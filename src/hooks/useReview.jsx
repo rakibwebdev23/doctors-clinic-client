@@ -1,18 +1,17 @@
-import { useEffect, useState } from "react";
+import {  useState } from "react";
+import useAxiosSecure from "./useAxiosSecure";
 
 export const useReview = () => {
 
     const [reviews, setReviews] = useState([]);
     const [loading, setLoading] = useState(true);
+    const axiosSecure = useAxiosSecure();
 
-    useEffect(() => {
-        fetch("http://localhost:5000/reviews")
-            .then(res => res.json())
-            .then(data => {
-                setLoading(false);
-                setReviews(data);
-            })
-    }, [])
+    axiosSecure("/reviews")
+        .then(res => {
+            setLoading(false)
+            setReviews(res.data)
+    })
 
     return [reviews, loading];
 };
