@@ -1,16 +1,17 @@
-import { useState } from "react";
-import useAxiosSecure from "./useAxiosSecure";
+import { useEffect, useState } from "react";
 
 export const useDoctorsList = () => {
     const [doctors, setDoctors] = useState([]);
     const [loading, setLoading] = useState(true);
-    const axiosSecure = useAxiosSecure();
 
-    axiosSecure("/doctors")
-        .then(res => {
-            setLoading(false);
-            setDoctors(res.data);
-        });
+    useEffect(() => {
+        fetch('http://localhost:5000/doctors')
+            .then(res => res.json())
+            .then(data => {
+                setLoading(false);
+                setDoctors(data);
+            })
+    }, [])
 
     const doctorsCardiologist = doctors.filter(doctor => doctor.category === "Cardiologist");
     const doctorsDermatologist = doctors.filter(doctor => doctor.category === "Dermatologist");

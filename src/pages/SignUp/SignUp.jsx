@@ -2,17 +2,17 @@ import { Link, useNavigate } from "react-router-dom";
 import img from "../../assets/images/log.jpg"
 import HelmetProvide from "../../component/HelmetProvide";
 import { useForm } from "react-hook-form";
-import { FaGoogle } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
-// import Swal from "sweetalert2";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialSign from "../../component/SocialSign/SocialSign";
 
 
 const SignUp = () => {
 
-    const { createUser, googleSignUser, updateUserProfile, logOut } = useAuth();
-    
+    const { createUser, updateUserProfile, logOut } = useAuth();
     const navigate = useNavigate();
+    const axiosPublic = useAxiosPublic();
 
     const {
         register,
@@ -30,43 +30,37 @@ const SignUp = () => {
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
                         console.log("User sign up successfully");
-                        reset();
-                        Swal.fire({
-                            position: "top-end",
-                            icon: "success",
-                            title: `${data.email} sign up successfully`,
-                            showConfirmButton: false,
-                            timer: 2000
-                        });
-                        logOut()
-                            .then(() => {
-                                navigate('/')
+
+                        const userInfo = {
+                            name: data.name,
+                            email: data.email
+                        }
+                        axiosPublic.post('/users', userInfo)
+                            .then(res => {
+                                console.log(res.data);
+
+                                if (res.data.insertedId) {
+                                    reset();
+                                    Swal.fire({
+                                        position: "top-end",
+                                        icon: "success",
+                                        title: `${data.email} sign up successfully`,
+                                        showConfirmButton: false,
+                                        timer: 2000
+                                    });
+                                    logOut()
+                                        .then(() => {
+                                            navigate('/')
+                                        })
+                                        .catch(error => console.log(error)
+                                        )
+                                }
                             })
-                            .catch(error => console.log(error)
-                            )
                     })
             })
             .catch(error => console.log(error)
             )
 
-    }
-
-    const handleGoogleSignUp = () => {
-        googleSignUser()
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
-                
-                logOut()
-                    .then(() => {
-                        navigate('/')
-                    })
-                    .catch(error => console.log(error)
-                    )
-
-            })
-            .catch(error => console.log(error)
-            )
     }
 
     return (
@@ -122,9 +116,9 @@ const SignUp = () => {
                                 <input className="btn btn-primary" type="submit" value="SignUp" />
                             </div>
                         </form>
-                        <div className="card-body mt-[-50px]">
-                            <button className="btn btn-primary text-center" onClick={handleGoogleSignUp}><FaGoogle className="text-pink-600 font-bold text-xl"></FaGoogle></button>
-                        </div>
+
+                        <SocialSign></SocialSign>
+
                         <small className="text-center pb-6">Already registered? Go to <Link to="/signin" className="font-bold text-blue-600 uppercase">Sign in</Link></small>
                     </div>
                 </div>

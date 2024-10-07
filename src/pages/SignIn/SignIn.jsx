@@ -4,12 +4,12 @@ import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-s
 import img from "../../assets/images/log.jpg"
 import HelmetProvide from "../../component/HelmetProvide";
 import Swal from "sweetalert2";
-import { FaGoogle } from "react-icons/fa";
 import useAuth from "../../hooks/useAuth";
+import SocialSign from "../../component/SocialSign/SocialSign";
 
 const SignIn = () => {
 
-    const { signInUser, googleSignUser } = useAuth();
+    const { signInUser } = useAuth();
     const [disabled, setDisabled] = useState(true);
     const location = useLocation();
     const navigate = useNavigate();
@@ -24,6 +24,8 @@ const SignIn = () => {
         signInUser(email, password)
             .then(result => {
                 const user = result.user;
+                console.log(user);
+
                 Swal.fire({
                     title: `${user.displayName} Sign In  Successfully`,
                     showClass: {
@@ -41,15 +43,6 @@ const SignIn = () => {
                       `
                     }
                 });
-                navigate(from, { replace: true });
-            })
-    }
-
-    const handleGoogleSignIn = () => {
-        googleSignUser()
-            .then(result => {
-                const loggedUser = result.user;
-                console.log(loggedUser);
                 navigate(from, { replace: true });
             })
     }
@@ -104,9 +97,9 @@ const SignIn = () => {
                                 <input disabled={disabled} className="btn btn-primary" type="submit" value="SignIn" />
                             </div>
                         </form>
-                        <div className="card-body mt-[-50px]">
-                            <button className="btn btn-ghost text-center" onClick={handleGoogleSignIn}><FaGoogle className="text-blue-600 font-bold text-xl"></FaGoogle></button>
-                        </div>
+
+                        <SocialSign></SocialSign>
+
                         <small className="text-center pb-6">Please register at first. Go to <Link to="/signup" className="font-bold text-blue-600 uppercase">Sign Up</Link></small>
                     </div>
                 </div>

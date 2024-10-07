@@ -83,7 +83,7 @@ const DoctorProfileView = () => {
             <div className="pb-10">
                 <div className="bg-fixed hero h-[700px]" style={{ backgroundImage: `url("${img}")` }}
                 >
-                    <div className="hero-overlay bg-opacity-70"></div>
+                    <div className="hero-overlay bg-orange-500 bg-opacity-30"></div>
                     <div className="hero-content h-[600px] w-[75%]">
                         <div className='text-white -mt-20'>
                             <div className="md:flex items-center text-white mt-20">

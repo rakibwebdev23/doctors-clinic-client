@@ -1,12 +1,10 @@
 import { Link } from 'react-router-dom';
 import logo from "../../../../public/logo4.png"
 import useAuth from '../../../hooks/useAuth';
-import useAppointment from '../../../hooks/useAppointment';
 
 const Navbar = () => {
 
     const { user, logOut } = useAuth();
-    const [appointment] = useAppointment();
     const handleLogout = () => {
         logOut()
             .then(() => { })
@@ -20,7 +18,7 @@ const Navbar = () => {
         <li><Link to="/about">About</Link></li>
         <li><Link to="/service">Our Services</Link></li>
         <li><Link to="/doctors">Our Doctors</Link></li>
-        <li><Link to="/dashboard/appointment">Appointment {appointment.length}</Link></li>
+        <li><Link to="/dashboard/appointment">Appointment</Link></li>
         {
             user ? <>
                 {/* <li><img className='rounded-full w-20' src={user?.photoURL} alt="" /></li> */}

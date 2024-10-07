@@ -6,27 +6,43 @@ import useAppointment from "../hooks/useAppointment";
 
 const Dashboard = () => {
     const [appointment] = useAppointment();
+    const isAdmin = true;
     return (
         <div className="flex">
             {/* dashboard sidebar */}
             <div className="w-66 min-h-screen bg-green-400">
                 <ul className="menu p-6 uppercase gap-4">
-                    <li><NavLink to="/dashboard/userHome">
-                        <MdOutlineDashboardCustomize />
-                        Dashboard
-                    </NavLink></li>
-                    <li><NavLink to="/dashboard/allUser">
-                        <FaHospitalUser />
-                        All User ({appointment.length})
-                    </NavLink></li>
-                    <li><NavLink to="/dashboard/addDoctor">
-                        <FaUserDoctor />
-                        Add a Doctor
-                    </NavLink></li>
-                    <li><NavLink to="/dashboard/manageDoctor">
-                        <FaUserDoctor />
-                        Manage Doctor
-                    </NavLink></li>
+                    {
+                        isAdmin ?
+                            <>
+                                <li><NavLink to="/dashboard/adminHome">
+                                    <MdOutlineDashboardCustomize />
+                                    Admin Home
+                                </NavLink></li>
+                                <li><NavLink to="/dashboard/addDoctor">
+                                    <FaUserDoctor />
+                                    Add a Doctor
+                                </NavLink></li>
+                                <li><NavLink to="/dashboard/manageDoctor">
+                                    <FaUserDoctor />
+                                    Manage Doctor
+                                </NavLink></li>
+                                <li><NavLink to="/dashboard/allUser">
+                                    <FaHospitalUser />
+                                    All User 
+                                </NavLink></li>
+
+                            </> : <>
+                                <li><NavLink to="/dashboard/userHome">
+                                    <MdOutlineDashboardCustomize />
+                                    User Home
+                                </NavLink></li>
+                                <li><NavLink to="/dashboard/appointment">
+                                    <FaHospitalUser />
+                                    My Appointment({appointment.length})
+                                </NavLink></li>
+                            </>
+                    }
                     <div className="divider"></div>
                     <li><NavLink to="/">
                         <FaHome></FaHome>
