@@ -3,10 +3,11 @@ import { FaUserDoctor } from "react-icons/fa6";
 import { MdOutlineDashboardCustomize } from "react-icons/md";
 import { NavLink, Outlet } from "react-router-dom";
 import useAppointment from "../hooks/useAppointment";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
     const [appointment] = useAppointment();
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
     return (
         <div className="flex">
             {/* dashboard sidebar */}
@@ -27,9 +28,9 @@ const Dashboard = () => {
                                     <FaUserDoctor />
                                     Manage Doctor
                                 </NavLink></li>
-                                <li><NavLink to="/dashboard/allUser">
+                                <li><NavLink to="/dashboard/allUsers">
                                     <FaHospitalUser />
-                                    All User 
+                                    All Users
                                 </NavLink></li>
 
                             </> : <>
