@@ -1,17 +1,30 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "./useAxiosPublic";
 
 export const useDoctorsList = () => {
-    const [doctors, setDoctors] = useState([]);
-    const [loading, setLoading] = useState(true);
+    const axiosPublic = useAxiosPublic();
+    // const [doctors, setDoctors] = useState([]);
+    // const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        fetch('http://localhost:5000/doctors')
-            .then(res => res.json())
-            .then(data => {
-                setLoading(false);
-                setDoctors(data);
-            })
-    }, [])
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/doctors')
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             setLoading(false);
+    //             setDoctors(data);
+    //         })
+    // }, [])
+
+    const { data: doctors = [], refetch } = useQuery({
+        queryKey: ["doctors"],
+        queryFn: async () => {
+            const res = await axiosPublic.get("/doctors");
+            return res.data;
+        }
+        
+    });
 
     const doctorsCardiologist = doctors.filter(doctor => doctor.category === "Cardiologist");
     const doctorsDermatologist = doctors.filter(doctor => doctor.category === "Dermatologist");
@@ -21,5 +34,5 @@ export const useDoctorsList = () => {
     const doctorsGynecologist = doctors.filter(doctor => doctor.category === "Gynecologist");
     const doctorsSpecial = doctors.filter(doctor => doctor.category === "Special");
 
-    return [doctors, doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist, loading];
+    return [doctors, refetch, doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist];
 };

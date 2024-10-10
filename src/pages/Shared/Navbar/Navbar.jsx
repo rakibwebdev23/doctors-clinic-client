@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import logo from "../../../../public/logo4.png"
 import useAuth from '../../../hooks/useAuth';
 
 const Navbar = () => {
@@ -28,7 +27,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar fixed z-10 max-w-screen-xl text-white bg-opacity-20 bg-black">
+        <div className="navbar fixed z-10 max-w-screen-xl text-white px-0">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,12 +51,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <Link to="/" className="w-16 flex items-center">
-                    <img src={logo} alt="" />
+                    <img src="https://i.ibb.co.com/jMYJMMz/logo4.png" alt="" />
                     <h2 className=' text-blue-500'><span className='font-bold'>Doctors</span> <br /><span className='text-orange-500'>Clinic</span></h2>
                 </Link>
             </div>
-            <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+            <div className="navbar-end max-w-screen py-1 bg-blue-600 bg-opacity-50 px-6 hidden lg:flex">
+                <ul className="menu menu-horizontal">
                     {navLink}
                 </ul>
             </div>

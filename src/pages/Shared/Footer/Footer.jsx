@@ -1,4 +1,3 @@
-import logo from "../../../../public/logo4.png"
 
 const Footer = () => {
 
@@ -6,7 +5,7 @@ const Footer = () => {
         <footer className="text-white">
             <div className="footer mt-10 bg-black bg-opacity-50  p-10">
                 <aside>
-                    <img className="w-24" src={logo} alt="" />
+                    <img className="w-24" src="https://i.ibb.co.com/jMYJMMz/logo4.png" alt="" />
                     <p>
 
                         <span className="text-xl font-bold text-blue-500">Doctors <span className="text-orange-500">Clinic</span></span>

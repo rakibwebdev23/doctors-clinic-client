@@ -11,6 +11,10 @@ import DoctorAppointment from "../pages/Dashboard/DoctorAppointment/DoctorAppoin
 import DoctorProfileView from "../pages/DoctorsList/Doctors/DoctorProfileView/DoctorProfileView";
 import PrivateRoute from "./PrivateRoute";
 import AllUsers from "../pages/Dashboard/AdminDashboard/AllUsers/AllUsers";
+import AdminRoute from "./AdminRoute";
+import AddDoctor from "../pages/Dashboard/AddDoctor/AddDoctor";
+import ManageDoctor from "../pages/Dashboard/ManageDoctor/ManageDoctor";
+import UpdateDoctor from "../pages/Dashboard/UpdateDoctor/UpdateDoctor";
 
 export const router = createBrowserRouter([
     {
@@ -36,7 +40,7 @@ export const router = createBrowserRouter([
             {
                 path: "/doctors/:id",
                 element: <DoctorProfileView></DoctorProfileView>,
-                loader: ({params}) => fetch(`http://localhost:5000/doctors/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/doctors/${params.id}`)
             },
             {
                 path: "/signup",
@@ -60,7 +64,20 @@ export const router = createBrowserRouter([
             // admin routes
             {
                 path: 'allUsers',
-                element: <AllUsers></AllUsers>
+                element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
+            },
+            {
+                path: "addDoctor",
+                element: <AdminRoute><AddDoctor></AddDoctor></AdminRoute>
+            },
+            {
+                path: "manageDoctor",
+                element: <AdminRoute><ManageDoctor></ManageDoctor></AdminRoute>
+            },
+            {
+                path: "updateDoctor/:id",
+                element: <AdminRoute><UpdateDoctor></UpdateDoctor></AdminRoute>,
+                loader: ({params}) => fetch(`http://localhost:5000/doctors/${params.id}`)
             }
         ]
     }

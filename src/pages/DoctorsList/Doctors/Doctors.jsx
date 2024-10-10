@@ -11,7 +11,7 @@ const Doctors = () => {
 
     const [tabIndex, setTabIndex] = useState(0);
 
-    const [, doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist] = useDoctorsList();
+    const [,,doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist] = useDoctorsList();
 
     return (
         <div>
