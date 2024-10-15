@@ -42,6 +42,10 @@ const Dashboard = () => {
                                     <FaHospitalUser />
                                     My Appointment({appointment.length})
                                 </NavLink></li>
+                                <li><NavLink to="/dashboard/paymentHistory">
+                                    <FaHospitalUser />
+                                    Payment History
+                                </NavLink></li>
                             </>
                     }
                     <div className="divider"></div>

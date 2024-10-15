@@ -1,14 +1,17 @@
 import { RiDeleteBin6Line } from "react-icons/ri";
 import SectionTitle from "../../../component/SectionTitle";
-import { useDoctorsList } from "../../../hooks/useDoctorsList";
 import { FaEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import useAxiosPublic from "../../../hooks/useAxiosPublic";
+import useDoctors from "../../../hooks/useDoctors";
 
 const ManageDoctor = () => {
-    const [doctors, refetch] = useDoctorsList();
     const axiosSecure = useAxiosSecure();
+
+    const [doctors, refetch] = useDoctors();
 
     const handleDeleteDoctor = (doctor) => {
         Swal.fire({
@@ -23,8 +26,6 @@ const ManageDoctor = () => {
             if (result.isConfirmed) {
                 axiosSecure.delete(`/doctors/${doctor._id}`)
                     .then(res => {
-                        console.log(res.data);
-
                         if (res.data.deletedCount > 0) {
                             refetch();
                             Swal.fire({

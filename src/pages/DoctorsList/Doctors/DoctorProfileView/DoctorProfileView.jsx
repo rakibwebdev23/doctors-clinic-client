@@ -88,7 +88,7 @@ const DoctorProfileView = () => {
                         <div className='text-white -mt-20'>
                             <div className="md:flex items-center text-white mt-20">
                                 <div className='w-1/2'>
-                                    <img src={image} className="rounded-lg shadow-2xl"/>
+                                    <img src={image} className="rounded-lg"/>
                                 </div>
                                 <div className='w-1/2 md:ml-10'>
                                     <div className="card-body text-left">

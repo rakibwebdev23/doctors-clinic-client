@@ -1,15 +1,20 @@
+import { Link } from "react-router-dom";
 import useAppointment from "../../../hooks/useAppointment";
 import DoctorAppointList from "../DoctorAppointList/DoctorAppointList";
 
 const DoctorAppointment = () => {
     const [appointment] = useAppointment();
-    const doctorFee = appointment.reduce((total, doctor) => total + doctor.visitFee, 0)
+    const doctorFee = appointment.reduce((total, doctor) => total + doctor.visitFee, 0);
+
     return (
         <div>
             <div className="flex font-bold mb-10 justify-evenly items-center">
                 <h2 className="text-3xl">Appointment: {appointment.length}</h2>
                 <h3 className="text-3xl">Doctor Visit Fee: {doctorFee}</h3>
-                <button className="btn btn-outline btn-warning">Pay</button>
+                {
+                    appointment.length ? <Link to="/dashboard/payment"><button className="btn btn-outline btn-warning">Pay</button></Link> : 
+                    <button disabled className="btn btn-outline btn-warning">Pay</button>
+                }
             </div>
             <div>
                 <div className="overflow-x-auto">

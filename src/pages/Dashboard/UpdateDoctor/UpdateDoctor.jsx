@@ -13,7 +13,6 @@ const UpdateDoctor = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
-    console.log(phone);
 
 
     const onSubmit = async (data) => {
@@ -23,6 +22,7 @@ const UpdateDoctor = () => {
                 "Content-Type": "multipart/form-data"
             }
         });
+        
         if (res.data.success) {
             const doctorDetails = {
                 category: data.category,
@@ -40,6 +40,7 @@ const UpdateDoctor = () => {
                 visitFee: parseFloat(data.visitFee)
             }
             const doctorRes = await axiosSecure.patch(`/doctors/${_id}`, doctorDetails)
+            
             if (doctorRes.data.insertedId) {
                 reset();
                 Swal.fire({

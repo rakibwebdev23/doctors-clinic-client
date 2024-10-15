@@ -15,6 +15,8 @@ import AdminRoute from "./AdminRoute";
 import AddDoctor from "../pages/Dashboard/AddDoctor/AddDoctor";
 import ManageDoctor from "../pages/Dashboard/ManageDoctor/ManageDoctor";
 import UpdateDoctor from "../pages/Dashboard/UpdateDoctor/UpdateDoctor";
+import Payment from "../pages/Dashboard/PaymentSystem/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/PaymentSystem/PaymentHistory/PaymentHistory";
 
 export const router = createBrowserRouter([
     {
@@ -59,6 +61,14 @@ export const router = createBrowserRouter([
             {
                 path: "appointment",
                 element: <DoctorAppointment></DoctorAppointment>
+            },
+            {
+                path: "payment",
+                element: <Payment></Payment>
+            },
+            {
+                path: "paymentHistory",
+                element: <PaymentHistory></PaymentHistory>
             },
 
             // admin routes
