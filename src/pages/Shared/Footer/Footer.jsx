@@ -1,9 +1,12 @@
+import img from "../../../assets/images/foter.jpg";
 
 const Footer = () => {
 
     return (
-        <footer className="text-white">
-            <div className="footer mt-10 bg-black bg-opacity-50  p-10">
+        <footer className="text-white" style={{
+            backgroundImage: `url(${img})`,
+        }}>
+            <div className="footer mt-10 p-10">
                 <aside>
                     <img className="w-24" src="https://i.ibb.co.com/jMYJMMz/logo4.png" alt="" />
                     <p>
@@ -34,7 +37,7 @@ const Footer = () => {
                     <a className="link link-hover">Cookie policy</a>
                 </nav>
             </div>
-            <footer className="footer footer-center bg-black bg-opacity-30 text-base-content p-4">
+            <footer className="footer footer-center bg-black bg-opacity-30 p-4 text-gray-200">
                 <aside>
                     <p>Copyright © {new Date().getFullYear()} - All right reserved by <span>Doctors Clinic</span></p>
                 </aside>

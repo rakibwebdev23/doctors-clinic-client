@@ -17,6 +17,8 @@ import ManageDoctor from "../pages/Dashboard/ManageDoctor/ManageDoctor";
 import UpdateDoctor from "../pages/Dashboard/UpdateDoctor/UpdateDoctor";
 import Payment from "../pages/Dashboard/PaymentSystem/Payment/Payment";
 import PaymentHistory from "../pages/Dashboard/PaymentSystem/PaymentHistory/PaymentHistory";
+import UserHome from "../pages/Dashboard/UserHome/UserHome";
+import AdminHome from "../pages/Dashboard/AdminHome/AdminHome";
 
 export const router = createBrowserRouter([
     {
@@ -59,6 +61,10 @@ export const router = createBrowserRouter([
         element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
+                path: 'userHome',
+                element: <UserHome></UserHome>
+            },
+            {
                 path: "appointment",
                 element: <DoctorAppointment></DoctorAppointment>
             },
@@ -72,6 +78,10 @@ export const router = createBrowserRouter([
             },
 
             // admin routes
+            {
+                path: 'adminHome',
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+            },
             {
                 path: 'allUsers',
                 element: <AdminRoute><AllUsers></AllUsers></AdminRoute>
@@ -87,7 +97,7 @@ export const router = createBrowserRouter([
             {
                 path: "updateDoctor/:id",
                 element: <AdminRoute><UpdateDoctor></UpdateDoctor></AdminRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/doctors/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/doctors/${params.id}`)
             }
         ]
     }

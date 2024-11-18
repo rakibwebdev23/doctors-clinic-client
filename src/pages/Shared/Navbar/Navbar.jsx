@@ -1,9 +1,12 @@
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import useAdmin from '../../../hooks/useAdmin';
+import { MdDashboard, MdOutlineDashboardCustomize } from 'react-icons/md';
 
 const Navbar = () => {
-
     const { user, logOut } = useAuth();
+    const [isAdmin] = useAdmin();
+
     const handleLogout = () => {
         logOut()
             .then(() => { })
@@ -15,9 +18,15 @@ const Navbar = () => {
     const navLink = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
-        <li><Link to="/service">Our Services</Link></li>
-        <li><Link to="/doctors">Our Doctors</Link></li>
+        <li><Link to="/service">Services</Link></li>
+        <li><Link to="/doctors">Doctors</Link></li>
         <li><Link to="/dashboard/appointment">Appointment</Link></li>
+        {
+            user && isAdmin && <li><Link to="/dashboard/adminHome"><MdOutlineDashboardCustomize></MdOutlineDashboardCustomize></Link></li>
+        }
+        {
+            user && !isAdmin && <li><Link to="/dashboard/userHome"><MdDashboard></MdDashboard></Link></li>
+        }
         {
             user ? <>
                 {/* <li><img className='rounded-full w-20' src={user?.photoURL} alt="" /></li> */}

@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import useAxiosPublic from "../../../hooks/useAxiosPublic";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 
 const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
 const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
@@ -13,6 +13,7 @@ const UpdateDoctor = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
 
 
     const onSubmit = async (data) => {
@@ -22,7 +23,7 @@ const UpdateDoctor = () => {
                 "Content-Type": "multipart/form-data"
             }
         });
-        
+
         if (res.data.success) {
             const doctorDetails = {
                 category: data.category,
@@ -39,9 +40,9 @@ const UpdateDoctor = () => {
                 image: res.data.data.display_url,
                 visitFee: parseFloat(data.visitFee)
             }
-            const doctorRes = await axiosSecure.patch(`/doctors/${_id}`, doctorDetails)
-            
-            if (doctorRes.data.insertedId) {
+            const doctorRes = await axiosSecure.patch(`/doctors/${_id}`, doctorDetails);
+
+            if (doctorRes.data.modifiedCount > 0) {
                 reset();
                 Swal.fire({
                     position: "top-end",
@@ -50,6 +51,7 @@ const UpdateDoctor = () => {
                     showConfirmButton: false,
                     timer: 1500
                 });
+                navigate('/doctors');
             }
         }
 
