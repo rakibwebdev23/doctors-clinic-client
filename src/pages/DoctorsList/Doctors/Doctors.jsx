@@ -24,8 +24,8 @@ const Doctors = () => {
             ></BannerShared>
             <div>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)
-                } className="text-center border-none">
-                    <TabList className="uppercase">
+                } className="text-center">
+                    <TabList className="font-bold uppercase border-black p-4 text-white bg-blue-500">
                         <Tab>expert</Tab>
                         <Tab>cardiologist</Tab>
                         <Tab>dermatologist</Tab>

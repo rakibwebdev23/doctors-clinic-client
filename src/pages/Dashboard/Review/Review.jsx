@@ -54,8 +54,8 @@ const Review = () => {
 
         return (
             <div>
-                <SectionTitle title="please give me your Feedback" subTitle="please add your comment"></SectionTitle>
-                <div className="card w-full shrink-0 shadow-2xl mt-10">
+                <SectionTitle heading="please add your comment"></SectionTitle>
+                <div className="card w-full shrink-0 mt-10 rounded-xl">
                     <form onSubmit={handleSubmit(onSubmit)} className="card-body space-y-4 bg-green-300">
                         <div className="flex items-center gap-4">
                             <div className="form-control w-1/2">

@@ -88,7 +88,7 @@ const Navbar = () => {
                     <h2 className=' text-blue-500'><span className='font-bold'>Doctors</span> <br /><span className='text-orange-500'>Clinic</span></h2>
                 </Link>
             </div>
-            <div className="navbar-end max-w-screen py-1 bg-blue-600 bg-opacity-50 px-6 hidden lg:flex justify-evenly">
+            <div className="navbar-end max-w-screen py-1 bg-blue-600 bg-opacity-50 px-6 hidden lg:flex justify-evenly mt-4">
                 <ul className="menu menu-horizontal gap-6">
                     {navLink}
                 </ul>
