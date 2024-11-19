@@ -27,11 +27,11 @@ const SignIn = () => {
                 console.log(user);
 
                 Swal.fire({
-                    position: "top-end",
+                    position: "top-center",
                     icon: "success",
                     title: `${user.displayName} Sign In  Successfully`,
                     showConfirmButton: false,
-                    timer: 1500
+                    timer: 2000
                   });
                 navigate(from, { replace: true });
             })

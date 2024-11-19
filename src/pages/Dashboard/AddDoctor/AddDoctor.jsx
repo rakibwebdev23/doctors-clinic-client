@@ -64,101 +64,50 @@ const AddDoctor = () => {
                     <div className="space-y-4">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Doctor name*</span>
+                                <span className="label-text font-bold">Patient name*</span>
                             </label>
                             <input type="text" placeholder="name" className="input input-bordered" {...register("name", { required: true })} />
                             {errors.name?.type === "required" &&
                                 <p className="text-red-600">Doctor name is required</p>
                             }
                         </div>
-
-                        <div className="grid grid-cols-3 gap-4">
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text font-bold">Category*</span>
-                                </label>
-                                <select defaultValue="default" className="select select-bordered w-full" {...register("category", { required: true })}>
-                                    <option disabled value="default">Category</option>
-                                    <option value="Expert">Expert</option>
-                                    <option value="Cardiologist">Cardiologist</option>
-                                    <option value="Dermatologist">Dermatologist</option>
-                                    <option value="OrthopedicSurgeon">Orthopedic Surgeon</option>
-                                    <option value="Neurologist">Neurologist</option>
-                                    <option value="Endocrinologist">Endocrinologist</option>
-                                    <option value="Gynecologist">Gynecologist</option>
-                                </select>
-                            </div>
-                            <div className="form-control w-full">
-                                <label className="label">
-                                    <span className="label-text font-bold">Specialist*</span>
-                                </label>
-                                <input type="text" placeholder="doctor specialist" className="input input-bordered" {...register("specialist", { required: true })} />
-                            </div>
-
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">Doctor Experience*</span>
-                                </label>
-                                <input type="text" placeholder="doctor experience" className="input input-bordered" {...register("experience", { required: true })} />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">Doctor chamber*</span>
-                                </label>
-                                <input type="text" placeholder="doctor chamber location" className="input input-bordered" {...register("chamberLocation", { required: true })} />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">Education*</span>
-                                </label>
-                                <input type="text" placeholder="education" className="input input-bordered" {...register("education", { required: true })} />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">Email*</span>
-                                </label>
-                                <input type="email" placeholder="email" className="input input-bordered" {...register("email", { required: true })} />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">Rating*</span>
-                                </label>
-                                <input type="number" name="rating" placeholder="rating" className="input input-bordered" {...register("rating", {
-                                    required: true,
-                                    maxLength: 1
-                                })} />
-                                {errors.rating?.type === 'maxLength' && <p className='text-red-500'>Rating must be less 1-5 characters</p>}
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">Phone*</span>
-                                </label>
-                                <input type="number" placeholder="phone number" className="input input-bordered" {...register("phone", { required: true })} />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text font-bold">Visiting Fee*</span>
-                                </label>
-                                <input type="number" placeholder="visit vee" className="input input-bordered" {...register("visitFee", { required: true })} />
-                            </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-bold">Ocupation*</span>
+                            </label>
+                            <input type="text" placeholder="name" className="input input-bordered" {...register("occupation", { required: true })} />
+                            {errors.occupation?.type === "required" &&
+                                <p className="text-red-600">Occupation is required</p>
+                            }
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text font-bold">Review Dtails*</span>
+                            </label>
+                            <input type="text" placeholder="name" className="input input-bordered" {...register("reviewText", { required: true })} />
+                            {errors.reviewText?.type === "required" &&
+                                <p className="text-red-600">Review details is required</p>
+                            }
                         </div>
                     </div>
-
-                    <div className="flex items-center gap-4">
-                        <div className="form-control w-full mt-4">
-                            <label className="label">
-                                <span className="label-text font-bold">Doctor About*</span>
-                            </label>
-                            <textarea className="textarea textarea-bordered" placeholder="doctor about" {...register("about", { required: true })}></textarea>
-                        </div>
-                        <div className="form-control w-full mt-4">
-                            <label className="label">
-                                <span className="label-text font-bold">Overview*</span>
-                            </label>
-                            <textarea className="textarea textarea-bordered" placeholder="overview" {...register("overview", { required: true })}></textarea>
-                        </div>
+                    <div className="mb-2">
+                        <label className="label">
+                            <span className="label-text font-bold">Rating</span>
+                        </label>
+                        <Rating
+                            className="bg-white p-2"
+                            style={{ maxWidth: 180 }}
+                            value={rating}
+                            onChange={setRating}
+                        />
+                        {rating === 0 && <p className="text-red-600">Rating is Required</p>}
                     </div>
-                    <input type="file" className="file-input file-input-bordered w-full max-w-md mt-4" {...register("image", { required: true })} />
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text font-bold">Your Image</span>
+                        </label>
+                        <input type="file" className="file-input file-input-bordered w-full max-w-xs" {...register("image", { required: true })} />
+                    </div>
 
                     <div className="flex justify-center py-4">
                         <button className="bg-gradient-to-r from-purple-400 to-blue-500 text-white font-bold py-2 px-6 rounded-lg  duration-500 ease-in-out hover:from-pink-500 hover:to-orange-500 hover:scale-125 w-1/2">
