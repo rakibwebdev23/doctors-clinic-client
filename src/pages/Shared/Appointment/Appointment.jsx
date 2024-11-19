@@ -2,17 +2,43 @@ import { useForm } from "react-hook-form";
 import { BsTelephoneInbound } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import img from "../../../assets/images/contact.jpg";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
+// import useAuth from "../../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Appointment = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const onSubmit = async (data) => {
+        const userInfo = {
+            name: data.name,
+            email: data.email,
+            phone: data.phone,
+            doctorName: data.doctorName,
+            department: data.department,
+            date: data.date
+        }
+        const res = await axiosSecure.post("/appointmentContact", userInfo);
+        console.log(res.data);
+        if (res.data.insertedId) {
+            Swal.fire({
+                position: "top-center",
+                icon: "success",
+                title: "Your Contact Information has been submitted",
+                showConfirmButton: false,
+                timer: 1500
+            });
+            reset();
+            navigate("/");
+        }
     }
 
 
     return (
-        <div className="hero min-h-screen mt-16 rounded"  style={{
+        <div className="hero min-h-screen mt-16 rounded bg-fixed" style={{
             backgroundImage: `url(${img})`,
         }}>
             <div className="hero-content flex-row rounded bg-black h-full bg-opacity-60">
@@ -58,7 +84,7 @@ const Appointment = () => {
                                 <label className="label">
                                     <span className="label-text text-fuchsia-200 font-bold">Phone Number</span>
                                 </label>
-                                <input type="number" placeholder="Your mobile" className="input input-bordered" {...register("number", { required: true })} />
+                                <input type="number" placeholder="Your mobile" className="input input-bordered" {...register("phone", { required: true })} />
                                 {errors.phone?.type === "required" && (
                                     <p role="alert" className="text-red-600">Phone number is required</p>
                                 )}
@@ -78,7 +104,7 @@ const Appointment = () => {
                                 </label>
                                 <select defaultValue="default" className="select select-bordered w-full" {...register("department", { required: true })}>
                                     <option disabled value="default">All Category</option>
-                                    <option value="Special">Expert</option>
+                                    <option value="Special">Special</option>
                                     <option value="Cardiologist">Cardiologist</option>
                                     <option value="Dermatologist">Dermatologist</option>
                                     <option value="Orthopedic Surgeon">Orthopedic Surgeon</option>

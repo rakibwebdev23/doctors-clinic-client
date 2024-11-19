@@ -20,12 +20,35 @@ const Navbar = () => {
         <li><Link to="/about">About</Link></li>
         <li><Link to="/service">Services</Link></li>
         <li><Link to="/doctors">Doctors</Link></li>
-        <li><Link to="/dashboard/appointment">Appointment</Link></li>
-        {
+        {/* {
             user && isAdmin && <li><Link to="/dashboard/adminHome"><MdOutlineDashboardCustomize></MdOutlineDashboardCustomize></Link></li>
         }
         {
             user && !isAdmin && <li><Link to="/dashboard/userHome"><MdDashboard></MdDashboard></Link></li>
+        } */}
+        {
+            user && isAdmin && (
+                <li className="group relative">
+                    <Link to="/dashboard/adminHome">
+                        <MdOutlineDashboardCustomize size={24} />
+                    </Link>
+                    <span className="absolute left-0 top-full mt-1 w-max scale-0 rounded bg-gray-800 px-2 py-1 text-sm text-white transition-all duration-200 group-hover:scale-100">
+                        Admin Dashboard
+                    </span>
+                </li>
+            )
+        }
+        {
+            user && !isAdmin && (
+                <li className="group relative">
+                    <Link to="/dashboard/userHome">
+                        <MdDashboard size={24} />
+                    </Link>
+                    <span className="absolute left-0 top-full mt-1 w-max scale-0 rounded bg-gray-800 px-2 py-1 text-sm text-white transition-all duration-200 group-hover:scale-100">
+                        User Dashboard
+                    </span>
+                </li>
+            )
         }
         {
             user ? <>
@@ -33,6 +56,7 @@ const Navbar = () => {
                 <li><Link onClick={handleLogout}>Sign Out</Link></li></> :
                 <><li><Link to="/signin">Sign In</Link></li></>
         }
+
     </>
 
     return (
@@ -64,8 +88,8 @@ const Navbar = () => {
                     <h2 className=' text-blue-500'><span className='font-bold'>Doctors</span> <br /><span className='text-orange-500'>Clinic</span></h2>
                 </Link>
             </div>
-            <div className="navbar-end max-w-screen py-1 bg-blue-600 bg-opacity-50 px-6 hidden lg:flex">
-                <ul className="menu menu-horizontal">
+            <div className="navbar-end max-w-screen py-1 bg-blue-600 bg-opacity-50 px-6 hidden lg:flex justify-evenly">
+                <ul className="menu menu-horizontal gap-6">
                     {navLink}
                 </ul>
             </div>
