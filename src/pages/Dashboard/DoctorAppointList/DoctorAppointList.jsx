@@ -21,7 +21,7 @@ const DoctorAppointList = ({ appointDoctor, index }) => {
             if (result.isConfirmed) {
                 axiosSecure.delete(`/appointment/${id}`)
                     .then(res => {
-                        console.log(res.data);
+                        // console.log(res.data);
                         if (res.data.deletedCount > 0) {
                             refetch();
                             Swal.fire({

@@ -47,7 +47,7 @@ export const router = createBrowserRouter([
             {
                 path: "/doctors/:id",
                 element: <DoctorProfileView></DoctorProfileView>,
-                loader: ({ params }) => fetch(`http://localhost:5000/doctors/${params.id}`)
+                loader: ({ params }) => fetch(`https://doctors-chamber-server-woad.vercel.app/doctors/${params.id}`)
             },
             {
                 path: "/signup",
@@ -112,7 +112,7 @@ export const router = createBrowserRouter([
             {
                 path: "updateDoctor/:id",
                 element: <AdminRoute><UpdateDoctor></UpdateDoctor></AdminRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/doctors/${params.id}`)
+                loader: ({ params }) => fetch(`https://doctors-chamber-server-woad.vercel.app/doctors/${params.id}`)
             }
         ]
     }

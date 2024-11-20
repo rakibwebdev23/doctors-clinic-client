@@ -30,7 +30,7 @@ const AllContact = () => {
                     Swal.fire({
                         position: "top-center",
                         icon: "success",
-                        title: `${contacts.name} This contact has been deleted`,
+                        title: "This contact has been deleted",
                         showConfirmButton: false,
                         timer: 1500
                     });

@@ -29,7 +29,7 @@ const SignUp = () => {
                 // user email, password er sathe name, photoURL send system
                 updateUserProfile(data.name, data.photoURL)
                     .then(() => {
-                        console.log("User sign up successfully");
+                        // console.log("User sign up successfully");
 
                         const userInfo = {
                             name: data.name,
@@ -37,7 +37,7 @@ const SignUp = () => {
                         }
                         axiosPublic.post('/users', userInfo)
                             .then(res => {
-                                console.log(res.data);
+                                // console.log(res.data);
 
                                 if (res.data.insertedId) {
                                     reset();

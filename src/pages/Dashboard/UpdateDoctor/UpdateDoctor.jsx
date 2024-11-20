@@ -45,7 +45,7 @@ const UpdateDoctor = () => {
             if (doctorRes.data.modifiedCount > 0) {
                 reset();
                 Swal.fire({
-                    position: "top-end",
+                    position: "top-center",
                     icon: "success",
                     title: `${data.name} is an Updated`,
                     showConfirmButton: false,
@@ -60,7 +60,7 @@ const UpdateDoctor = () => {
     return (
         <div>
             <h2 className="text-3xl font-bold my-4">Doctor Details Update</h2>
-            <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
+            <div className="card w-full shrink-0 bg-green-200">
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                     <div className="space-y-4">
                         <div className="form-control">

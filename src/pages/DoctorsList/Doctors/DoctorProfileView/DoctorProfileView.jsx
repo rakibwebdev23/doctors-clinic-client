@@ -34,7 +34,7 @@ const DoctorProfileView = () => {
             }
             axiosSecure.post('/appointment', doctorAppointment)
                 .then(res => {
-                    console.log(res.data, doctorAppointment);                   
+                    // console.log(res.data, doctorAppointment);                   
                     if (res.data.insertedId) {
                         Swal.fire({
                             title: `${name} appointment added`,

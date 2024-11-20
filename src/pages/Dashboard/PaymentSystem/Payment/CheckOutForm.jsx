@@ -22,7 +22,7 @@ const CheckOutForm = () => {
         if (totalVisitFee > 0) {
             axiosSecure.post('/create_payment-intent', { visitFee: totalVisitFee })
                 .then(res => {
-                    console.log('Payment Secret', res.data.clientSecret);
+                    // console.log('Payment Secret', res.data.clientSecret);
                     setClientSecret(res.data.clientSecret);
                 });
         }
@@ -70,9 +70,9 @@ const CheckOutForm = () => {
 
         }
         else {
-            console.log("PaymentIntent Confirm:", paymentIntent);
+            // console.log("PaymentIntent Confirm:", paymentIntent);
             if (paymentIntent.status === "succeeded") {
-                console.log("Payment confirm TransactionId:", paymentIntent.id);
+                // console.log("Payment confirm TransactionId:", paymentIntent.id);
                 setTransactionId(paymentIntent.id);
 
                 const paymentInfo = {
@@ -85,9 +85,9 @@ const CheckOutForm = () => {
                     status: 'pending'
                 }
 
-                console.log(paymentInfo);
+                // console.log(paymentInfo);
                 const res = await axiosSecure.post('/payments', paymentInfo)
-                console.log('payment saved', res.data);
+                // console.log('payment saved', res.data);
 
 
                 if (res.data?.paymentResult?.insertedId) {

@@ -6,7 +6,7 @@ export const useDoctorsList = () => {
     const [doctors, setDoctors] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/doctors')
+        fetch('https://doctors-chamber-server-woad.vercel.app/doctors')
             .then(res => res.json())
             .then(data => {
                 setDoctors(data);

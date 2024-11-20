@@ -32,10 +32,10 @@ const Review = () => {
                 occupation: data.occupation,
                 reviewText:data.details
             }
-            console.log(patientDetails);
+            // console.log(patientDetails);
             
             const patientRes = await axiosSecure.post("/reviews", patientDetails)
-            console.log(patientRes.data);
+            // console.log(patientRes.data);
             
             if (patientRes.data.insertedId) {
                 reset();
