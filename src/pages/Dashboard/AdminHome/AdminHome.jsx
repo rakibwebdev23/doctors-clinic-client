@@ -20,14 +20,26 @@ const AdminHome = () => {
 
     return (
         <div>
-            <h2 className="text-3xl font-bold">
-                <span>Hi, Welcome </span>
-                <span className="text-green-600 mr-2">
-                    {
-                        user?.displayName ? user.displayName : <Link to="/" className="btn btn-ghost ">Back</Link>
-                    }
-                </span>
-            </h2>
+            <div className='flex justify-between items-center'>
+                <h2 className="text-3xl font-bold">
+                    <span>Hi, Welcome </span>
+                    <span className='text-green-600'>
+                        {
+                            user?.displayName ? user?.displayName : <Link to="/" className="btn btn-ghost ">Back</Link>
+                        }
+                    </span>
+                </h2>
+                <div className="flex items-center">
+                    <div className="">
+                        {user.photoURL !== null && <div className="avatar items-center flex flex-col">
+                            <div className="w-24 rounded-full">
+                                <img className="" src={user.photoURL} />
+                            </div>
+                            <h2 className="text-2xl font-bold mt-2">{user.displayName}</h2>
+                        </div>}
+                    </div>
+                </div>
+            </div>
 
             <div className="stats shadow w-full mt-16">
                 <div className="stat bg-blue-600">

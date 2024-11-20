@@ -19,7 +19,7 @@ const PatientReview = () => {
                 heading={"Our Patient Review"}
                 subHeading={"I had a great experience with Dr. Johnson. His knowledge and expertise in managing cardiovascular conditions were evident throughout my visits. While the wait times were occasionally long, the quality of care provided was worth the wait. Dr. Johnson took the time to address all my concerns and made sure I felt comfortable with the treatment plan. Overall, I would recommend him for his professionalism and skill."}
             ></SectionTitle>
-            <div>
+            <div className="">
                 <Swiper
                     rewind={true}
                     navigation={true}
@@ -35,7 +35,7 @@ const PatientReview = () => {
                                         <img className="w-16 h-16 rounded-full" src={item.image} />
                                         <div>
                                             <h2 className="font-bold text-neutral-500 text-xl">{item.patientName}</h2>
-                                            <small className="text-neutral-400">{item.occupation}</small>
+                                            <small className="text-neutral-400 ">{item.occupation}</small>
                                             <Rating
                                                 style={{ maxWidth: 180 }}
                                                 value={item.rating}
