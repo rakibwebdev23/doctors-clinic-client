@@ -25,7 +25,7 @@ const Doctors = () => {
             <div>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)
                 } className="text-center">
-                    <TabList className="font-bold uppercase border-black p-4 text-white bg-blue-500">
+                    <TabList className="font-bold uppercase border-black p-4 text-white bg-blue-500 flex lg:flex-row flex-col lg:justify-center text-left gap-2">
                         <Tab>expert</Tab>
                         <Tab>cardiologist</Tab>
                         <Tab>dermatologist</Tab>

@@ -39,9 +39,9 @@ export default [
 
     },
     env: {
-      browser: true, // Enable browser global variables
-      node: true,    // Enable Node.js global variables
-      es2020: true,  // Enable ES2020 features
+      // browser: true, // Enable browser global variables
+      // node: true,    // Enable Node.js global variables
+      // es2020: true,  // Enable ES2020 features
     },
   },
 ]

@@ -11,7 +11,7 @@ const Payment = () => {
             <SectionTitle
                 heading="Please Payment & Get Services"
             ></SectionTitle>
-            <div className="mt-16">
+            <div className="mt-12">
                 <Elements stripe={stripePromise}>
                     <CheckOutForm></CheckOutForm>
                 </Elements>

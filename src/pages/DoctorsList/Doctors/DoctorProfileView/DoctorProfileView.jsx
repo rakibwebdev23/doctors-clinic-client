@@ -76,24 +76,24 @@ const DoctorProfileView = () => {
     }
 
     return (
-        <>
+        <div>
             <HelmetProvide
                 helmetTitle={"Doctor Profile"}
             ></HelmetProvide>
-            <div className="pb-10">
-                <div className="bg-fixed hero h-[700px]" style={{ backgroundImage: `url("${img}")` }}
+            <div className="">
+                <div className="bg-fixed hero" style={{ backgroundImage: `url("${img}")` }}
                 >
                     <div className="hero-overlay bg-orange-500 bg-opacity-30"></div>
-                    <div className="hero-content h-[600px] w-[75%]">
-                        <div className='text-white -mt-20'>
+                    <div className="hero-content min-h-screen lg:w-[75%] max-w-full lg:mb-8">
+                        <div className='text-white '>
                             <div className="md:flex items-center text-white mt-20">
-                                <div className='w-1/2'>
+                                <div className='lg:w-1/2 w-full'>
                                     <img src={image} className="rounded-lg"/>
                                 </div>
-                                <div className='w-1/2 md:ml-10'>
-                                    <div className="card-body text-left">
+                                <div className='lg:w-1/2 w-full lg:ml-10'>
+                                    <div className="mt-4">
                                         <div className="space-y-1">
-                                            <h2 className="card-title md:text-4xl font-bold">{name}</h2>
+                                            <h2 className="card-title lg:text-4xl text-2xl font-bold">{name}</h2>
                                             <p>{specialist}</p>
                                             <Rating
                                                 style={{ maxWidth: 180 }}
@@ -102,9 +102,9 @@ const DoctorProfileView = () => {
                                             />
                                         </div>
                                         <div className='mt-6 space-y-1'>
-                                            <p className='md:flex items-center gap-4'><IoLocationOutline className='font-bold text-xl'></IoLocationOutline> {chamberLocation}</p>
-                                            <p className='md:flex items-center gap-4'><FaRegAddressBook className='font-bold text-xl'></FaRegAddressBook> {email}</p>
-                                            <p className='md:flex items-center gap-4'><AiOutlineDollarCircle className='font-bold text-xl'></AiOutlineDollarCircle> $ {visitFee}</p>
+                                            <p className='flex items-center gap-4'><IoLocationOutline className='font-bold text-xl'></IoLocationOutline> {chamberLocation}</p>
+                                            <p className='flex items-center gap-4'><FaRegAddressBook className='font-bold text-xl'></FaRegAddressBook> {email}</p>
+                                            <p className='flex items-center gap-4'><AiOutlineDollarCircle className='font-bold text-xl'></AiOutlineDollarCircle> $ {visitFee}</p>
                                         </div>
                                         <div className="card-actions mt-2">
                                             <button onClick={handleDoctorAppointment} className="btn btn-outline border-0 border-b-4 border-t-4 font-bold text-green-400 border-green-600 hover:bg-green-600 hover:border-none zoom transition-transform duration-200  hover:scale-x-125">Appointment</button>
@@ -116,14 +116,14 @@ const DoctorProfileView = () => {
                     </div>
                 </div>
 
-                <div className="mt-16">
+                <div className="lg:mt-16 mt-12 px-4 lg:px-8">
                     <div className="space-y-3">
                         <h1 className="text-3xl text-orange-500 font-bold">About Me</h1>
-                        <p>{about} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quidem labore voluptatibus! Modi dignissimos architecto ipsam perspiciatis at quaerat eligendi aliquam iure quod aspernatur dolor nobis, quis nostrum ex doloremque maiores est laudantium distinctio quo laborum dolores perferendis cupiditate. Quaerat expedita officia quidem placeat, nostrum magnam inventore numquam  dolor nobis, quis nostrum ex doloremque maiores culpa alias!</p>
+                        <p className="text-justify leading-relaxed">{about} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quidem labore voluptatibus! Modi dignissimos architecto ipsam perspiciatis at quaerat eligendi aliquam iure quod aspernatur dolor nobis, quis nostrum ex doloremque maiores est laudantium distinctio quo laborum dolores perferendis cupiditate. Quaerat expedita officia quidem placeat, nostrum magnam inventore numquam  dolor nobis, quis nostrum ex doloremque maiores culpa alias!</p>
                     </div>
                     <div className="flex">
-                        <div className="md:flex gap-20 mt-20 mx-auto">
-                            <div className="bg-orange-200 bg-opacity-40 p-6 rounded-lg">
+                        <div className="md:flex gap-20 lg:mt-20 mt-12 mx-auto">
+                            <div className="bg-orange-200 bg-opacity-40 p-4 lg:p-8 rounded-lg">
                                 <div className="space-y-3">
                                     <h2 className="text-2xl text-orange-500 border-b font-bold ">Education</h2>
                                     <p>{education}</p>
@@ -137,7 +137,7 @@ const DoctorProfileView = () => {
                                     <p>{experience}</p>
                                 </div>
                             </div>
-                            <div className="bg-slate-300 bg-opacity-40 p-6 rounded-lg ">
+                            <div className="bg-slate-300 bg-opacity-40 p-4 lg:p-8 rounded-lg mt-8 lg:mt-0">
                                 <div className="space-y-3">
                                     <h2 className="text-2xl text-orange-500 border-b font-bold ">Address & Contact</h2>
                                     <p className='flex items-center gap-4'><IoLocationOutline className='font-bold text-xl'></IoLocationOutline> {chamberLocation}</p>
@@ -151,7 +151,7 @@ const DoctorProfileView = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="space-y-3 mt-20">
+                    <div className="space-y-3 lg:mt-16 mt-12 pb-6">
                         <h2 className="text-3xl text-orange-500 border-b font-bold ">Review</h2>
                         <div>
                             <small>Ratting_______</small>
@@ -161,12 +161,12 @@ const DoctorProfileView = () => {
                                 readOnly
                             />
                         </div>
-                        <p className="pt-6">{overview} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis nam ratione dignissimos earum nemo, reprehenderit molestias nobis hic enim expedita voluptatum ipsam! Odio, molestias atque, reiciendis quas aliquid sequi quibusdam numquam, esse perferendis quia sed tempora a vero temporibus aliquam delectus fugiat. Maxime, exercitationem atque. Molestias, dolores nobis eligendi illo debitis omnis veniam a, ipsam modi, odit voluptatum corrupti aspernatur. Nulla tempora soluta natus. Tempore nulla hic reiciendis assumenda cupiditate ad recusandae quasi perspiciatis eos modi possimus reprehenderit suscipit sapiente distinctio pariatur, blanditiis magnam ut veritatis repellat! Pariatur voluptatibus odit molestias labore possimus consectetur rerum provident veritatis? Alias, molestiae.</p>
+                        <p className="lg:pt-6 pt-4 text-justify leading-relaxed">{overview} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis nam ratione dignissimos earum nemo, reprehenderit molestias nobis hic enim expedita voluptatum ipsam! Odio, molestias atque, reiciendis quas aliquid sequi quibusdam numquam, esse perferendis quia sed tempora a vero temporibus aliquam delectus fugiat. Maxime, exercitationem atque. Molestias, dolores nobis eligendi illo debitis omnis veniam a, ipsam modi, odit voluptatum corrupti aspernatur. Nulla tempora soluta natus. Tempore nulla hic reiciendis assumenda cupiditate ad recusandae quasi perspiciatis eos modi possimus reprehenderit suscipit sapiente distinctio pariatur, blanditiis magnam ut veritatis repellat! Pariatur voluptatibus odit molestias labore possimus consectetur rerum provident veritatis? Alias, molestiae.</p>
                     </div>
                 </div>
 
             </div>
-        </>
+        </div>
     );
 };
 

@@ -12,7 +12,7 @@ const Dashboard = () => {
     return (
         <div>
             <HelmetProvide helmetTitle="Dashboard"></HelmetProvide>
-            <div className="flex">
+            <div className="lg:flex">
                 {/* dashboard sidebar */}
                 <div className="w-66 min-h-screen bg-green-400">
                     <ul className="menu p-6 uppercase gap-4 font-semibold">

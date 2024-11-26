@@ -15,6 +15,7 @@ const Navbar = () => {
 
             })
     }
+    
     const navLink = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About</Link></li>
@@ -32,7 +33,7 @@ const Navbar = () => {
                     <Link to="/dashboard/adminHome">
                         <MdOutlineDashboardCustomize size={24} />
                     </Link>
-                    <span className="absolute left-0 top-full mt-1 w-max scale-0 rounded bg-gray-800 px-2 py-1 text-sm text-white transition-all duration-200 group-hover:scale-100">
+                    <span className="absolute left-0 top-full mt-6 w-max scale-0 rounded bg-blue-600 px-2 py-1 text-sm text-white transition-all duration-200 group-hover:scale-100">
                         Admin Dashboard
                     </span>
                 </li>
@@ -44,7 +45,7 @@ const Navbar = () => {
                     <Link to="/dashboard/userHome">
                         <MdDashboard size={24} />
                     </Link>
-                    <span className="absolute left-0 top-full mt-1 w-max scale-0 rounded bg-gray-800 px-2 py-1 text-sm text-white transition-all duration-200 group-hover:scale-100">
+                    <span className="absolute left-0 top-full mt-6 w-max scale-0 rounded bg-blue-600 px-2 py-1 text-sm text-white transition-all duration-200 group-hover:scale-100">
                         User Dashboard
                     </span>
                 </li>
@@ -60,7 +61,7 @@ const Navbar = () => {
     </>
 
     return (
-        <div className="navbar fixed z-10 max-w-screen-xl text-white px-0">
+        <div className="navbar fixed z-10 text-white bg-black bg-opacity-60">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -76,20 +77,23 @@ const Navbar = () => {
                                 strokeWidth="2"
                                 d="M4 6h16M4 12h8m-8 6h16" />
                         </svg>
+
                     </div>
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] w-40 p-2 font-bold shadow text-black">
                         {navLink}
                     </ul>
                 </div>
-                <Link to="/" className="w-16 flex items-center">
-                    <img src="https://i.ibb.co.com/jMYJMMz/logo4.png" alt="" />
-                    <h2 className=' text-blue-500'><span className='font-bold'>Doctors</span> <br /><span className='text-orange-500'>Clinic</span></h2>
-                </Link>
+                <div className=''>
+                    <Link to="/" className="flex items-center">
+                        <img className='w-12' src="https://i.ibb.co.com/jMYJMMz/logo4.png" alt="" />
+                        <h2 className=' text-blue-500'><span className='font-bold'>Doctors </span><span className='text-orange-500'>Clinic</span></h2>
+                    </Link>
+                </div>
             </div>
-            <div className="navbar-end max-w-screen py-1 bg-blue-600 bg-opacity-50 px-6 hidden lg:flex justify-evenly mt-4">
-                <ul className="menu menu-horizontal gap-6">
+            <div className="navbar-end hidden lg:flex font-semibold">
+                <ul className="menu menu-horizontal">
                     {navLink}
                 </ul>
             </div>

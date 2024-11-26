@@ -62,8 +62,8 @@ const AddDoctor = () => {
             <SectionTitle
                 heading="Add a New Doctor"
             ></SectionTitle>
-            <div className="card w-full shrink-0 bg-green-200">
-                <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+            <div className="card max-w-full shrink-0 bg-green-200">
+                <form onSubmit={handleSubmit(onSubmit)} className="card-body min-h-screen">
                     <div className="space-y-4">
                         <div className="form-control">
                             <label className="label">
@@ -75,7 +75,7 @@ const AddDoctor = () => {
                             }
                         </div>
 
-                        <div className="grid grid-cols-3 gap-4">
+                        <div className="grid lg:grid-cols-3 gap-4">
 
                             <div className="form-control w-full">
                                 <label className="label">
@@ -163,7 +163,7 @@ const AddDoctor = () => {
                         </div>
                     </div>
 
-                    <div className="flex items-center gap-4">
+                    <div className="lg:flex items-center gap-4">
                         <div className="form-control w-full mt-4">
                             <label className="label">
                                 <span className="label-text font-bold">Doctor About*</span>

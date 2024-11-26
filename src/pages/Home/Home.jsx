@@ -19,10 +19,10 @@ const Home = () => {
             <AboutInfo></AboutInfo>
             <Address></Address>
             <PatientReview></PatientReview>
-            <div className='mt-20'>
+            <div className='mt-8'>
                 <SectionTitle
                     heading={"Our Expert Doctors"}
-                    subHeading={"An expert doctor is a highly skilled and knowledgeable medical professional with extensive experience in diagnosing, treating, and managing a wide range of health conditions. They stay up-to-date with the latest advancements in medicine and provide compassionate care."}
+                    subHeading={"An expert doctor is a highly skilled and knowledgeable medical professional with extensive experience diagnosing, treating, and managing various health conditions. They stay up-to-date with the latest advancements in medicine and provide compassion."}
                 ></SectionTitle>
             </div>
             <DoctorsList doctors={doctorsSpecial}></DoctorsList>

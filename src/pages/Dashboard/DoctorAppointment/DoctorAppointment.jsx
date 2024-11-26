@@ -8,7 +8,7 @@ const DoctorAppointment = () => {
 
     return (
         <div>
-            <div className="flex font-bold mb-10 justify-evenly items-center">
+            <div className="lg:flex font-bold mb-10 lg:justify-evenly items-center space-y-4 lg:space-y-0">
                 <h2 className="text-3xl">Appointment: {appointment.length}</h2>
                 <h3 className="text-3xl">Doctor Visit Fee: {doctorFee}</h3>
                 {
@@ -20,7 +20,7 @@ const DoctorAppointment = () => {
                 <div className="overflow-x-auto">
                     <table className="table rounded-lg">
                         {/* head */}
-                        <thead className="font-bold text-xl bg-green-400">
+                        <thead className="lg:font-bold lg:text-xl bg-green-400 ">
                             <tr>
                                 <th>
                                     #

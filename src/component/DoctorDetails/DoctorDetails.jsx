@@ -73,12 +73,12 @@ const DoctorDetails = ({ doctor }) => {
     // }
 
     return (
-        <div className="card bg-base-100 w-96 shadow-xl">
-            <figure className="px-10 pt-10">
+        <div className="card bg-base-100 w-96 shadow-xl hover:bg-blue-100 transition-all duration-500 hover:opacity-80">
+            <figure className="p-6">
                 <img
                     src={image}
                     alt="Doctors"
-                    className="rounded-xl " />
+                    className="rounded-xl h-full w-full object-cover transition-all duration-500 ease-in-out transform hover:scale-110 hover:opacity-80" />
             </figure>
             <div className="card-body text-left">
                 <h2 className="card-title font-bold">{name}</h2>

@@ -58,22 +58,22 @@ const SignIn = () => {
                 helmetTitle={"SignIn"}
             ></HelmetProvide>
             <div className="hero bg-white min-h-screen">
-                <div className="hero-content md:flex">
-                    <div className="text-center w-1/2 lg:text-left">
-                        <img className="h-screen w-screen rounded-xl" src={img} alt="" />
+                <div className="hero-content lg:flex flex-col lg:flex-row">
+                    <div className="text-center lg:w-1/2 lg:text-left">
+                        <img className="min-h-screen max-w-full rounded-xl" src={img} alt="" />
                     </div>
-                    <div className="card w-1/2 max-w-sm">
-                        <h1 className="text-2xl font-bold text-center pt-6">SignIn to Doctors Clinic</h1>
+                    <div className="card lg:w-1/2 max-w-full">
+                        <h1 className="text-4xl font-bold text-center pt-6 text-blue-700">SignIn to Doctors Clinic</h1>
                         <form onSubmit={handleSignIn} className="card-body">
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Email</span>
+                                    <span className="label-text font-bold">Email</span>
                                 </label>
                                 <input type="email" name="email" placeholder="email" className="input input-bordered" required />
                             </div>
                             <div className="form-control">
                                 <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text font-bold">Password</span>
                                 </label>
                                 <input type="password" name="password" placeholder="password" className="input input-bordered" required />
                             </div>

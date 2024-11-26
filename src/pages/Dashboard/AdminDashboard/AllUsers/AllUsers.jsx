@@ -74,7 +74,7 @@ const AllUsers = () => {
 
     return (
         <div>
-            <div className="text-4xl font-bold uppercase">
+            <div className="lg:text-4xl text-3xl font-bold uppercase">
                 <h2>Total Users: {users.length}</h2>
             </div>
             <div>
@@ -82,7 +82,7 @@ const AllUsers = () => {
                     <table className="table table-zebra">
                         {/* head */}
                         <thead>
-                            <tr className="text-xl font-bold rounded-xl bg-green-400">
+                            <tr className="lg:text-xl font-bold rounded-xl bg-green-400">
                                 <th>#</th>
                                 <th>Name</th>
                                 <th>Email</th>

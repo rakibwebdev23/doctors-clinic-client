@@ -19,7 +19,7 @@ const UserHome = () => {
 
     return (
         <div>
-            <div className='flex justify-between items-center'>
+            <div className='lg:flex lg:justify-between items-center'>
                 <h2 className="text-3xl font-bold">
                     <span>Hi, Welcome </span>
                     <span className='text-green-600'>
@@ -29,7 +29,7 @@ const UserHome = () => {
                     </span>
                 </h2>
                 <div className="flex items-center">
-                    <div className="">
+                    <div className="mt-8 lg:mt-0">
                         {user.photoURL !== null && <div className="avatar items-center flex flex-col">
                             <div className="w-32 rounded-full">
                                 <img className="" src={user.photoURL} />
@@ -39,7 +39,7 @@ const UserHome = () => {
                     </div>
                 </div>
             </div>
-            <div className="stats shadow-transparent mt-10 w-full">
+            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow w-full mt-16">
                 <div className="stat bg-green-500">
                     <div className="stat-figure text-white">
                         <FaDollarSign className="text-4xl"></FaDollarSign>

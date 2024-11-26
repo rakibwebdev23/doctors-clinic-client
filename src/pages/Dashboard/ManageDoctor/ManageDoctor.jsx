@@ -43,17 +43,15 @@ const ManageDoctor = () => {
 
     return (
         <div>
-            <h2 className="text-center font-bold text-2xl text-blue-500">All Doctors</h2>
             <SectionTitle
                 heading="Manage all Doctors"
             ></SectionTitle>
-            <div className="divider w-1/2 mx-auto"></div>
-            <h2 className="text-3xl font-bold my-8">All Doctors: {doctors.length}</h2>
+            <h2 className="text-3xl font-bold my-4">All Doctors: {doctors.length}</h2>
             <div>
                 <div className="overflow-x-auto w-full">
                     <table className="table">
                         <thead className="bg-green-400">
-                            <tr className="font-bold text-xl">
+                            <tr className="lg:font-bold font-medium lg:text-xl">
                                 <th>
                                     #
                                 </th>

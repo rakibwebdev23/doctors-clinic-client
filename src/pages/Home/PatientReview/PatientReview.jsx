@@ -17,21 +17,21 @@ const PatientReview = () => {
         <div>
             <SectionTitle
                 heading={"Our Patient Review"}
-                subHeading={"I had a great experience with Dr. Johnson. His knowledge and expertise in managing cardiovascular conditions were evident throughout my visits. While the wait times were occasionally long, the quality of care provided was worth the wait. Dr. Johnson took the time to address all my concerns and made sure I felt comfortable with the treatment plan. Overall, I would recommend him for his professionalism and skill."}
+                subHeading={"I had a great experience with Dr. Johnson. His knowledge and expertise in managing cardiovascular conditions were evident throughout my visits. While the wait times were occasionally long, the quality of care provided was worth the wait. Dr. Johnson took the time to address all my concerns and ensured I felt comfortable with the treatment plan. Overall, I would recommend him for his professionalism and skill."}
             ></SectionTitle>
-            <div className="">
+            <div className="p-4 lg:p-8">
                 <Swiper
                     rewind={true}
                     navigation={true}
                     modules={[Navigation]}
-                    className="mySwiper mt-16 "
+                    className="mySwiper mt-14"
                 >
                     {
                         reviews.map(item => <SwiperSlide
                             key={item.patientId}>
-                            <div className="px-80 space-y-2">
-                                <div className="flex items-center justify-between ">
-                                    <div className="flex items-center gap-4">
+                            <div className="px-14 lg:px-48 w-full space-y-2">
+                                <div className="lg:flex items-center justify-between ">
+                                    <div className="lg:flex items-center gap-4">
                                         <img className="w-16 h-16 rounded-full" src={item.image} />
                                         <div>
                                             <h2 className="font-bold text-neutral-500 text-xl">{item.patientName}</h2>
@@ -44,9 +44,9 @@ const PatientReview = () => {
 
                                         </div>
                                     </div>
-                                    <FaQuoteLeft className="text-5xl font-bold text-orange-500"></FaQuoteLeft>
+                                    <FaQuoteLeft className="lg:size-14 font-bold text-orange-500 size-10"></FaQuoteLeft>
                                 </div>
-                                <p className="text-balance">{ item.reviewText}</p>
+                                <p className="text-justify leading-tight">{ item.reviewText}</p>
                             </div>
                         </SwiperSlide>)
                     }

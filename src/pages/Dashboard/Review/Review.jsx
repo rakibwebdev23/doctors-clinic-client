@@ -55,10 +55,10 @@ const Review = () => {
         return (
             <div>
                 <SectionTitle heading="please add your comment"></SectionTitle>
-                <div className="card w-full shrink-0 mt-10 rounded-xl">
-                    <form onSubmit={handleSubmit(onSubmit)} className="card-body space-y-4 bg-green-300">
-                        <div className="flex items-center gap-4">
-                            <div className="form-control w-1/2">
+                <div className="card shrink-0 lg:mt-10 rounded-xl">
+                    <form onSubmit={handleSubmit(onSubmit)} className="card-body max-w-full space-y-4 bg-green-300">
+                        <div className="lg:flex items-center gap-4">
+                            <div className="form-control lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text font-bold">Your name*</span>
                                 </label>
@@ -67,7 +67,7 @@ const Review = () => {
                                     <p className="text-red-600">Your Name is Required</p>
                                 )}
                             </div>
-                            <div className="form-control w-1/2">
+                            <div className="form-control lg:w-1/2">
                                 <label className="label">
                                     <span className="label-text font-bold">Occupation*</span>
                                 </label>

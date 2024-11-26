@@ -6,7 +6,7 @@ export const useReview = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://doctors-chamber-server-woad.vercel.app/reviews')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => {
                 setLoading(false);

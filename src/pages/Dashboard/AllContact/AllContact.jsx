@@ -42,13 +42,13 @@ const AllContact = () => {
     }
 
     return (
-        <div>
+        <div className="max-w-full">
             <h2 className="text-3xl font-bold mb-4">Total Contact: {contacts.length}</h2>
             <div className="overflow-x-auto">
                 <table className="table table-zebra">
                     {/* head */}
-                    <thead className="w-full bg-green-400">
-                        <tr className="text-xl font-bold w-full">
+                    <thead className="max-w-full bg-green-400">
+                        <tr className="lg:text-xl font-bold w-full">
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>

@@ -16,15 +16,15 @@ const Services = () => {
             <BannerShared
                 img={serviceImg}
                 subTitle={"Our Services"}
-                description={"The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being. The cardiology department provides expert heart care, including the diagnosis and management of cardiovascular conditions, while dermatology services address common skin issues like acne, eczema, and infections."}
+                description={"The Doctors Clinic offers a variety of healthcare services to cater to patients of all ages. Patients can receive general consultations, which include comprehensive health check-ups and personalized medical advice. The clinic also provides specialized care in pediatrics, focusing on the healthy growth and development of children. Additionally, the cardiology department offers expert heart care, including the diagnosis and management of cardiovascular conditions. The dermatology services address common skin issues such as acne, eczema, and infections, ensuring that all patient needs are prioritized."}
             ></BannerShared>
-            <div className="md:flex gap-6 md:mt-32">
-                <div className="md:w-1/2">
+            <div className="lg:flex gap-6">
+                <div className="lg:w-1/2 px-4 lg:px-6">
                     <img className="rounded-xl" src={doctorImg} alt="" />
                 </div>
-                <div className="md:w-1/2 space-y-4 text-left">
-                    <h2 className="text-4xl text-orange-500 font-bold">Our Services</h2>
-                    <p className="space-y-2">The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being. The cardiology department provides expert heart care, including the diagnosis and management of cardiovascular conditions, while dermatology services address common skin issues like acne, eczema, and infections.</p>
+                <div className="lg:w-1/2 space-y-4 text-justify px-4 lg:px-8">
+                    <h2 className="text-4xl text-orange-500 font-bold mt-8 lg:mt-0">Our Services</h2>
+                    <p className="leading-tight">The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being. The cardiology department provides expert heart care, including the diagnosis and management of cardiovascular conditions, while dermatology services address common skin issues like acne, eczema, and infections.</p>
                     <div className="space-y-6">
                         <div className="flex gap-4">
                             <SlNotebook className="text-5xl font-bold text-blue-600"></SlNotebook>
