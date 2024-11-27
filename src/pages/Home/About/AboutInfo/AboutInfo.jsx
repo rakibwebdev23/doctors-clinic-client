@@ -5,12 +5,12 @@ import img1 from "../../../../assets/images/medical4.jpg";
 const AboutInfo = () => {
     return (
         <div className="hero bg-base-200 p-4 lg:p-8">
-            <div className="hero-content flex-col lg:flex-row pt-16">
+            <div className="hero-content flex-col lg:flex-row">
                 <div className="lg:w-1/2 relative">
                     <img src={img1} className="w-3/4 rounded-lg outline outline-white shadow-black shadow-xl" />
                     <img src={img2} className="w-1/2 right-5 top-1/2 absolute rounded-lg shadow-2xl border-solid border-8 border-white" />
                 </div>
-                <div className="lg:w-1/2 space-y-6 mt-20 lg:mt-0">
+                <div className="lg:w-1/2 space-y-6 mt-14 lg:mt-0">
                     <h2 className="text-3xl font-bold text-blue-600">About Us</h2>
                     <h1 className="lg:text-6xl text-4xl leading-tight font-bold">Expert Care, Trusted Service</h1>
                     <p className="text-justify text-black leading-relaxed">

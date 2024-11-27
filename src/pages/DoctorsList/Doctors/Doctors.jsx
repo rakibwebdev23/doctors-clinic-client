@@ -25,14 +25,14 @@ const Doctors = () => {
             <div>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)
                 } className="text-center">
-                    <TabList className="font-bold uppercase border-black p-4 text-white bg-blue-500 flex lg:flex-row flex-col lg:justify-center text-left gap-2">
-                        <Tab>expert</Tab>
-                        <Tab>cardiologist</Tab>
-                        <Tab>dermatologist</Tab>
-                        <Tab>orthopedic Surgeon</Tab>
-                        <Tab>neurologist</Tab>
-                        <Tab>endocrinologist</Tab>
-                        <Tab>gynecologist</Tab>
+                    <TabList className="font-bold uppercase border-black p-4 text-white flex lg:flex-row flex-col lg:justify-center text-left gap-2 py-6 mb-4">
+                        <Tab className="p-4 bg-blue-700 hover:bg-gray-300 cursor-pointer rounded hover:text-black hover:delay-100 duration-300">expert</Tab>
+                        <Tab className="p-4 bg-blue-700 hover:bg-gray-300 cursor-pointer rounded hover:text-black hover:delay-100 duration-300">cardiologist</Tab>
+                        <Tab className="p-4 bg-blue-700 hover:bg-gray-300 cursor-pointer rounded hover:text-black hover:delay-100 duration-300">dermatologist</Tab>
+                        <Tab className="p-4 bg-blue-700 hover:bg-gray-300 cursor-pointer rounded hover:text-black hover:delay-100 duration-300">orthopedic Surgeon</Tab>
+                        <Tab className="p-4 bg-blue-700 hover:bg-gray-300 cursor-pointer rounded hover:text-black hover:delay-100 duration-300">neurologist</Tab>
+                        <Tab className="p-4 bg-blue-700 hover:bg-gray-300 cursor-pointer rounded hover:text-black hover:delay-100 duration-300">endocrinologist</Tab>
+                        <Tab className="p-4 bg-blue-700 hover:bg-gray-300 cursor-pointer rounded hover:text-black hover:delay-100 duration-300">gynecologist</Tab>
                     </TabList>
                     <TabPanel>
                         <div>
