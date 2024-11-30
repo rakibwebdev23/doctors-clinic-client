@@ -10,7 +10,7 @@ const BannerShared = ({ img, title, subTitle, description }) => {
                             <h2 className="text-4xl font-bold text-orange-600 mb-2">{ title}</h2>
                             <h1 className="mb-5 lg:text-5xl text-4xl font-bold uppercase text-blue-600 mt-6">{ subTitle }</h1>
                         </div>
-                        <p className="mb-5 text-white leading-relaxed">
+                        <p className="mb-5 text-white lg:text-justify leading-relaxed text-left">
                            {description}
                         </p>
                     </div>
