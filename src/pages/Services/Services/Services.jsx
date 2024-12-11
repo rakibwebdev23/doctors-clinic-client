@@ -22,46 +22,46 @@ const Services = () => {
                 <div className="lg:w-1/2 px-4 lg:px-6">
                     <img className="rounded-xl" src={doctorImg} alt="" />
                 </div>
-                <div className="lg:w-1/2 space-y-4 text-justify px-4 lg:px-8">
+                <div className="lg:w-1/2 space-y-4 lg:text-justify px-4 lg:px-8">
                     <h2 className="text-4xl text-orange-500 font-bold mt-8 lg:mt-0">Our Services</h2>
-                    <p className="leading-tight">The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being. The cardiology department provides expert heart care, including the diagnosis and management of cardiovascular conditions, while dermatology services address common skin issues like acne, eczema, and infections.</p>
+                    <p className="leading-relaxed tracking-normal">The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being. The cardiology department provides expert heart care, including the diagnosis and management of cardiovascular conditions, while dermatology services address common skin issues like acne, eczema, and infections.</p>
                     <div className="space-y-6">
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 text-left">
                             <SlNotebook className="text-5xl font-bold text-blue-600"></SlNotebook>
                             <div className="space-y-4">
                                 <h2 className="text-2xl font-bold">General Treatement</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus delectus pariatur vel autem quas, dicta minus asperiores a dolorem fuga.</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 text-left">
                             <FaHeart className="text-5xl font-bold text-blue-600"></FaHeart>
                             <div className="space-y-4">
                                 <h2 className="text-2xl font-bold">Heart Surgery</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus delectus pariatur vel autem quas, dicta minus asperiores a dolorem fuga.</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 text-left">
                             <LuBone className="text-5xl font-bold text-blue-600"></LuBone>
                             <div className="space-y-4">
                                 <h2 className="text-2xl font-bold">Orthopedic Surgery</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus delectus pariatur vel autem quas, dicta minus asperiores a dolorem fuga.</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 text-left">
                             <FaBrain className="text-5xl font-bold text-blue-600"></FaBrain>
                             <div className="space-y-4">
                                 <h2 className="text-2xl font-bold">Neuro Surgery</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus delectus pariatur vel autem quas, dicta minus asperiores a dolorem fuga.</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 text-left">
                             <RiWomenLine  className="text-5xl font-bold text-blue-600"></RiWomenLine >
                             <div className="space-y-4">
                                 <h2 className="text-2xl font-bold">Gynecological Surgery</h2>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus delectus pariatur vel autem quas, dicta minus asperiores a dolorem fuga.</p>
                             </div>
                         </div>
-                        <div className="flex gap-4">
+                        <div className="flex gap-4 text-left">
                             <BiDonateBlood  className="text-5xl font-bold text-blue-600"></BiDonateBlood >
                             <div className="space-y-4">
                                 <h2 className="text-2xl font-bold">Blood Trasfusion</h2>

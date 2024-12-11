@@ -84,7 +84,7 @@ const Navbar = () => {
                     </ul>
                 </div>
             </div>
-            <div className="flex-1 justify-end lg:justify-start">
+            <div className="flex-1 justify-end lg:justify-start px-2">
                 <Link to="/" className="flex items-center">
                     <img className="w-12" src="https://i.ibb.co.com/jMYJMMz/logo4.png" alt="logo" />
                     <h2 className="ml-2 text-blue-500 text-lg">

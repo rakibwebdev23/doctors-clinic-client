@@ -23,9 +23,9 @@ const AllContact = () => {
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Yes, delete it!"
-        }).then(async(result) => {
+        }).then(async (result) => {
             if (result.isConfirmed) {
-                const res = await axiosSecure.delete(`/appointmentContact/${id}`)
+                const res = await axiosSecure.delete(`/appointmentContact/${id}`);
                 if (res.data.deletedCount > 0) {
                     Swal.fire({
                         position: "top-center",
@@ -36,19 +36,20 @@ const AllContact = () => {
                     });
                     refetch();
                 }
-
             }
         });
-    }
+    };
 
     return (
-        <div className="max-w-full">
-            <h2 className="text-3xl font-bold mb-4">Total Contact: {contacts.length}</h2>
-            <div className="overflow-x-auto">
-                <table className="table table-zebra">
-                    {/* head */}
-                    <thead className="max-w-full bg-green-400">
-                        <tr className="lg:text-xl font-bold w-full">
+        <div className="p-4 md:p-6">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
+                Total Contact: {contacts.length}
+            </h2>
+            <div className="overflow-x-auto shadow-lg rounded-lg">
+                <table className="table table-zebra w-full">
+                    {/* Table Header */}
+                    <thead className="bg-green-400 text-white">
+                        <tr className="text-sm md:text-base lg:text-lg font-bold">
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -59,22 +60,27 @@ const AllContact = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
+                    {/* Table Body */}
                     <tbody>
-                        {
-                            contacts.map((contact, index) => <tr key={contact._id}>
+                        {contacts.map((contact, index) => (
+                            <tr key={contact._id} className="hover:bg-gray-100 text-xs md:text-sm lg:text-base">
                                 <td>{index + 1}</td>
-                                <td className="font-bold">{contact.name}</td>
+                                <td className="font-semibold">{contact.name}</td>
                                 <td>{contact.email}</td>
                                 <td>{contact.phone}</td>
-                                <td className="font-bold">{contact.doctorName}</td>
+                                <td className="font-semibold">{contact.doctorName}</td>
                                 <td>{contact.department}</td>
                                 <td>{contact.date}</td>
                                 <td>
-                                    <button onClick={() => deleteContact(contact._id)} className="btn bg-red-600 text-white text-xl btn-md font-bold hover:text-red-600"><RiDeleteBin6Line></RiDeleteBin6Line></button>
+                                    <button
+                                        onClick={() => deleteContact(contact._id)}
+                                        className="btn bg-red-600 text-white hover:text-red-600 text-xs md:text-sm lg:text-lg"
+                                    >
+                                        <RiDeleteBin6Line />
+                                    </button>
                                 </td>
-                            </tr>)
-                        }
-
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>

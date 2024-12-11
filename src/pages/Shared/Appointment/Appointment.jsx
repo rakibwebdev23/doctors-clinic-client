@@ -46,7 +46,7 @@ const Appointment = () => {
                 <div className="hero-content flex flex-col lg:flex-row rounded bg-black bg-opacity-60 max-w-full">
                     <div className="lg:text-left lg:w-1/2 pl-4 text-fuchsia-200 w-full">
                         <h1 className="lg:text-5xl text-4xl text-blue-600 font-bold leading-tight">Contact With Us</h1>
-                        <p className="py-6 px-4 text-justify leading-relaxed text-gray-200 lg:hyphens-none hyphens-auto break-words">
+                        <p className="py-6 px-4 text-justify text-gray-200 hyphens-auto tracking-normal">
                         I had a great experience with Dr. Johnson. His knowledge and expertise in managing cardiovascular conditions were evident throughout my visits. While the wait times were occasionally long, the quality of care provided was worth the wait. Dr. Johnson took the time to address all my concerns and ensured I felt comfortable with the treatment plan. Overall, I would recommend him for his professionalism and skill.
                         </p>
                         <div className="flex items-center gap-6 mb-2">

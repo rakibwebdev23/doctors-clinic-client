@@ -1,9 +1,10 @@
-
-const SectionTitle = ({heading, subHeading}) => {
+const SectionTitle = ({ heading, subHeading }) => {
     return (
-        <div className="lg:text-center space-y-4 lg:p-8 p-4">
-            <h2 className="lg:text-4xl text-3xl leading-tight font-bold text-blue-600 uppercase">{heading}</h2>
-            <p className="text-justify lg:text-center lg:w-3/4 mx-auto break-words hyphens-auto lg:hyphens-none">{subHeading}</p>
+        <div className="lg:text-center space-y-4 lg:p-12 p-6">
+            <h2 className="text-3xl lg:text-4xl font-bold text-blue-600 uppercase leading-tight text-center">{heading}</h2>
+            <p className="text-justify lg:text-center lg:w-3/4 mx-auto break-words hyphens-auto lg:hyphens-none text-sm lg:text-base">
+                {subHeading}
+            </p>
         </div>
     );
 };

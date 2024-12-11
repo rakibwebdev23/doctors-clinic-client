@@ -125,7 +125,14 @@ const CheckOutForm = () => {
             />
             <p className="text-red-600 my-2">{error}</p>
             {transactionId && <p className="text-green-600">Payment Transaction Id: {transactionId}</p>}
-            <button className="mt-10 btn btn-outline btn-primary" type="submit" disabled={!stripe || !clientSecret}>
+            <button
+                className="mt-10 w-full py-3 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold 
+             rounded-lg shadow-md hover:from-green-600 hover:to-green-800 hover:shadow-lg 
+             focus:outline-none focus:ring-2 focus:ring-green-400 disabled:bg-gray-400 
+             disabled:cursor-not-allowed transition-all duration-300"
+                type="submit"
+                disabled={!stripe || !clientSecret}
+            >
                 Pay
             </button>
         </form>

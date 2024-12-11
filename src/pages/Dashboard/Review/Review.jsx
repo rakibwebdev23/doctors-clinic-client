@@ -30,87 +30,79 @@ const Review = () => {
                 rating,
                 image: res.data.data.display_url,
                 occupation: data.occupation,
-                reviewText:data.details
+                reviewText: data.details
             }
-            // console.log(patientDetails);
             
             const patientRes = await axiosSecure.post("/reviews", patientDetails)
-            // console.log(patientRes.data);
             
             if (patientRes.data.insertedId) {
                 reset();
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
-                    title: `${data.name} is an added to the Doctor List`,
+                    title: `${data.name} is added to the Doctor List`,
                     showConfirmButton: false,
                     timer: 1500
                 });
                 navigate('/');
             }
         }
-
     }
 
-        return (
-            <div>
-                <SectionTitle heading="please add your comment"></SectionTitle>
-                <div className="card shrink-0 lg:mt-10 rounded-xl">
-                    <form onSubmit={handleSubmit(onSubmit)} className="card-body max-w-full space-y-4 bg-green-300">
-                        <div className="lg:flex items-center gap-4">
-                            <div className="form-control lg:w-1/2">
-                                <label className="label">
-                                    <span className="label-text font-bold">Your name*</span>
-                                </label>
-                                <input type="text" placeholder="Name" className="input input-bordered" {...register("name", { required: true })} />
-                                {errors.name?.type === "required" && (
-                                    <p className="text-red-600">Your Name is Required</p>
-                                )}
-                            </div>
-                            <div className="form-control lg:w-1/2">
-                                <label className="label">
-                                    <span className="label-text font-bold">Occupation*</span>
-                                </label>
-                                <input type="text" placeholder="Name" className="input input-bordered" {...register("occupation", { required: true })} />
-                                {errors.occupation?.type === "required" && (
-                                    <p className="text-red-600">Occupation is Required</p>
-                                )}
-                            </div>
-                        </div>
-                        <div className="form-control w-full">
-                            <div className="label">
-                                <span className="label-text font-bold">Your Feedback</span>
-                            </div>
-                            <textarea className="textarea textarea-bordered h-24" placeholder="Recipe Details" {...register("details", { required: true })}></textarea>
-                        </div>
-                        <div className="mb-2">
+    return (
+        <div className="px-4 py-6 lg:px-8 lg:py-12">
+            <SectionTitle heading="Please Add Your Comment" />
+            <div className="card shrink-0 lg:mt-10 rounded-xl">
+                <form onSubmit={handleSubmit(onSubmit)} className="card-body max-w-full space-y-4 bg-green-300 p-4 rounded-lg">
+                    <div className="lg:flex items-center gap-4">
+                        <div className="form-control lg:w-1/2 w-full">
                             <label className="label">
-                                <span className="label-text font-bold">Rating</span>
+                                <span className="label-text font-bold">Your Name*</span>
                             </label>
-                            <Rating
-                                className="bg-white p-2"
-                                style={{ maxWidth: 180 }}
-                                value={rating}
-                                onChange={setRating}
-                            />
-                            {rating === 0 && <p className="text-red-600">Rating is Required</p>}
+                            <input type="text" placeholder="Name" className="input input-bordered w-full" {...register("name", { required: true })} />
+                            {errors.name?.type === "required" && <p className="text-red-600">Your Name is Required</p>}
                         </div>
-                        <div className="form-control">
+                        <div className="form-control lg:w-1/2 w-full">
                             <label className="label">
-                                <span className="label-text font-bold">Your Image</span>
+                                <span className="label-text font-bold">Occupation*</span>
                             </label>
-                            <input type="file" className="file-input file-input-bordered w-full max-w-xs" {...register("image", { required: true })} />
+                            <input type="text" placeholder="Occupation" className="input input-bordered w-full" {...register("occupation", { required: true })} />
+                            {errors.occupation?.type === "required" && <p className="text-red-600">Occupation is Required</p>}
                         </div>
-                        <div>
-                            <button className="relative px-8 py-3 border-2 border-transparent bg-gray-700 transition-all duration-300 text-white hover:bg-green-600 hover:text-black font-semibold
-                         flex justify-center items-center gap-2 rounded-lg">
-                                Add Review
-                            </button>
+                    </div>
+                    <div className="form-control w-full">
+                        <div className="label">
+                            <span className="label-text font-bold">Your Feedback</span>
                         </div>
-                    </form>
-                </div>
+                        <textarea className="textarea textarea-bordered h-24 w-full" placeholder="Feedback Details" {...register("details", { required: true })}></textarea>
+                    </div>
+                    <div className="mb-2">
+                        <label className="label">
+                            <span className="label-text font-bold">Rating</span>
+                        </label>
+                        <Rating
+                            className="bg-white p-2"
+                            style={{ maxWidth: 180 }}
+                            value={rating}
+                            onChange={setRating}
+                        />
+                        {rating === 0 && <p className="text-red-600">Rating is Required</p>}
+                    </div>
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text font-bold">Your Image</span>
+                        </label>
+                        <input type="file" className="file-input file-input-bordered w-full max-w-xs" {...register("image", { required: true })} />
+                    </div>
+                    <div>
+                        <button className="relative px-8 py-3 border-2 border-transparent bg-gray-700 transition-all duration-300 text-white hover:bg-green-500 hover:text-black font-semibold flex justify-center items-center gap-2 rounded-lg w-full md:w-auto">
+                            Add Review
+                        </button>
+                    </div>
+                </form>
             </div>
-        );
-    };
+        </div>
+    );
+};
 
-    export default Review;
+export default Review;

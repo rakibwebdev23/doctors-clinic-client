@@ -7,42 +7,44 @@ const DoctorAppointment = () => {
     const doctorFee = appointment.reduce((total, doctor) => total + doctor.visitFee, 0);
 
     return (
-        <div>
-            <div className="lg:flex font-bold mb-10 lg:justify-evenly items-center space-y-4 lg:space-y-0">
-                <h2 className="text-3xl">Appointment: {appointment.length}</h2>
-                <h3 className="text-3xl">Doctor Visit Fee: {doctorFee}</h3>
-                {
-                    appointment.length ? <Link to="/dashboard/payment"><button className="btn btn-outline btn-warning">Pay</button></Link> : 
-                    <button disabled className="btn btn-outline btn-warning">Pay</button>
-                }
+        <div className="p-4 md:p-6 lg:p-8">
+            <div className="flex flex-col lg:flex-row lg:justify-evenly items-center space-y-4 lg:space-y-0 lg:space-x-6 mb-8 font-bold text-center lg:text-left">
+                <h2 className="text-2xl md:text-3xl">Appointment: {appointment.length}</h2>
+                <h3 className="text-2xl md:text-3xl">Doctor Visit Fee: ${doctorFee}</h3>
+                {appointment.length ? (
+                    <Link to="/dashboard/payment">
+                        <button className="px-10 py-3 bg-green-600 hover:bg-green-700 w-full md:w-auto text-white rounded-md">
+                            Pay
+                        </button>
+                    </Link>
+                ) : (
+                    <button disabled className="btn btn-outline btn-warning w-full md:w-auto">
+                        Pay
+                    </button>
+                )}
             </div>
-            <div>
-                <div className="overflow-x-auto">
-                    <table className="table rounded-lg">
-                        {/* head */}
-                        <thead className="lg:font-bold lg:text-xl bg-green-400 ">
-                            <tr>
-                                <th>
-                                    #
-                                </th>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th>Speciality</th>
-                                <th>Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {
-                                appointment.map((appointDoctor, index) => <DoctorAppointList
-                                    key={appointDoctor._id}
-                                    appointDoctor={appointDoctor}
-                                    index={index}
-                                ></DoctorAppointList>)
-                            }
-                        </tbody>
 
-                    </table>
-                </div>
+            <div className="overflow-x-auto">
+                <table className="table table-zebra rounded-lg w-full">
+                    <thead className="bg-green-400 text-white text-sm md:text-lg font-bold">
+                        <tr>
+                            <th>#</th>
+                            <th>Image</th>
+                            <th>Name</th>
+                            <th>Speciality</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {appointment.map((appointDoctor, index) => (
+                            <DoctorAppointList
+                                key={appointDoctor._id}
+                                appointDoctor={appointDoctor}
+                                index={index}
+                            />
+                        ))}
+                    </tbody>
+                </table>
             </div>
         </div>
     );
