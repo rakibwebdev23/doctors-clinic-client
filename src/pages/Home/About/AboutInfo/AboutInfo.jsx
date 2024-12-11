@@ -4,7 +4,7 @@ import img1 from "../../../../assets/images/medical4.jpg";
 
 const AboutInfo = () => {
     return (
-        <div className="hero bg-base-200 p-4 lg:p-8">
+        <div className="hero bg-base-200 p-4 lg:p-8 mt-14 lg:mt-0">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="lg:w-1/2 relative">
                     <img src={img1} className="w-3/4 rounded-lg outline outline-white shadow-black shadow-xl" />
