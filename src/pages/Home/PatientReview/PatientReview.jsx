@@ -17,13 +17,13 @@ const PatientReview = () => {
     const [reviews] = useReview();
 
     return (
-        <div className="container mx-auto px-4 lg:px-8 py-10">
+        <div className="container mx-auto p-4 lg:px-8">
             <SectionTitle
                 heading="Our Patient Reviews"
                 subHeading="Here's what our patients have to say about their experience at our clinic."
             />
 
-            <div className="p-4 md:p-6 lg:p-8">
+            <div className="p-4 lg:px-8">
                 <Swiper
                     rewind={true}
                     navigation={true}
@@ -62,7 +62,7 @@ const PatientReview = () => {
                                     </div>
                                     <FaQuoteLeft className="text-orange-500 text-3xl md:text-5xl" />
                                 </div>
-                                <p className="text-neutral-600 text-sm md:text-base leading-relaxed text-justify p-6 lg:p-0">
+                                <p className="text-neutral-600 text-sm md:text-base leading-relaxed text-center hyphens-auto lg:text-justify p-6 lg:p-0 tracking-normal">
                                     {item.reviewText || "No review"}
                                 </p>
                             </div>

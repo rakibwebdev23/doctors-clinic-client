@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import useAdmin from '../../../hooks/useAdmin';
@@ -7,12 +8,18 @@ const Navbar = () => {
     const { user, logOut } = useAuth();
     const [isAdmin] = useAdmin();
 
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
     const handleLogout = () => {
         logOut()
             .then(() => { })
             .catch(error => {
                 console.log(error);
             });
+    };
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
     };
 
     const navLink = (
@@ -47,44 +54,17 @@ const Navbar = () => {
             }
             {
                 user ? (
-                    <>
-                        <li><Link onClick={handleLogout}>Sign Out</Link></li>
-                    </>
+                    <li><Link onClick={handleLogout}>Sign Out</Link></li>
                 ) : (
-                    <>
-                        <li><Link to="/signin">Sign In</Link></li>
-                    </>
+                    <li><Link to="/signin">Sign In</Link></li>
                 )
             }
         </>
     );
 
     return (
-        <div className="navbar fixed z-10 text-white bg-black bg-opacity-90 py-3">
-            <div className="navbar-start lg:hidden">
-                <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost font-bold">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="h-5 w-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M4 6h16M4 12h8m-8 6h16" />
-                        </svg>
-                    </div>
-                    <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] w-40 p-2 font-bold shadow text-black">
-                        {navLink}
-                    </ul>
-                </div>
-            </div>
-            <div className="flex-1 justify-end lg:justify-start px-2">
+        <div className="navbar fixed z-10 text-white bg-black bg-opacity-90 py-3 px-4">
+            <div className="navbar-start">
                 <Link to="/" className="flex items-center">
                     <img className="w-12" src="https://i.ibb.co.com/jMYJMMz/logo4.png" alt="logo" />
                     <h2 className="ml-2 text-blue-500 text-lg">
@@ -93,10 +73,60 @@ const Navbar = () => {
                     </h2>
                 </Link>
             </div>
+
+            {/* Dropdown menu */}
+            <div className="navbar-end lg:hidden">
+                <div className="dropdown">
+                    <div
+                        tabIndex={0}
+                        role="button"
+                        className="btn btn-ghost"
+                        onClick={toggleMenu}
+                    >
+                        {isMenuOpen ? (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-8 w-8 text-orange-500 transition duration-300"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            >
+                                <path d="M18 6L6 18M6 6l12 12" />
+                            </svg>
+                        ) : (
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-8 w-8 text-blue-500 hover:text-orange-500 transition duration-300"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+                                <path
+                                    d="M4 6h16M4 12h16M4 18h16"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                />
+                            </svg>
+                        )}
+                    </div>
+                    {isMenuOpen && (
+                        <ul
+                            tabIndex={0}
+                            className="menu menu-sm dropdown-content right-0 bg-base-100 rounded-box z-[1] w-40 p-2 mt-2 font-bold shadow text-black"
+                        >
+                            {navLink}
+                        </ul>
+                    )}
+                </div>
+            </div>
+
+            {/* Desktop menu */}
             <div className="navbar-end hidden lg:flex font-semibold">
-                <ul className="menu menu-horizontal">
-                    {navLink}
-                </ul>
+                <ul className="menu menu-horizontal">{navLink}</ul>
             </div>
         </div>
     );
