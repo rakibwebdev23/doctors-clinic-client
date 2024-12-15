@@ -49,7 +49,7 @@ const AllContact = () => {
                 <table className="table table-zebra w-full">
                     {/* Table Header */}
                     <thead className="bg-green-400 text-white">
-                        <tr className="text-sm md:text-base lg:text-lg font-bold">
+                        <tr className="text-sm lg:text-base font-bold">
                             <th>#</th>
                             <th>Name</th>
                             <th>Email</th>
@@ -65,12 +65,12 @@ const AllContact = () => {
                         {contacts.map((contact, index) => (
                             <tr key={contact._id} className="hover:bg-gray-100 text-xs md:text-sm lg:text-base">
                                 <td>{index + 1}</td>
-                                <td className="font-semibold">{contact.name}</td>
-                                <td>{contact.email}</td>
-                                <td>{contact.phone}</td>
-                                <td className="font-semibold">{contact.doctorName}</td>
-                                <td>{contact.department}</td>
-                                <td>{contact.date}</td>
+                                <td className="font-semibold text-sm">{contact.name}</td>
+                                <td className="text-sm">{contact.email}</td>
+                                <td className="text-sm">{contact.phone}</td>
+                                <td className="font-semibold text-sm">{contact.doctorName}</td>
+                                <td className=" text-sm">{contact.department}</td>
+                                <td className="text-sm">{contact.date}</td>
                                 <td>
                                     <button
                                         onClick={() => deleteContact(contact._id)}

@@ -46,7 +46,7 @@ const CheckOutForm = () => {
         });
 
         if (error) {
-            console.log('Payment error', error);
+            // console.log('Payment error', error);
             setError(error.message);
         }
         else {
@@ -106,36 +106,52 @@ const CheckOutForm = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <CardElement
-                options={{
-                    style: {
-                        base: {
-                            fontSize: '20px',
-                            color: '#424770',
-                            '::placeholder': {
-                                color: '#aab7c4',
+        <form onSubmit={handleSubmit} className="space-y-6">
+            <div className="w-full px-2 sm:px-4 md:px-6 lg:px-8">
+                <CardElement
+                    options={{
+                        style: {
+                            base: {
+                                fontSize: '16px',
+                                color: '#424770',
+                                '::placeholder': {
+                                    color: '#aab7c4',
+                                },
+                            },
+                            invalid: {
+                                color: '#9e2146',
                             },
                         },
-                        invalid: {
-                            color: '#9e2146',
-                        },
-                    },
-                }}
-            />
-            <p className="text-red-600 my-2">{error}</p>
-            {transactionId && <p className="text-green-600">Payment Transaction Id: {transactionId}</p>}
-            <button
-                className="mt-10 w-full py-3 bg-gradient-to-r from-green-500 to-green-700 text-white font-semibold 
-             rounded-lg shadow-md hover:from-green-600 hover:to-green-800 hover:shadow-lg 
-             focus:outline-none focus:ring-2 focus:ring-green-400 disabled:bg-gray-400 
-             disabled:cursor-not-allowed transition-all duration-300"
-                type="submit"
-                disabled={!stripe || !clientSecret}
-            >
-                Pay
-            </button>
+                    }}
+                    className="p-3 border rounded-lg shadow-sm bg-white w-full"
+                />
+            </div>
+
+            {/* Display Error Message */}
+            <p className="text-red-600 text-sm my-2 px-2">{error}</p>
+
+            {/* Transaction ID */}
+            {transactionId && (
+                <p className="text-green-600 text-sm px-2">
+                    Payment Transaction Id: {transactionId}
+                </p>
+            )}
+
+            {/* Submit Button */}
+            <div className="flex justify-center px-2">
+                <button
+                    className="mt-4 w-full sm:w-auto py-3 px-6 bg-gradient-to-r from-green-500 to-green-700 
+                text-white font-semibold rounded-lg shadow-md hover:from-green-600 hover:to-green-800 
+                focus:outline-none focus:ring-2 focus:ring-green-400 disabled:bg-gray-400 
+                disabled:cursor-not-allowed transition-all duration-300 text-sm sm:text-base"
+                    type="submit"
+                    disabled={!stripe || !clientSecret}
+                >
+                    Pay
+                </button>
+            </div>
         </form>
+
     );
 };
 

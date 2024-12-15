@@ -20,7 +20,7 @@ const Banner = () => {
                             <span className="text-orange-500">Our</span>{" "}
                             <span>Priority</span>
                         </h1>
-                        <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-6 lg:w-3/4 font-poppins">
+                        <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-6 lg:w-3/4 font-poppins lg:text-justify lg:hyphens-auto">
                             Doctors Clinic is a trusted healthcare provider dedicated to
                             delivering high-quality medical services with a personal
                             touch. Our experienced doctors and staff ensure comprehensive

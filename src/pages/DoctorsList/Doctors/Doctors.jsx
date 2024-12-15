@@ -20,7 +20,7 @@ const Doctors = () => {
             <BannerShared
                 img={img}
                 subTitle={"Our Doctors"}
-                description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi asperiores quaerat, labore esse officia, exercitationem corporis repellat nostrum repudiandae architecto cum amet! Excepturi asperiores quaerat, labore esse officia, exercitationem corporis repellat nostrum repudiandae architecto cum amet! Quam accusamus, totam fugiat voluptas, dolorem sapiente repellendus quia blanditiis voluptates corporis alias id accusantium? Odit sequi exercitationem temporibus, nam labore, fugiat vero aliquid quos, eaque."}
+                description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi asperiores quaerat, labore esse officia, exercitationem corporis repellat nostrum repudiandae architecto cum amet! Excepturi asperiores quaerat, labore esse officia, exercitationem corporis repellat nostrum repudiandae architecto cum amet! Quam accusamus, totam fugiat voluptas."}
             ></BannerShared>
             <div>
                 <Tabs defaultIndex={tabIndex} onSelect={(index) => setTabIndex(index)

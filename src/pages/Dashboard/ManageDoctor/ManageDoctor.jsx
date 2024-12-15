@@ -45,7 +45,7 @@ const ManageDoctor = () => {
             <div className="overflow-x-auto">
                 <table className="table table-auto w-full">
                     <thead className="bg-green-400">
-                        <tr className="text-sm md:text-lg font-semibold">
+                        <tr className="text-sm lg:text-lg md:text-base font-semibold">
                             <th>#</th>
                             <th>Image</th>
                             <th>Name</th>
@@ -74,9 +74,9 @@ const ManageDoctor = () => {
                                         </div>
                                     </div>
                                 </td>
-                                <td className="font-bold">{doctor.name}</td>
-                                <td className="text-gray-600">{doctor.email}</td>
-                                <td className="text-gray-600">
+                                <td className="font-bold lg:text-base text-sm">{doctor.name}</td>
+                                <td className="text-gray-600 lg:text-base text-sm">{doctor.email}</td>
+                                <td className="text-gray-600 lg:text-base text-sm">
                                     {doctor.category}
                                 </td>
                                 <td>

@@ -90,7 +90,7 @@ const AllUsers = () => {
                         {users.map((user, index) => (
                             <tr key={user._id} className="bg-slate-100 hover:bg-slate-200 text-sm md:text-base">
                                 <th>{index + 1}</th>
-                                <td>{user.name}</td>
+                                <td className="font-bold">{user.name}</td>
                                 <td>{user.email}</td>
                                 <td>
                                     {user.role === "admin" ? (

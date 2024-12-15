@@ -65,7 +65,7 @@ const PatientReview = () => {
 
                                     {/* Review Text */}
                                     <div className="lg:col-span-2">
-                                        <p className="text-gray-600 text-sm md:text-base leading-relaxed text-justify">
+                                        <p className="text-gray-600 text-sm md:text-base leading-relaxed lg:text-justify text-center">
                                             {item.reviewText || "No review available"}
                                         </p>
                                     </div>

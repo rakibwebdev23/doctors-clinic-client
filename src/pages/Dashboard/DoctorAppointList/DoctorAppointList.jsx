@@ -51,10 +51,10 @@ const DoctorAppointList = ({ appointDoctor, index }) => {
                     </div>
                 </div>
             </td>
-            <td className="font-bold text-xl">
+            <td className="font-bold lg:text-xl md:text-base text-sm">
                 {doctorName}
             </td>
-            <td>
+            <td className="lg:text-base text-sm">
                 {specialist}
             </td>
             <th>
