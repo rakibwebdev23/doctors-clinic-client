@@ -22,7 +22,6 @@ const DoctorProfileView = () => {
 
     const handleDoctorAppointment = () => {
         if (user && user.email) {
-            // Send to appointment to the database
             const doctorAppointment = {
                 doctorId: _id,
                 doctorName: name,
@@ -31,35 +30,33 @@ const DoctorProfileView = () => {
                 patientName: user.displayName,
                 specialist,
                 visitFee
-            }
+            };
             axiosSecure.post('/appointment', doctorAppointment)
                 .then(res => {
-                    // console.log(res.data, doctorAppointment);                   
                     if (res.data.insertedId) {
                         Swal.fire({
                             title: `${name} appointment added`,
                             showClass: {
                                 popup: `
-                                animate__animated
-                                animate__fadeInUp
-                                animate__faster
-                              `
+                                    animate__animated
+                                    animate__fadeInUp
+                                    animate__faster
+                                `
                             },
                             hideClass: {
                                 popup: `
-                                animate__animated
-                                animate__fadeOutDown
-                                animate__faster
-                              `
+                                    animate__animated
+                                    animate__fadeOutDown
+                                    animate__faster
+                                `
                             }
                         });
                         refetch();
                     }
-                })
-        }
-        else {
+                });
+        } else {
             Swal.fire({
-                title: "You are not Sign In",
+                title: "You are not Signed In",
                 text: "Please Sign In to confirm appointment!",
                 icon: "warning",
                 showCancelButton: true,
@@ -68,103 +65,79 @@ const DoctorProfileView = () => {
                 confirmButtonText: "Yes, Sign In!"
             }).then((result) => {
                 if (result.isConfirmed) {
-                    navigate("/signin", { state: { from: location } })
+                    navigate("/signin", { state: { from: location } });
                 }
             });
         }
-
-    }
+    };
 
     return (
         <div>
-            <HelmetProvide
-                helmetTitle={"Doctor Profile"}
-            ></HelmetProvide>
-            <div className="">
-                <div className="bg-fixed hero" style={{ backgroundImage: `url("${img}")` }}
-                >
-                    <div className="hero-overlay bg-orange-500 bg-opacity-30"></div>
-                    <div className="hero-content min-h-screen lg:w-[75%] max-w-full lg:mb-8">
-                        <div className='text-white '>
-                            <div className="md:flex items-center text-white mt-20">
-                                <div className='lg:w-1/2 w-full'>
-                                    <img src={image} className="rounded-lg"/>
-                                </div>
-                                <div className='lg:w-1/2 w-full lg:ml-10'>
-                                    <div className="mt-4">
-                                        <div className="space-y-1">
-                                            <h2 className="card-title lg:text-4xl text-2xl font-bold">{name}</h2>
-                                            <p>{specialist}</p>
-                                            <Rating
-                                                style={{ maxWidth: 180 }}
-                                                value={rating}
-                                                readOnly
-                                            />
-                                        </div>
-                                        <div className='mt-6 space-y-1'>
-                                            <p className='flex items-center gap-4'><IoLocationOutline className='font-bold text-xl'></IoLocationOutline> {chamberLocation}</p>
-                                            <p className='flex items-center gap-4'><FaRegAddressBook className='font-bold text-xl'></FaRegAddressBook> {email}</p>
-                                            <p className='flex items-center gap-4'><AiOutlineDollarCircle className='font-bold text-xl'></AiOutlineDollarCircle> $ {visitFee}</p>
-                                        </div>
-                                        <div className="card-actions mt-2">
-                                            <button onClick={handleDoctorAppointment} className="btn btn-outline border-0 border-b-4 border-t-4 font-bold text-green-400 border-green-600 hover:bg-green-600 hover:border-none zoom transition-transform duration-200  hover:scale-x-125">Appointment</button>
-                                        </div>
-                                    </div>
-                                </div>
+            <HelmetProvide helmetTitle={"Doctor Profile"} />
+            <div className="bg-fixed hero relative" style={{ backgroundImage: `url("${img}")` }}>
+                <div className="hero-overlay bg-opacity-40 bg-orange-500"></div>
+                <div className="hero-content min-h-screen flex items-center justify-center lg:w-3/4 mx-auto">
+                    <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0 w-full">
+                        <div className="w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden">
+                            <img src={image} className="w-full h-full object-cover border-4 border-white rounded-full transition-transform duration-300 hover:scale-110" />
+                        </div>
+                        <div className="lg:ml-12 text-white w-full lg:w-2/3">
+                            <h2 className="text-3xl lg:text-4xl font-semibold">{name}</h2>
+                            <p className="text-lg">{specialist}</p>
+                            <div className="flex items-center gap-2 mt-3">
+                                <Rating style={{ maxWidth: 180 }} value={rating} readOnly />
+                            </div>
+                            <div className="mt-6">
+                                <p className="flex items-center gap-2 text-lg">
+                                    <IoLocationOutline className="text-xl text-orange-500" />
+                                    {chamberLocation}
+                                </p>
+                                <p className="flex items-center gap-2 text-lg">
+                                    <FaRegAddressBook className="text-xl text-orange-500" />
+                                    {email}
+                                </p>
+                                <p className="flex items-center gap-2 text-lg">
+                                    <AiOutlineDollarCircle className="text-xl text-orange-500" />
+                                    ${visitFee}
+                                </p>
+                            </div>
+                            <div className="mt-6">
+                                <button onClick={handleDoctorAppointment} className="btn btn-outline border-2 border-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300 w-full py-2 rounded-md">
+                                    Book Appointment
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div className="lg:mt-16 mt-12 px-4 lg:px-8">
-                    <div className="space-y-3">
-                        <h1 className="text-3xl text-orange-500 font-bold">About Me</h1>
-                        <p className="text-justify leading-relaxed">{about} Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo quidem labore voluptatibus! Modi dignissimos architecto ipsam perspiciatis at quaerat eligendi aliquam iure quod aspernatur dolor nobis, quis nostrum ex doloremque maiores est laudantium distinctio quo laborum dolores perferendis cupiditate. Quaerat expedita officia quidem placeat, nostrum magnam inventore numquam  dolor nobis, quis nostrum ex doloremque maiores culpa alias!</p>
+            <div className="lg:mt-16 mt-8 px-4 lg:px-16">
+                <h1 className="text-3xl text-orange-500 font-bold">About Me</h1>
+                <p className="text-justify leading-relaxed mt-4">{about}</p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
+                    <div className="space-y-6 bg-orange-100 p-6 rounded-lg">
+                        <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Education</h2>
+                        <p>{education}</p>
                     </div>
-                    <div className="flex">
-                        <div className="md:flex gap-20 lg:mt-20 mt-12 mx-auto">
-                            <div className="bg-orange-200 bg-opacity-40 p-4 lg:p-8 rounded-lg">
-                                <div className="space-y-3">
-                                    <h2 className="text-2xl text-orange-500 border-b font-bold ">Education</h2>
-                                    <p>{education}</p>
-                                </div>
-                                <div className="space-y-3 mt-10">
-                                    <h2 className="text-2xl text-orange-500 border-b font-bold ">Specialist</h2>
-                                    <p>{specialist}</p>
-                                </div>
-                                <div className="space-y-3 mt-10">
-                                    <h2 className="text-2xl text-orange-500 border-b font-bold ">Experience</h2>
-                                    <p>{experience}</p>
-                                </div>
-                            </div>
-                            <div className="bg-slate-300 bg-opacity-40 p-4 lg:p-8 rounded-lg mt-8 lg:mt-0">
-                                <div className="space-y-3">
-                                    <h2 className="text-2xl text-orange-500 border-b font-bold ">Address & Contact</h2>
-                                    <p className='flex items-center gap-4'><IoLocationOutline className='font-bold text-xl'></IoLocationOutline> {chamberLocation}</p>
-                                    <p className='flex items-center gap-4'><FaRegAddressBook className='font-bold text-xl'></FaRegAddressBook> {email}</p>
-                                    <p className='flex items-center gap-4'><FaPhone className='font-bold text-xl'></FaPhone> {phone}</p>
-                                    <h2 className="font-bold ">Visiting Charge</h2>
-                                    <p className='flex items-center gap-4'><AiOutlineDollarCircle className='font-bold text-xl'></AiOutlineDollarCircle>$ {visitFee}</p>
-
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div className="space-y-3 lg:mt-16 mt-12 pb-6">
-                        <h2 className="text-3xl text-orange-500 border-b font-bold ">Review</h2>
-                        <div>
-                            <small>Ratting_______</small>
-                            <Rating
-                                style={{ maxWidth: 180 }}
-                                value={rating}
-                                readOnly
-                            />
-                        </div>
-                        <p className="lg:pt-6 pt-4 text-justify leading-relaxed">{overview} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum debitis nam ratione dignissimos earum nemo, reprehenderit molestias nobis hic enim expedita voluptatum ipsam! Odio, molestias atque, reiciendis quas aliquid sequi quibusdam numquam, esse perferendis quia sed tempora a vero temporibus aliquam delectus fugiat. Maxime, exercitationem atque. Molestias, dolores nobis eligendi illo debitis omnis veniam a, ipsam modi, odit voluptatum corrupti aspernatur. Nulla tempora soluta natus. Tempore nulla hic reiciendis assumenda cupiditate ad recusandae quasi perspiciatis eos modi possimus reprehenderit suscipit sapiente distinctio pariatur, blanditiis magnam ut veritatis repellat! Pariatur voluptatibus odit molestias labore possimus consectetur rerum provident veritatis? Alias, molestiae.</p>
+                    <div className="space-y-6 bg-gray-200 p-6 rounded-lg">
+                        <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Experience</h2>
+                        <p>{experience}</p>
                     </div>
                 </div>
 
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
+                    <div className="space-y-6 bg-slate-200 p-6 rounded-lg">
+                        <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Contact & Address</h2>
+                        <p className="flex items-center gap-2"><IoLocationOutline className="text-xl text-orange-500" /> {chamberLocation}</p>
+                        <p className="flex items-center gap-2"><FaRegAddressBook className="text-xl text-orange-500" /> {email}</p>
+                        <p className="flex items-center gap-2"><FaPhone className="text-xl text-orange-500" /> {phone}</p>
+                        <p className="flex items-center gap-2"><AiOutlineDollarCircle className="text-xl text-orange-500" /> ${visitFee}</p>
+                    </div>
+                    <div className="space-y-6 bg-slate-100 p-6 rounded-lg">
+                        <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Overview</h2>
+                        <p>{overview}</p>
+                    </div>
+                </div>
             </div>
         </div>
     );
