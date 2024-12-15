@@ -1,20 +1,14 @@
 import DoctorDetails from "../../component/DoctorDetails/DoctorDetails";
 
 const DoctorsList = ({ doctors }) => {
-
     return (
-
-        <div className="flex mx-auto mt-8">
-            <div className="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 mx-auto">
-                {
-                    doctors.map(doctor => <DoctorDetails
-                        key={doctor._id}
-                        doctor={doctor}
-                    ></DoctorDetails>)
-                }
+        <div className="container mx-auto px-4 py-16">
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+                {doctors.map(doctor => (
+                    <DoctorDetails key={doctor._id} doctor={doctor} />
+                ))}
             </div>
         </div>
-
     );
 };
 

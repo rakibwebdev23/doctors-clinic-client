@@ -1,13 +1,11 @@
 import SectionTitle from "../../../component/SectionTitle";
 import { useReview } from "../../../hooks/useReview";
-
 // Swiper imports
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/autoplay";
 import { Navigation, Autoplay } from "swiper/modules";
-
 // Icons and Rating imports
 import { FaQuoteLeft } from "react-icons/fa";
 import { Rating } from "@smastrom/react-rating";
@@ -17,58 +15,64 @@ const PatientReview = () => {
     const [reviews] = useReview();
 
     return (
-        <div className="container mx-auto p-4 lg:px-8">
+        <div className="container mx-auto px-4 pt-10">
             <SectionTitle
-                heading="Our Patient Reviews"
-                subHeading="Here's what our patients have to say about their experience at our clinic."
+                heading="What Our Patients Say"
+                subHeading="Discover the experiences and feedback from our patients."
             />
-
-            <div className="p-4 lg:px-8">
+            <div className="mt-12">
                 <Swiper
                     rewind={true}
                     navigation={true}
                     autoplay={{
-                        delay: 3000,
+                        delay: 3500,
                         disableOnInteraction: false,
                     }}
-                    speed={2000}
+                    speed={1500}
                     modules={[Navigation, Autoplay]}
-                    className="mySwiper mt-10"
+                    className="mySwiper"
                 >
-                    {
-                        reviews.map((item, index) => (
+                    {reviews.map((item, index) => (
                         <SwiperSlide key={item._id || index}>
-                            <div className="px-4 md:px-10 lg:px-32 w-full space-y-4">
-                                <div className="flex flex-col lg:flex-row items-center justify-between gap-4">
-                                    <div className="flex items-center gap-4">
+                            <div className="bg-white shadow-lg rounded-xl p-8 mx-4 md:mx-8 transition-all duration-300 transform hover:scale-105">
+                                <div className="grid lg:grid-cols-5 grid-cols-1 gap-6 items-center">
+                                    {/* Patient Image and Info */}
+                                    <div className="lg:col-span-2 flex items-center gap-6">
                                         <img
-                                            className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover"
+                                            className="w-20 h-20 lg:w-24 lg:h-24 rounded-full object-cover border-4 border-blue-600 shadow-xl"
                                             src={item.image}
                                             alt={item.patientName || "Patient"}
                                         />
                                         <div>
-                                            <h2 className="font-bold text-neutral-700 text-lg md:text-xl">
+                                            <h3 className="font-semibold text-xl md:text-2xl text-gray-800">
                                                 {item.patientName || "Anonymous"}
-                                            </h2>
-                                            <small className="text-neutral-500">
+                                            </h3>
+                                            <p className="text-gray-500 text-sm">
                                                 {item.occupation || "Occupation"}
-                                            </small>
-                                            <Rating
-                                                style={{ maxWidth: 120 }}
-                                                value={item.rating || 0}
-                                                readOnly
-                                            />
+                                            </p>
+                                            <div className="flex items-center gap-2 mt-2">
+                                                <Rating
+                                                    style={{ maxWidth: 120 }}
+                                                    value={item.rating || 0}
+                                                    readOnly
+                                                />
+                                            </div>
                                         </div>
                                     </div>
-                                    <FaQuoteLeft className="text-orange-500 text-3xl md:text-5xl" />
+                                    <div className="hidden lg:block lg:col-span-1 text-center">
+                                        <FaQuoteLeft className="text-gray-600 text-4xl" />
+                                    </div>
+
+                                    {/* Review Text */}
+                                    <div className="lg:col-span-2">
+                                        <p className="text-gray-600 text-sm md:text-base leading-relaxed text-justify">
+                                            {item.reviewText || "No review available"}
+                                        </p>
+                                    </div>
                                 </div>
-                                <p className="text-neutral-600 text-sm md:text-base leading-relaxed text-center hyphens-auto lg:text-justify p-6 lg:p-0 tracking-normal">
-                                    {item.reviewText || "No review"}
-                                </p>
                             </div>
                         </SwiperSlide>
-                        ))
-                    }
+                    ))}
                 </Swiper>
             </div>
         </div>
