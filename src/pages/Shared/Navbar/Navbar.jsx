@@ -63,7 +63,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar fixed z-10 text-white bg-black bg-opacity-90 py-3 px-4">
+        <div className="navbar max-w-screen-xl fixed z-10 text-white bg-black bg-opacity-90 py-3 px-4">
             <div className="navbar-start">
                 <Link to="/" className="flex items-center">
                     <img className="w-12" src="https://i.ibb.co.com/jMYJMMz/logo4.png" alt="logo" />
@@ -86,7 +86,7 @@ const Navbar = () => {
                         {isMenuOpen ? (
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-8 w-8 text-orange-500 transition duration-300"
+                                className="h-6 w-6 text-orange-500 transition duration-300"
                                 viewBox="0 0 24 24"
                                 fill="none"
                                 stroke="currentColor"
@@ -99,7 +99,7 @@ const Navbar = () => {
                         ) : (
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
-                                className="h-8 w-8 text-blue-500 hover:text-orange-500 transition duration-300"
+                                className="h-6 w-6 text-blue-500 hover:text-orange-500 transition duration-300"
                                 viewBox="0 0 24 24"
                                 fill="currentColor"
                             >

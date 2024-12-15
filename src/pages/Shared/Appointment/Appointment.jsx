@@ -3,7 +3,6 @@ import { BsTelephoneInbound } from "react-icons/bs";
 import { CiLocationOn } from "react-icons/ci";
 import img from "../../../assets/images/contact.jpg";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-// import useAuth from "../../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
@@ -20,9 +19,8 @@ const Appointment = () => {
             doctorName: data.doctorName,
             department: data.department,
             date: data.date
-        }
+        };
         const res = await axiosSecure.post("/appointmentContact", userInfo);
-        // console.log(res.data);
         if (res.data.insertedId) {
             Swal.fire({
                 position: "top-center",
@@ -34,77 +32,87 @@ const Appointment = () => {
             reset();
             navigate("/");
         }
-    }
-
+    };
 
     return (
-        <div className="lg:px-8 p-4">
-            <div className="hero mt-16 rounded bg-fixed justify-center h-full w-full" style={{
-                backgroundImage: `url(${img})`,
-                
-            }}>
-                <div className="hero-content flex flex-col lg:flex-row rounded bg-black bg-opacity-60 max-w-full">
-                    <div className="lg:text-left lg:w-1/2 pl-4 text-fuchsia-200 w-full">
-                        <h1 className="lg:text-5xl text-4xl text-blue-600 font-bold leading-tight">Contact With Us</h1>
-                        <p className="py-6 px-4 text-justify text-gray-200 hyphens-auto tracking-normal">
-                        I had a great experience with Dr. Johnson. His knowledge and expertise in managing cardiovascular conditions were evident throughout my visits. While the wait times were occasionally long, the quality of care provided was worth the wait. Dr. Johnson took the time to address all my concerns and ensured I felt comfortable with the treatment plan. Overall, I would recommend him for his professionalism and skill.
+        <div className="max-w-screen-2xl mx-auto px-4 lg:px-8">
+            <div
+                className="hero mt-12 rounded-xl bg-fixed h-full"
+                style={{ backgroundImage: `url(${img})` }}
+            >
+                <div className="hero-overlay bg-black bg-opacity-60 rounded-xl"></div>
+                <div className="hero-content flex flex-col lg:flex-row gap-12 p-8 lg:p-16">
+                    {/* Left Section */}
+                    <div className="lg:w-1/2 text-white">
+                        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-blue-400 mb-6">
+                            Contact With Us
+                        </h1>
+                        <p className="text-sm md:text-lg leading-relaxed mb-6">
+                            I had a great experience with Dr. Johnson. His knowledge and expertise in managing cardiovascular conditions were evident throughout my visits. While the wait times were occasionally long, the quality of care provided was worth the wait. Dr. Johnson took the time to address all my concerns and ensured I felt comfortable with the treatment plan.
                         </p>
-                        <div className="flex items-center gap-6 mb-2">
-                            <BsTelephoneInbound className="text-3xl text-blue-500"></BsTelephoneInbound>
+                        <div className="flex items-center gap-4 mb-4">
+                            <BsTelephoneInbound className="text-2xl text-blue-400" />
                             <p>+01307236959 <br /> +0829497414394</p>
                         </div>
-                        <div className="flex items-center gap-6 mt-2">
-                            <CiLocationOn className="text-3xl text-blue-500"></CiLocationOn>
-                            <p>Dhanmondi 17, Dhaka -1200, <br /> Bangladesh</p>
+                        <div className="flex items-center gap-4">
+                            <CiLocationOn className="text-2xl text-blue-400" />
+                            <p>
+                                Dhanmondi 17, Dhaka -1200, <br /> Bangladesh
+                            </p>
                         </div>
                     </div>
-                    <div className="card lg:w-3/4 w-full">
-                        <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-                            <div className="lg:grid lg:grid-cols-2 lg:gap-4">
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-fuchsia-200 font-bold">Name</span>
-                                    </label>
-                                    <input type="text" placeholder="Your name" className="input input-bordered" {...register("name", { required: true })} />
-                                    {errors.name?.type === "required" && (
-                                        <p role="alert" className="text-red-600">Name is required</p>
-                                    )}
 
+                    {/* Right Section */}
+                    <div className="w-full lg:w-1/2 bg-white p-6 rounded-lg shadow-lg">
+                        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div>
+                                    <label className="label font-bold text-blue-500">Name</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Your name"
+                                        className="input input-bordered w-full"
+                                        {...register("name", { required: "Name is required" })}
+                                    />
+                                    {errors.name && <p className="text-red-600">{errors.name.message}</p>}
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-fuchsia-200 font-bold">Email</span>
-                                    </label>
-                                    <input type="email" placeholder="Your email" className="input input-bordered" {...register("email", { required: true })} />
-                                    {errors.email?.type === "required" && (
-                                        <p role="alert" className="text-red-600">Email is required</p>
-                                    )}
-
+                                <div>
+                                    <label className="label font-bold text-blue-500">Email</label>
+                                    <input
+                                        type="email"
+                                        placeholder="Your email"
+                                        className="input input-bordered w-full"
+                                        {...register("email", { required: "Email is required" })}
+                                    />
+                                    {errors.email && <p className="text-red-600">{errors.email.message}</p>}
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-fuchsia-200 font-bold">Phone Number</span>
-                                    </label>
-                                    <input type="number" placeholder="Your mobile" className="input input-bordered" {...register("phone", { required: true })} />
-                                    {errors.phone?.type === "required" && (
-                                        <p role="alert" className="text-red-600">Phone number is required</p>
-                                    )}
+                                <div>
+                                    <label className="label font-bold text-blue-500">Phone Number</label>
+                                    <input
+                                        type="number"
+                                        placeholder="Your phone number"
+                                        className="input input-bordered w-full"
+                                        {...register("phone", { required: "Phone number is required" })}
+                                    />
+                                    {errors.phone && <p className="text-red-600">{errors.phone.message}</p>}
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-fuchsia-200 font-bold">Doctor Name</span>
-                                    </label>
-                                    <input type="text" placeholder="Doctor name" className="input input-bordered" {...register("doctorName", { required: true })} />
-                                    {errors.doctorName?.type === "required" && (
-                                        <p role="alert" className="text-red-600">Doctor name is required</p>
-                                    )}
+                                <div>
+                                    <label className="label font-bold text-blue-500">Doctor Name</label>
+                                    <input
+                                        type="text"
+                                        placeholder="Doctor name"
+                                        className="input input-bordered w-full"
+                                        {...register("doctorName", { required: "Doctor name is required" })}
+                                    />
+                                    {errors.doctorName && <p className="text-red-600">{errors.doctorName.message}</p>}
                                 </div>
-                                <div className="form-control w-full">
-                                    <label className="label">
-                                        <span className="label-text font-bold text-fuchsia-200">Department</span>
-                                    </label>
-                                    <select defaultValue="default" className="select select-bordered w-full" {...register("department", { required: true })}>
-                                        <option disabled value="default">All Category</option>
+                                <div>
+                                    <label className="label font-bold text-blue-500">Department</label>
+                                    <select
+                                        className="select select-bordered w-full"
+                                        {...register("department", { required: "Department is required" })}
+                                    >
+                                        <option disabled value="default">Select Department</option>
                                         <option value="Special">Special</option>
                                         <option value="Cardiologist">Cardiologist</option>
                                         <option value="Dermatologist">Dermatologist</option>
@@ -112,22 +120,24 @@ const Appointment = () => {
                                         <option value="Neurologist">Neurologist</option>
                                         <option value="Endocrinologist">Endocrinologist</option>
                                         <option value="Gynecologist">Gynecologist</option>
-
                                     </select>
                                 </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text text-fuchsia-200 font-bold">Date</span>
-                                    </label>
-                                    <input type="date" placeholder="Your name" className="input input-bordered" {...register("date", { required: true })} />
-                                    {errors.date?.type === "required" && (
-                                        <p role="alert" className="text-red-600">Date is required</p>
-                                    )}
+                                <div>
+                                    <label className="label font-bold text-blue-500">Date</label>
+                                    <input
+                                        type="date"
+                                        className="input input-bordered w-full"
+                                        {...register("date", { required: "Date is required" })}
+                                    />
+                                    {errors.date && <p className="text-red-600">{errors.date.message}</p>}
                                 </div>
                             </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary bg-opacity-50 border-none">Appointment</button>
-                            </div>
+                            <button
+                                type="submit"
+                                className="btn btn-primary w-full bg-blue-500 text-white hover:bg-blue-700 transition"
+                            >
+                                Book Appointment
+                            </button>
                         </form>
                     </div>
                 </div>

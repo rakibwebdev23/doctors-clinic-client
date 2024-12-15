@@ -3,17 +3,35 @@ import img from "../../assets/images/banner2.png";
 
 const Banner = () => {
     return (
-        <div className="relative lg:flex items-center bg-cover bg-center text-white bg-opacity-20 bg-black min-h-screen mx-auto" style={{ backgroundImage: `url("${img}")` }}>
-            {/* Left Side Content */}
-            <div className="flex min-h-screen">
-                <div className="text-left flex flex-col p-4 lg:p-8 justify-center">
-                    <h1 className="lg:text-6xl text-4xl mt-6 leading-tight font-bold mb-6 font-poppins">Your Health, <br /> <span className="md:ml-20"><span className="text-orange-600">Our</span> Priority</span></h1>
-                    <p className="lg:mt-4 mt-6 leading-relaxed whitespace-wrap lg:w-1/2 font-poppins lg:text-justify text-left">
-                        Doctors Clinic is a leading healthcare and provider dedicated to delivering high-quality medical services with a personal touch. Our team of experienced and compassionate doctors, nurses, and support staff is committed to providing comprehensive care to patients of all ages.
-                    </p>
-                    <Link to="/service"><button className="mt-6 px-6 py-3 bg-blue-700 text-white font-medium rounded hover:bg-blue-800 leading-tight whitespace-nowrap">
-                        All Services
-                    </button></Link>
+        <div
+            className="relative bg-cover bg-center min-h-screen flex items-center justify-center lg:justify-start text-white"
+            style={{ backgroundImage: `url("${img}")` }}
+        >
+            {/* Background Overlay */}
+            <div className="absolute inset-0 bg-black/60"></div>
+
+            {/* Content Wrapper */}
+            <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12">
+                <div className="flex flex-col lg:flex-row lg:items-center">
+                    {/* Left Content */}
+                    <div className="text-center lg:text-left lg:ml-16">
+                        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6 font-poppins">
+                            Your Health, <br />
+                            <span className="text-orange-500">Our</span>{" "}
+                            <span>Priority</span>
+                        </h1>
+                        <p className="text-base sm:text-lg lg:text-xl leading-relaxed mb-6 lg:w-3/4 font-poppins">
+                            Doctors Clinic is a trusted healthcare provider dedicated to
+                            delivering high-quality medical services with a personal
+                            touch. Our experienced doctors and staff ensure comprehensive
+                            care for patients of all ages.
+                        </p>
+                        <Link to="/service">
+                            <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 text-white font-semibold rounded-lg transition duration-300 ease-in-out shadow-md">
+                                All Services
+                            </button>
+                        </Link>
+                    </div>
                 </div>
             </div>
         </div>
