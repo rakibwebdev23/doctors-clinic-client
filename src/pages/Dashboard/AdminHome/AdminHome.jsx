@@ -5,7 +5,6 @@ import { useQuery } from "@tanstack/react-query";
 import { FaUserDoctor } from "react-icons/fa6";
 import { FaDollarSign, FaList, FaUsers } from "react-icons/fa";
 
-
 const AdminHome = () => {
     const { user } = useAuth();
     const axiosSecure = useAxiosSecure();
@@ -13,64 +12,61 @@ const AdminHome = () => {
     const { data: stats = [] } = useQuery({
         queryKey: ['admin-stats'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/admin-stats')
+            const res = await axiosSecure.get('/admin-stats');
             return res.data;
         }
     });
 
     return (
-        <div>
-            <div className='lg:flex lg:justify-between items-center'>
-                <h2 className="text-3xl font-bold">
-                    <span>Hi, Welcome </span>
-                    <span className='text-green-600'>
-                        {
-                            user?.displayName ? user?.displayName : <Link to="/" className="btn btn-ghost ">Back</Link>
-                        }
+        <div className="container mx-auto px-6 py-8">
+            <div className="lg:flex lg:justify-between lg:items-center mb-10 flex-col lg:flex-row">
+                <h2 className="text-3xl font-bold text-center lg:text-left">
+                    Hi, Welcome{" "}
+                    <span className="text-green-600">
+                        {user?.displayName ? user?.displayName : <Link to="/" className="btn btn-ghost">Back</Link>}
                     </span>
                 </h2>
-                <div className="flex items-center">
-                    <div className="mt-8 lg:mt-0">
-                        {user.photoURL !== null && <div className="avatar items-center flex flex-col">
-                            <div className="w-24 rounded-full">
-                                <img className="" src={user.photoURL} />
+
+                <div className="flex items-center justify-center mt-6 lg:mt-0">
+                    {user.photoURL && (
+                        <div className="avatar flex flex-col items-center">
+                            <div className="w-24 h-24 rounded-full overflow-hidden mb-2">
+                                <img src={user.photoURL} alt="User Profile" />
                             </div>
-                            <h2 className="text-2xl font-bold mt-2">{user.displayName}</h2>
-                        </div>}
-                    </div>
+                            <h2 className="text-xl font-semibold">{user.displayName}</h2>
+                        </div>
+                    )}
                 </div>
             </div>
 
-            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow w-full mt-16">
-                <div className="stat bg-blue-600">
-                    <div className="stat-figure text-4xl text-white">
-                        <FaDollarSign></FaDollarSign>
+            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow w-full mt-16 gap-6">
+                <div className="stat card bg-blue-600 text-white p-6 rounded-lg shadow-md">
+                    <div className="stat-figure text-4xl mb-4">
+                        <FaDollarSign />
                     </div>
-                    <div className="stat-title font-bold">Revenue</div>
-                    <div className="stat-value">{stats.revenue}</div>
+                    <div className="stat-title font-semibold text-lg">Revenue</div>
+                    <div className="stat-value text-2xl">{stats.revenue}</div>
                 </div>
-                <div className="stat bg-green-500">
-                    <div className="stat-figure text-4xl text-white">
-                        <FaUserDoctor></FaUserDoctor>
+                <div className="stat card bg-green-500 text-white p-6 rounded-lg shadow-md">
+                    <div className="stat-figure text-4xl mb-4">
+                        <FaUserDoctor />
                     </div>
-                    <div className="stat-title font-bold">Doctors</div>
-                    <div className="stat-value">{stats.doctors}</div>
+                    <div className="stat-title font-semibold text-lg">Doctors</div>
+                    <div className="stat-value text-2xl">{stats.doctors}</div>
                 </div>
-
-                <div className="stat bg-orange-400">
-                    <div className="stat-figure text-4xl text-white">
-                        <FaUsers></FaUsers>
+                <div className="stat card bg-orange-400 text-white p-6 rounded-lg shadow-md">
+                    <div className="stat-figure text-4xl mb-4">
+                        <FaUsers />
                     </div>
-                    <div className="stat-title font-bold">Patient's</div>
-                    <div className="stat-value">{stats.patients}</div>
+                    <div className="stat-title font-semibold text-lg">Patients</div>
+                    <div className="stat-value text-2xl">{stats.patients}</div>
                 </div>
-
-                <div className="stat bg-blue-500">
-                    <div className="stat-figure text-white text-4xl">
-                        <FaList></FaList>
+                <div className="stat card bg-blue-500 text-white p-6 rounded-lg shadow-md">
+                    <div className="stat-figure text-4xl mb-4">
+                        <FaList />
                     </div>
-                    <div className="stat-title font-bold">Appointment</div>
-                    <div className="stat-value">{stats.appointments}</div>
+                    <div className="stat-title font-semibold text-lg">Appointments</div>
+                    <div className="stat-value text-2xl">{stats.appointments}</div>
                 </div>
             </div>
         </div>

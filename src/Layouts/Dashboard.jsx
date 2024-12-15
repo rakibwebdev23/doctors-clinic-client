@@ -14,7 +14,7 @@ const Dashboard = () => {
             <HelmetProvide helmetTitle="Dashboard"></HelmetProvide>
             <div className="lg:flex">
                 {/* dashboard sidebar */}
-                <div className="w-66 min-h-screen bg-green-400">
+                <div className="w-66 lg:min-h-screen bg-green-400">
                     <ul className="menu p-6 uppercase gap-4 font-semibold">
                         {
                             isAdmin ?
