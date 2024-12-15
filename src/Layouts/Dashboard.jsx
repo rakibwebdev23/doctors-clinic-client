@@ -14,7 +14,7 @@ const Dashboard = () => {
             <HelmetProvide helmetTitle="Dashboard"></HelmetProvide>
             <div className="lg:flex">
                 {/* dashboard sidebar */}
-                <div className="w-66 lg:min-h-screen bg-green-400">
+                <div className="w-66 lg:min-h-screen bg-green-400 text-black">
                     <ul className="menu p-6 uppercase gap-4 font-semibold">
                         {
                             isAdmin ?
@@ -69,7 +69,7 @@ const Dashboard = () => {
 
                 </div>
                 {/* dashboard contet  */}
-                <div className="flex-1 p-10">
+                <div className="flex-1 p-10 bg-white">
                     <Outlet></Outlet>
                 </div>
             </div>

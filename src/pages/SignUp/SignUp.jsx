@@ -68,41 +68,41 @@ const SignUp = () => {
                         <h1 className="text-3xl font-semibold text-center text-blue-700 mb-6">Sign Up to Doctors Clinic</h1>
                         <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                             <div className="form-control">
-                                <label className="label font-semibold text-lg">Name</label>
+                                <label className="label font-semibold text-lg text-blue-600">Name</label>
                                 <input 
                                     type="text" 
                                     {...register("name", { required: true })} 
                                     name="name" 
                                     placeholder="Your name" 
-                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500"
                                 />
                                 {errors.name && <span className="text-red-600">Name is required</span>}
                             </div>
 
                             <div className="form-control">
-                                <label className="label font-semibold text-lg">Photo URL</label>
+                                <label className="label font-semibold text-lg text-blue-600">Photo URL</label>
                                 <input 
                                     type="text" 
                                     {...register("photoURL", { required: true })} 
                                     placeholder="Your photo URL" 
-                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500"
                                 />
                                 {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
                             </div>
 
                             <div className="form-control">
-                                <label className="label font-semibold text-lg">Email</label>
+                                <label className="label font-semibold text-lg text-blue-600">Email</label>
                                 <input 
                                     type="email" 
                                     {...register("email", { required: true })} 
                                     name="email" 
                                     placeholder="email" 
-                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500"
                                 />
                                 {errors.email && <span className="text-red-600">Email is required</span>}
                             </div>
                             <div className="form-control">
-                                <label className="label font-semibold text-lg">Password</label>
+                                <label className="label font-semibold text-lg text-blue-600">Password</label>
                                 <input 
                                     type="password" 
                                     {...register("password", {
@@ -113,7 +113,7 @@ const SignUp = () => {
                                     })} 
                                     name="password" 
                                     placeholder="Password" 
-                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500"
                                 />
                                 {errors.password?.type === "required" && <span className="text-red-600">Password is required</span>}
                                 {errors.password?.type === "minLength" && <span className="text-red-600">Password must have 6 characters</span>}

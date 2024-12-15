@@ -72,7 +72,7 @@ const DoctorProfileView = () => {
     };
 
     return (
-        <div>
+        <div className="text-black">
             <HelmetProvide helmetTitle={"Doctor Profile"} />
             <div className="bg-fixed hero relative" style={{ backgroundImage: `url("${img}")` }}>
                 <div className="hero-overlay bg-opacity-40 bg-orange-500"></div>

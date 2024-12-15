@@ -23,7 +23,7 @@ const UserHome = () => {
         <div className="container mx-auto px-6 py-8">
             <div className="lg:flex lg:justify-between items-center mb-8 flex-col lg:flex-row">
                 <h2 className="text-3xl font-bold text-center lg:text-left">
-                    <span>Hi, Welcome </span>
+                    <span className='text-gray-700'>Hi, Welcome </span>
                     <span className="text-green-600">
                         {user?.displayName ? user?.displayName : <Link to="/" className="btn btn-ghost">Back</Link>}
                     </span>
@@ -35,13 +35,13 @@ const UserHome = () => {
                             <div className="w-32 h-32 rounded-full overflow-hidden mb-2">
                                 <img src={user.photoURL} alt="User Profile" />
                             </div>
-                            <h2 className="text-2xl font-bold">{user.displayName}</h2>
+                            <h2 className="text-2xl font-bold text-black">{user.displayName}</h2>
                         </div>
                     )}
                 </div>
             </div>
 
-            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow w-full mt-16 gap-6">
+            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow w-full mt-16 gap-6 p-4">
                 <div className="stat card bg-green-500 text-white p-6 rounded-lg shadow-md">
                     <div className="stat-figure text-4xl mb-4">
                         <FaDollarSign />

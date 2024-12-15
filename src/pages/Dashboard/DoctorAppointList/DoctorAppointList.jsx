@@ -36,7 +36,7 @@ const DoctorAppointList = ({ appointDoctor, index }) => {
         });
     }
     return (
-        <tr className="w-full">
+        <tr className="w-full bg-white text-slate-700">
             <th>
                 {index + 1}
             </th>

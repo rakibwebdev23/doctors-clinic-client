@@ -9,8 +9,8 @@ const DoctorAppointment = () => {
     return (
         <div className="p-4 md:p-6 lg:p-8">
             <div className="flex flex-col lg:flex-row lg:justify-evenly items-center space-y-4 lg:space-y-0 lg:space-x-6 mb-8 font-bold text-center lg:text-left">
-                <h2 className="text-2xl md:text-3xl">Appointment: {appointment.length}</h2>
-                <h3 className="text-2xl md:text-3xl">Doctor Visit Fee: ${doctorFee}</h3>
+                <h2 className="text-2xl md:text-3xl text-blue-600">Appointment: {appointment.length}</h2>
+                <h3 className="text-2xl md:text-3xl text-black">Doctor Visit Fee: ${doctorFee}</h3>
                 {appointment.length ? (
                     <Link to="/dashboard/payment">
                         <button className="px-10 py-3 bg-green-600 hover:bg-green-700 w-full md:w-auto text-white rounded-md">

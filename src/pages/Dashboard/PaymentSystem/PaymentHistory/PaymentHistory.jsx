@@ -16,7 +16,7 @@ const PaymentHistory = () => {
 
     return (
         <div className="p-4 md:p-6 lg:p-8">
-            <h2 className="my-4 text-2xl md:text-3xl lg:text-4xl font-bold text-center lg:text-left">
+            <h2 className="my-4 text-2xl md:text-3xl lg:text-4xl font-bold text-center lg:text-left text-black">
                 Total Payment: {payments.length}
             </h2>
 
@@ -33,7 +33,7 @@ const PaymentHistory = () => {
                     </thead>
                     <tbody>
                         {payments.map((payment, index) => (
-                            <tr key={payment._id} className="hover:bg-gray-100">
+                            <tr key={payment._id} className="bg-white text-slate-700">
                                 <td>{index + 1}</td>
                                 <td className="break-words">{payment.email}</td>
                                 <td className="break-words">{payment.transactionId}</td>

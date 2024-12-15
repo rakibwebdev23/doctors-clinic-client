@@ -70,7 +70,7 @@ const AllUsers = () => {
     return (
         <div className="p-4 md:p-8">
             <div className="text-center mb-6">
-                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase">
+                <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-slate-800">
                     Total Users: {users.length}
                 </h2>
             </div>
@@ -86,9 +86,9 @@ const AllUsers = () => {
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className="bg-white">
                         {users.map((user, index) => (
-                            <tr key={user._id} className="bg-slate-100 hover:bg-slate-200 text-sm md:text-base">
+                            <tr key={user._id} className="hover:bg-slate-200 text-sm md:text-base text-slate-700">
                                 <th>{index + 1}</th>
                                 <td className="font-bold">{user.name}</td>
                                 <td>{user.email}</td>
@@ -115,6 +115,7 @@ const AllUsers = () => {
                             </tr>
                         ))}
                     </tbody>
+
                 </table>
             </div>
         </div>

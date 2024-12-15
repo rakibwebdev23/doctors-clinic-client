@@ -4,7 +4,7 @@ import img1 from "../../../../assets/images/medical4.jpg";
 
 const AboutInfo = () => {
     return (
-        <div className="hero bg-base-200 p-4 lg:p-6 mt-16 lg:mt-0">
+        <div className="hero p-4 lg:p-6 mt-16 lg:mt-0 bg-white text-white">
             <div className="hero-content flex-col lg:flex-row">
                 <div className="lg:w-1/2 relative">
                     <img src={img1} className="w-3/4 rounded-lg outline outline-white shadow-black shadow-xl" />
@@ -12,7 +12,7 @@ const AboutInfo = () => {
                 </div>
                 <div className="lg:w-1/2 lg:space-y-6 mt-16 lg:mt-0">
                     <h2 className="lg:text-3xl text-xl font-bold text-blue-600">About Us</h2>
-                    <h1 className="lg:text-6xl md:text-4xl text-2xl leading-tight font-bold">Expert Care, Trusted Service</h1>
+                    <h1 className="lg:text-6xl md:text-4xl text-2xl leading-tight font-bold text-black">Expert Care, Trusted Service</h1>
                     <p className="lg:text-justify text-left hyphens-auto text-black leading-relaxed mt-4 lg:mt-0">
                     Doctors Clinic is a leading healthcare provider dedicated to delivering high-quality medical services with a personal touch. Our team of experienced and compassionate doctors, nurses, and support staff is committed to providing comprehensive care to patients of all ages. We understand that every patient is unique, and our approach is centered around personalized treatment plans that cater to individual needs. Whether you need routine check-ups, specialized care, or emergency services, we are here to ensure your health and well-being.
                     </p>

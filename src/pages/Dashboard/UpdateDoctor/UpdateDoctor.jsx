@@ -57,30 +57,34 @@ const UpdateDoctor = () => {
 
     return (
         <div className="container mx-auto px-4 lg:px-8">
-            <h2 className="text-2xl md:text-3xl font-bold my-4 text-center">Update Doctor Details</h2>
+            <h2 className="text-2xl md:text-3xl font-bold my-4 text-center text-blue-600">Update Doctor Details</h2>
             <div className="card w-full bg-green-200 p-4 md:p-8 rounded-lg">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                    {/* Doctor Name */}
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text font-bold">Doctor Name*</span>
+                            <span className="label-text font-bold text-black">Doctor Name*</span>
                         </label>
                         <input
                             defaultValue={name}
                             type="text"
                             placeholder="Name"
-                            className="input input-bordered w-full"
+                            className="input input-bordered w-full text-white bg-gray-800"
                             {...register("name", { required: true })}
                         />
                         {errors.name && <p className="text-red-600 text-sm">Doctor name is required</p>}
                     </div>
+
+                    {/* Grid Inputs */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        {/* Category */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Category*</span>
+                                <span className="label-text font-bold text-black">Category*</span>
                             </label>
                             <select
                                 defaultValue={category}
-                                className="select select-bordered w-full"
+                                className="select select-bordered w-full text-white bg-gray-800"
                                 {...register("category", { required: true })}
                             >
                                 <option disabled value="default">Select Category</option>
@@ -90,101 +94,112 @@ const UpdateDoctor = () => {
                                 <option value="Gynecologist">Gynecologist</option>
                             </select>
                         </div>
+
+                        {/* Specialist */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Specialist*</span>
+                                <span className="label-text font-bold text-black">Specialist*</span>
                             </label>
                             <input
                                 defaultValue={specialist}
                                 type="text"
                                 placeholder="Specialist"
-                                className="input input-bordered w-full"
+                                className="input input-bordered w-full text-white bg-gray-800"
                                 {...register("specialist", { required: true })}
                             />
                         </div>
+
+                        {/* Experience */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Experience*</span>
+                                <span className="label-text font-bold text-black">Experience*</span>
                             </label>
                             <input
                                 defaultValue={experience}
                                 type="text"
                                 placeholder="Experience"
-                                className="input input-bordered w-full"
+                                className="input input-bordered w-full text-white bg-gray-800"
                                 {...register("experience", { required: true })}
                             />
                         </div>
 
+                        {/* Chamber Location */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Chamber Location*</span>
+                                <span className="label-text font-bold text-black">Chamber Location*</span>
                             </label>
                             <input
                                 defaultValue={chamberLocation}
                                 type="text"
                                 placeholder="Location"
-                                className="input input-bordered w-full"
+                                className="input input-bordered w-full text-white bg-gray-800"
                                 {...register("chamberLocation", { required: true })}
                             />
                         </div>
 
+                        {/* Phone */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Phone*</span>
+                                <span className="label-text font-bold text-black">Phone*</span>
                             </label>
                             <input
                                 defaultValue={phone}
                                 type="number"
                                 placeholder="Phone Number"
-                                className="input input-bordered w-full"
+                                className="input input-bordered w-full text-white bg-gray-800"
                                 {...register("phone", { required: true })}
                             />
                         </div>
 
+                        {/* Visiting Fee */}
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Visiting Fee*</span>
+                                <span className="label-text font-bold text-black">Visiting Fee*</span>
                             </label>
                             <input
                                 defaultValue={visitFee}
                                 type="number"
                                 placeholder="Fee"
-                                className="input input-bordered w-full"
+                                className="input input-bordered w-full text-white bg-gray-800"
                                 {...register("visitFee", { required: true })}
                             />
                         </div>
                     </div>
 
+                    {/* About & Overview */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">About*</span>
+                                <span className="label-text font-bold text-black">About*</span>
                             </label>
                             <textarea
                                 defaultValue={about}
-                                className="textarea textarea-bordered w-full"
+                                className="textarea textarea-bordered w-full text-white bg-gray-800"
                                 placeholder="About Doctor"
                                 {...register("about", { required: true })}
                             ></textarea>
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text font-bold">Overview*</span>
+                                <span className="label-text font-bold text-black">Overview*</span>
                             </label>
                             <textarea
                                 defaultValue={overview}
-                                className="textarea textarea-bordered w-full"
+                                className="textarea textarea-bordered w-full text-white bg-gray-800"
                                 placeholder="Overview"
                                 {...register("overview", { required: true })}
                             ></textarea>
                         </div>
                     </div>
 
+                    {/* Image Upload */}
                     <input
                         type="file"
-                        className="file-input file-input-bordered w-full max-w-md"
+                        className="file-input file-input-bordered w-full max-w-md text-white"
                         {...register("image", { required: true })}
                     />
+
+                    {/* Submit Button */}
                     <div className="flex justify-center">
                         <button
                             type="submit"

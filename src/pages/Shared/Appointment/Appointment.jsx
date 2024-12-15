@@ -112,7 +112,7 @@ const Appointment = () => {
                                         className="select select-bordered w-full"
                                         {...register("department", { required: "Department is required" })}
                                     >
-                                        <option disabled value="default">Select Department</option>
+                                        <option className="text-white" disabled value="default">Select Department</option>
                                         <option value="Special">Special</option>
                                         <option value="Cardiologist">Cardiologist</option>
                                         <option value="Dermatologist">Dermatologist</option>
@@ -126,7 +126,8 @@ const Appointment = () => {
                                     <label className="label font-bold text-blue-500">Date</label>
                                     <input
                                         type="date"
-                                        className="input input-bordered w-full"
+                                        placeholder="Date"
+                                        className="input input-bordered w-full placeholder-gray-400"
                                         {...register("date", { required: "Date is required" })}
                                     />
                                     {errors.date && <p className="text-red-600">{errors.date.message}</p>}

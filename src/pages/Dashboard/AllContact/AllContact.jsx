@@ -42,7 +42,7 @@ const AllContact = () => {
 
     return (
         <div className="p-4 md:p-6">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-slate-800">
                 Total Contact: {contacts.length}
             </h2>
             <div className="overflow-x-auto shadow-lg rounded-lg">
@@ -61,7 +61,7 @@ const AllContact = () => {
                         </tr>
                     </thead>
                     {/* Table Body */}
-                    <tbody>
+                    <tbody className="bg-white text-slate-700">
                         {contacts.map((contact, index) => (
                             <tr key={contact._id} className="hover:bg-gray-100 text-xs md:text-sm lg:text-base">
                                 <td>{index + 1}</td>
@@ -69,7 +69,7 @@ const AllContact = () => {
                                 <td className="text-sm">{contact.email}</td>
                                 <td className="text-sm">{contact.phone}</td>
                                 <td className="font-semibold text-sm">{contact.doctorName}</td>
-                                <td className=" text-sm">{contact.department}</td>
+                                <td className="text-sm">{contact.department}</td>
                                 <td className="text-sm">{contact.date}</td>
                                 <td>
                                     <button
@@ -82,6 +82,7 @@ const AllContact = () => {
                             </tr>
                         ))}
                     </tbody>
+
                 </table>
             </div>
         </div>

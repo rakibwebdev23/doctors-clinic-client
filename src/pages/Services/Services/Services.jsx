@@ -24,8 +24,8 @@ const Services = () => {
                 </div>
                 <div className="lg:w-1/2 space-y-4 lg:text-justify px-4 lg:px-8">
                     <h2 className="text-4xl text-orange-500 font-bold mt-8 lg:mt-0">Our Services</h2>
-                    <p className="leading-relaxed tracking-normal lg:text-justify text-left">The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being.</p>
-                    <div className="space-y-6">
+                    <p className="leading-relaxed tracking-normal lg:text-justify text-left text-black">The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being.</p>
+                    <div className="space-y-6 text-black">
                         <div className="flex gap-4 text-left">
                             <SlNotebook className="text-5xl font-bold text-blue-600"></SlNotebook>
                             <div className="space-y-4">

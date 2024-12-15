@@ -57,14 +57,14 @@ const Review = () => {
                     <div className="lg:flex items-center gap-4">
                         <div className="form-control lg:w-1/2 w-full">
                             <label className="label">
-                                <span className="label-text font-bold">Your Name*</span>
+                                <span className="label-text font-bold text-black">Your Name*</span>
                             </label>
                             <input type="text" placeholder="Name" className="input input-bordered w-full" {...register("name", { required: true })} />
                             {errors.name?.type === "required" && <p className="text-red-600">Your Name is Required</p>}
                         </div>
                         <div className="form-control lg:w-1/2 w-full">
                             <label className="label">
-                                <span className="label-text font-bold">Occupation*</span>
+                                <span className="label-text font-bold text-black">Occupation*</span>
                             </label>
                             <input type="text" placeholder="Occupation" className="input input-bordered w-full" {...register("occupation", { required: true })} />
                             {errors.occupation?.type === "required" && <p className="text-red-600">Occupation is Required</p>}
@@ -72,16 +72,16 @@ const Review = () => {
                     </div>
                     <div className="form-control w-full">
                         <div className="label">
-                            <span className="label-text font-bold">Your Feedback</span>
+                            <span className="label-text font-bold text-black">Your Feedback</span>
                         </div>
                         <textarea className="textarea textarea-bordered h-24 w-full" placeholder="Feedback Details" {...register("details", { required: true })}></textarea>
                     </div>
                     <div className="mb-2">
                         <label className="label">
-                            <span className="label-text font-bold">Rating</span>
+                            <span className="label-text font-bold text-black">Rating</span>
                         </label>
                         <Rating
-                            className="bg-white p-2"
+                            className="bg-white p-2 text-yellow-600"
                             style={{ maxWidth: 180 }}
                             value={rating}
                             onChange={setRating}
@@ -90,9 +90,9 @@ const Review = () => {
                     </div>
                     <div className="form-control w-full">
                         <label className="label">
-                            <span className="label-text font-bold">Your Image</span>
+                            <span className="label-text font-bold text-black">Your Image</span>
                         </label>
-                        <input type="file" className="file-input file-input-bordered w-full max-w-xs" {...register("image", { required: true })} />
+                        <input type="file" className="file-input file-input-bordered w-full max-w-xs text-white" {...register("image", { required: true })} />
                     </div>
                     <div>
                         <button className="relative px-8 py-3 border-2 border-transparent bg-gray-700 transition-all duration-300 text-white hover:bg-green-500 hover:text-black font-semibold flex justify-center items-center gap-2 rounded-lg w-full md:w-auto">

@@ -38,14 +38,14 @@ const ManageDoctor = () => {
     return (
         <div className="p-2 md:p-6">
             <SectionTitle heading="Manage All Doctors"></SectionTitle>
-            <h2 className="text-2xl md:text-3xl font-bold my-4 text-center">
+            <h2 className="text-2xl md:text-3xl font-bold my-4 text-center text-black">
                 All Doctors: {doctors.length}
             </h2>
 
             <div className="overflow-x-auto">
                 <table className="table table-auto w-full">
                     <thead className="bg-green-400">
-                        <tr className="text-sm lg:text-lg md:text-base font-semibold">
+                        <tr className="text-sm lg:text-lg md:text-base font-semibold text-white">
                             <th>#</th>
                             <th>Image</th>
                             <th>Name</th>
@@ -59,7 +59,7 @@ const ManageDoctor = () => {
                         {doctors.map((doctor, index) => (
                             <tr
                                 key={doctor._id}
-                                className="text-xs md:text-base hover:bg-gray-100"
+                                className="text-xs md:text-base hover:bg-gray-100 text-black"
                             >
                                 <td className="font-bold">{index + 1}</td>
                                 <td>
