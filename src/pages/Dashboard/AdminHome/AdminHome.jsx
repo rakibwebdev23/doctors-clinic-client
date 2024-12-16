@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
@@ -22,9 +21,6 @@ const AdminHome = () => {
             <div className="lg:flex lg:justify-between lg:items-center mb-10 flex-col lg:flex-row">
                 <h2 className="text-3xl font-bold text-center lg:text-left text-gray-700">
                     Hi, Welcome{" "}
-                    <span className="text-green-600">
-                        {user?.displayName ? user?.displayName : <Link to="/" className="btn btn-ghost">Back</Link>}
-                    </span>
                 </h2>
 
                 <div className="flex items-center justify-center mt-6 lg:mt-0">
@@ -33,13 +29,13 @@ const AdminHome = () => {
                             <div className="w-24 h-24 rounded-full overflow-hidden mb-2">
                                 <img src={user.photoURL} alt="User Profile" />
                             </div>
-                            <h2 className="text-xl font-semibold text-black">{user.displayName}</h2>
+                            <h2 className="text-xl font-semibold text-green-600">{user.displayName}</h2>
                         </div>
                     )}
                 </div>
             </div>
 
-            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow w-full mt-16 gap-6 p-4">
+            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow max-w-full mt-16 gap-6 p-4">
                 <div className="stat card bg-blue-600 text-white p-6 rounded-lg shadow-md">
                     <div className="stat-figure text-4xl mb-4">
                         <FaDollarSign />

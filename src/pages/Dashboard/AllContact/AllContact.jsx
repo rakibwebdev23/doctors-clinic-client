@@ -46,7 +46,7 @@ const AllContact = () => {
                 Total Contact: {contacts.length}
             </h2>
             <div className="overflow-x-auto shadow-lg rounded-lg">
-                <table className="table table-zebra w-full">
+                <table className="table table-zebra max-w-full">
                     {/* Table Header */}
                     <thead className="bg-green-400 text-white">
                         <tr className="text-sm lg:text-base font-bold">

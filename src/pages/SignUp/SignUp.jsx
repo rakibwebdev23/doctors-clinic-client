@@ -74,7 +74,7 @@ const SignUp = () => {
                                     {...register("name", { required: true })} 
                                     name="name" 
                                     placeholder="Your name" 
-                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500"
+                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-500"
                                 />
                                 {errors.name && <span className="text-red-600">Name is required</span>}
                             </div>
@@ -85,7 +85,7 @@ const SignUp = () => {
                                     type="text" 
                                     {...register("photoURL", { required: true })} 
                                     placeholder="Your photo URL" 
-                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500"
+                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-500"
                                 />
                                 {errors.photoURL && <span className="text-red-600">Photo URL is required</span>}
                             </div>
@@ -97,7 +97,7 @@ const SignUp = () => {
                                     {...register("email", { required: true })} 
                                     name="email" 
                                     placeholder="email" 
-                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500"
+                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-500"
                                 />
                                 {errors.email && <span className="text-red-600">Email is required</span>}
                             </div>
@@ -113,7 +113,7 @@ const SignUp = () => {
                                     })} 
                                     name="password" 
                                     placeholder="Password" 
-                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500"
+                                    className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-500"
                                 />
                                 {errors.password?.type === "required" && <span className="text-red-600">Password is required</span>}
                                 {errors.password?.type === "minLength" && <span className="text-red-600">Password must have 6 characters</span>}

@@ -1,9 +1,8 @@
 import React from 'react';
 import useAuth from '../../../hooks/useAuth';
-import { FaCartPlus, FaCcMastercard, FaDollarSign, FaUserDoctor } from 'react-icons/fa6';
+import { FaCcMastercard, FaDollarSign, FaUserDoctor } from 'react-icons/fa6';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { useQuery } from '@tanstack/react-query';
-import { Link } from 'react-router-dom';
 
 const UserHome = () => {
     const { user } = useAuth();
@@ -24,9 +23,6 @@ const UserHome = () => {
             <div className="lg:flex lg:justify-between items-center mb-8 flex-col lg:flex-row">
                 <h2 className="text-3xl font-bold text-center lg:text-left">
                     <span className='text-gray-700'>Hi, Welcome </span>
-                    <span className="text-green-600">
-                        {user?.displayName ? user?.displayName : <Link to="/" className="btn btn-ghost">Back</Link>}
-                    </span>
                 </h2>
 
                 <div className="flex items-center justify-center mt-6 lg:mt-0">
@@ -35,32 +31,32 @@ const UserHome = () => {
                             <div className="w-32 h-32 rounded-full overflow-hidden mb-2">
                                 <img src={user.photoURL} alt="User Profile" />
                             </div>
-                            <h2 className="text-2xl font-bold text-black">{user.displayName}</h2>
+                            <h2 className="text-2xl font-bold text-green-600">{user.displayName}</h2>
                         </div>
                     )}
                 </div>
             </div>
 
-            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow w-full mt-16 gap-6 p-4">
+            <div className="stats flex flex-col lg:flex-none lg:flex-row shadow max-w-full mt-16 gap-6 p-4">
                 <div className="stat card bg-green-500 text-white p-6 rounded-lg shadow-md">
                     <div className="stat-figure text-4xl mb-4">
                         <FaDollarSign />
                     </div>
-                    <div className="stat-title font-bold">Total Paid Amount</div>
+                    <div className="stat-title font-bold">Total Paid</div>
                     <div className="stat-value text-2xl">${appointments}</div>
                 </div>
                 <div className="stat card bg-green-400 text-white p-6 rounded-lg shadow-md">
                     <div className="stat-figure text-4xl mb-4">
                         <FaUserDoctor />
                     </div>
-                    <div className="stat-title font-bold">Total Appointments</div>
+                    <div className="stat-title font-bold">Appointments</div>
                     <div className="stat-value text-2xl">{stats.length}</div>
                 </div>
                 <div className="stat card bg-green-300 text-white p-6 rounded-lg shadow-md">
                     <div className="stat-figure text-4xl mb-4">
                         <FaCcMastercard />
                     </div>
-                    <div className="stat-title font-bold">Total Payments</div>
+                    <div className="stat-title font-bold">Payments</div>
                     <div className="stat-value text-2xl">{stats.length}</div>
                 </div>
             </div>

@@ -63,19 +63,19 @@ const SignIn = () => {
                         <form onSubmit={handleSignIn} className="space-y-6">
                             <div className="form-control">
                                 <label className="label font-semibold text-lg text-blue-600">Email</label>
-                                <input type="email" name="email" placeholder="Enter your email" className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500" required />
+                                <input type="email" name="email" placeholder="Enter your email" className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-500" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label font-semibold text-lg text-blue-600">Password</label>
-                                <input type="password" name="password" placeholder="Enter your password" className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500" required />
+                                <input type="password" name="password" placeholder="Enter your password" className="input input-bordered w-full py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-500" required />
                             </div>
 
                             <div className="form-control">
                                 <label className="label font-semibold text-lg text-blue-600">Captcha</label>
                                 <div className="captcha-wrapper flex flex-col items-center">
                                     <LoadCanvasTemplate />
-                                    <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="Type the captcha" className="input input-bordered w-full mt-3 py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-400 placeholder-gray-500" required />
+                                    <input onBlur={handleValidateCaptcha} type="text" name="captcha" placeholder="Type the captcha" className="input input-bordered w-full mt-3 py-3 px-4 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-black placeholder-gray-500" required />
                                 </div>
                             </div>
 

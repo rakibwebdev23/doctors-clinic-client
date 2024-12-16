@@ -43,7 +43,7 @@ const ManageDoctor = () => {
             </h2>
 
             <div className="overflow-x-auto">
-                <table className="table table-auto w-full">
+                <table className="table table-auto max-w-full">
                     <thead className="bg-green-400">
                         <tr className="text-sm lg:text-lg md:text-base font-semibold text-white">
                             <th>#</th>

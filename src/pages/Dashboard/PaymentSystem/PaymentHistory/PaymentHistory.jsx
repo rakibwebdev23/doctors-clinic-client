@@ -21,7 +21,7 @@ const PaymentHistory = () => {
             </h2>
 
             <div className="overflow-x-auto">
-                <table className="table table-zebra rounded-lg w-full">
+                <table className="table table-zebra rounded-lg max-w-full">
                     <thead className="bg-green-400 text-white text-sm md:text-lg font-bold">
                         <tr>
                             <th>#</th>

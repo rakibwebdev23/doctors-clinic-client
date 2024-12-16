@@ -76,7 +76,7 @@ const AllUsers = () => {
             </div>
 
             <div className="overflow-x-auto">
-                <table className="table table-zebra w-full">
+                <table className="table table-zebra max-w-full">
                     <thead>
                         <tr className="text-sm md:text-lg lg:text-xl font-bold bg-green-400 text-white">
                             <th>#</th>
