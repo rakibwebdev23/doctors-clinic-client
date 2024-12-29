@@ -126,8 +126,7 @@ const Appointment = () => {
                                     <label className="label font-bold text-blue-500">Date</label>
                                     <input
                                         type="date"
-                                        placeholder="Date"
-                                        className="input input-bordered w-full placeholder-gray-500 text-black"
+                                        className="input input-bordered w-full  text-black"
                                         {...register("date", { required: "Date is required" })}
                                     />
                                     {errors.date && <p className="text-red-600">{errors.date.message}</p>}

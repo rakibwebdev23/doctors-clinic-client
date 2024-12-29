@@ -1,17 +1,17 @@
 # Doctors Clinic
 
-**A responsive appointment scheduling platform for managing doctor-patient interactions efficiently.**
+A responsive appointment scheduling platform for managing doctor-patient interactions efficiently.
 
 ## **Features**
 
-- **Responsive design for all device types.**
-- **User authentication with Firebase (Signup, Login, Google Authentication).**
-- **Backend integration using Node.js and Express.js.**
-- **Secure data management with MongoDB.**
-- **Integrated Stripe.js for payment processing, enabling users to make secure online payments.***
-- **User authentication with Firebase (Signup, Login, Google Authentication).**
-- **Backend integration using Node.js and Express.js.**
-- **Secure data management with MongoDB.**
+- Responsive design for all device types.
+- User authentication with Firebase (Signup, Login, Google Authentication).
+- Backend integration using Node.js and Express.js.
+- Secure data management with MongoDB.
+- Integrated Stripe.js for payment processing, enabling users to make secure online payments.
+- User authentication with Firebase (Signup, Login, Google Authentication).
+- Backend integration using Node.js and Express.js.
+- Secure data management with MongoDB.
 
 ## **Technologies Used**
 

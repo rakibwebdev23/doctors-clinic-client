@@ -1,7 +1,7 @@
 const BannerShared = ({ img, title, subTitle, description }) => {
     return (
         <div
-            className="hero min-h-screen bg-fixed bg-cover bg-center mb-16 font-poppins"
+            className="hero min-h-screen lg:bg-fixed md:bg-fixed bg-cover bg-center mb-16 font-poppins"
             style={{ backgroundImage: `url("${img}")` }}
         >
             {/* Overlay Section */}
