@@ -21,5 +21,5 @@ A responsive appointment scheduling platform for managing doctor-patient interac
 
 - **Live Site:** [Doctors Clinic](https://doctors-clinic-18d18.web.app)
 - **Server Site Repository:** [GitHub Repository](https://github.com/rakibwebdev23/doctors-clinic-server)
-- **Portfolio:** [rakib-hasan.com](https://rakib-hasan-eb93b.web.app)
-- **LinkedIn:** [Rakib Hasan](https://rakib-hasan-eb93b.web.app)
+- **Portfolio:** [rakib-hasan.web.app](https://rakib-hasan-eb93b.web.app)
+- **LinkedIn:** [Rakib Hasan](https://www.linkedin.com/in/md-rakib-hasan-0606b933a)
