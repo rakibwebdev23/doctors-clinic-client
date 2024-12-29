@@ -9,9 +9,6 @@ A responsive appointment scheduling platform for managing doctor-patient interac
 - Backend integration using Node.js and Express.js.
 - Secure data management with MongoDB.
 - Integrated Stripe.js for payment processing, enabling users to make secure online payments.
-- User authentication with Firebase (Signup, Login, Google Authentication).
-- Backend integration using Node.js and Express.js.
-- Secure data management with MongoDB.
 
 ## **Technologies Used**
 
