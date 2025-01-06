@@ -8,7 +8,7 @@ const Banner = () => {
             style={{ backgroundImage: `url("${img}")` }}
         >
             {/* Background Overlay */}
-            <div className="absolute inset-0 bg-black/60"></div>
+            <div className="absolute inset-0 bg-black/50"></div>
 
             {/* Content Wrapper */}
             <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12">

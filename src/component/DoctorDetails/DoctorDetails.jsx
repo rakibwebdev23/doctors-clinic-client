@@ -17,7 +17,7 @@ const DoctorDetails = ({ doctor }) => {
                     className="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
                 />
             </figure>
-            <div className="p-6 text-left"> {/* Added text-left to align text to the left */}
+            <div className="p-6 text-left">
                 <h3 className="text-2xl font-semibold text-gray-800">{name}</h3>
                 <p className="text-lg text-gray-500 mb-3">{specialist}</p>
 

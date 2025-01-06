@@ -71,7 +71,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar max-w-screen-xl mx-auto fixed z-40 text-white bg-black bg-opacity-90 py-3 px-4">
+        <div className="navbar max-w-screen-xl mx-auto fixed z-40 text-white bg-black bg-opacity-90 py-4 px-4">
             <div className="navbar-start">
                 <Link to="/" className="flex items-center">
                     <img
@@ -89,12 +89,12 @@ const Navbar = () => {
             <div className="navbar-end lg:hidden">
                 <button
                     role="button"
-                    className="btn btn-ghost"
+                    className="btn btn-ghost bg-blue-600"
                     onClick={toggleMenu}
                 >
                     {isMenuOpen ? (
                         <svg
-                            className="h-6 w-6 text-orange-500 transition duration-300"
+                            className="h-6 w-6 text-black transition duration-100"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -106,7 +106,7 @@ const Navbar = () => {
                         </svg>
                     ) : (
                         <svg
-                            className="h-6 w-6 text-blue-500 hover:text-orange-500 transition duration-300"
+                            className="h-6 w-6 text-white transition duration-100"
                             viewBox="0 0 24 24"
                             fill="currentColor"
                         >
@@ -123,14 +123,14 @@ const Navbar = () => {
 
                 {/* Dropdown Menu */}
                 {isMenuOpen && (
-                    <ul className="absolute left-0 top-full w-full bg-black bg-opacity-95 py-4 space-y-2 text-center font-semibold shadow-lg transition-all duration-300">
+                    <ul className="absolute left-0 top-full h-screen w-full bg-black bg-opacity-95 py-4 space-y-3 text-center font-bold shadow-lg transition-all duration-300">
                         {navLink}
                     </ul>
                 )}
             </div>
 
             {/* Desktop Menu */}
-            <div className="navbar-end hidden lg:flex font-semibold">
+            <div className="navbar-end hidden lg:flex font-bold">
                 <ul className="menu menu-horizontal space-x-4">{navLink}</ul>
             </div>
         </div>
