@@ -12,7 +12,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(() => {})
+            .then(() => { })
             .catch(error => console.log(error));
     };
 
@@ -71,67 +71,71 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar max-w-screen-xl mx-auto fixed z-40 text-white bg-black bg-opacity-90 py-4 px-4">
-            <div className="navbar-start">
-                <Link to="/" className="flex items-center">
-                    <img
-                        className="lg:w-12 md:w-10 w-8"
-                        src="https://i.ibb.co.com/jMYJMMz/logo4.png"
-                        alt="logo"
-                    />
-                    <h2 className="ml-2 text-blue-500 lg:text-lg md:text-base text-sm font-bold">
-                        Doctors <span className="text-orange-500">Clinic</span>
-                    </h2>
-                </Link>
-            </div>
-
-            {/* Mobile Dropdown Menu */}
-            <div className="navbar-end lg:hidden">
-                <button
-                    role="button"
-                    className="btn btn-ghost bg-blue-600"
-                    onClick={toggleMenu}
-                >
-                    {isMenuOpen ? (
-                        <svg
-                            className="h-6 w-6 text-black transition duration-100"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                        >
-                            <path d="M18 6L6 18M6 6l12 12" />
-                        </svg>
-                    ) : (
-                        <svg
-                            className="h-6 w-6 text-white transition duration-100"
-                            viewBox="0 0 24 24"
-                            fill="currentColor"
-                        >
-                            <path
-                                d="M4 6h16M4 12h16M4 18h16"
-                                stroke="currentColor"
-                                strokeWidth="2"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
+        <div className="z-40 fixed w-full text-white bg-black py-4">
+            <div className="mx-auto max-w-screen-xl px-4">
+                <div className='navbar'>
+                    <div className="navbar-start">
+                        <Link to="/" className="flex items-center">
+                            <img
+                                className="lg:w-12 md:w-10 w-8"
+                                src="https://i.ibb.co.com/jMYJMMz/logo4.png"
+                                alt="logo"
                             />
-                        </svg>
-                    )}
-                </button>
+                            <h2 className="ml-2 text-blue-500 lg:text-lg md:text-base text-sm font-bold">
+                                Doctors <span className="text-orange-500">Clinic</span>
+                            </h2>
+                        </Link>
+                    </div>
 
-                {/* Dropdown Menu */}
-                {isMenuOpen && (
-                    <ul className="absolute left-0 top-full h-screen w-full bg-black bg-opacity-95 py-4 space-y-3 text-center font-bold shadow-lg transition-all duration-300">
-                        {navLink}
-                    </ul>
-                )}
-            </div>
+                    {/* Mobile Dropdown Menu */}
+                    <div className="navbar-end lg:hidden">
+                        <button
+                            role="button"
+                            className="btn btn-ghost bg-blue-600"
+                            onClick={toggleMenu}
+                        >
+                            {isMenuOpen ? (
+                                <svg
+                                    className="h-4 w-4 text-black transition duration-100"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                >
+                                    <path d="M18 6L6 18M6 6l12 12" />
+                                </svg>
+                            ) : (
+                                <svg
+                                    className="h-4 w-4 text-white transition duration-100"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                >
+                                    <path
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                        stroke="currentColor"
+                                        strokeWidth="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                    />
+                                </svg>
+                            )}
+                        </button>
 
-            {/* Desktop Menu */}
-            <div className="navbar-end hidden lg:flex font-bold">
-                <ul className="menu menu-horizontal space-x-4">{navLink}</ul>
+                        {/* Dropdown Menu */}
+                        {isMenuOpen && (
+                            <ul className="absolute left-0 top-full h-screen w-full bg-black py-2 space-y-3 text-center font-bold shadow-lg transition-all duration-300">
+                                {navLink}
+                            </ul>
+                        )}
+                    </div>
+
+                    {/* Desktop Menu */}
+                    <div className="navbar-end hidden lg:flex font-bold">
+                        <ul className="menu menu-horizontal space-x-4">{navLink}</ul>
+                    </div>
+                </div>
             </div>
         </div>
     );

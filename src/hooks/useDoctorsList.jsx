@@ -21,5 +21,7 @@ export const useDoctorsList = () => {
     const doctorsGynecologist = doctors.filter(doctor => doctor.category === "Gynecologist");
     const doctorsSpecial = doctors.filter(doctor => doctor.category === "Special");
 
+    
+
     return [doctorsSpecial, doctorsCardiologist, doctorsDermatologist, doctorsOrthopedic, doctorsNeurologist, doctorsEndocrinologist, doctorsGynecologist];
 };
