@@ -12,7 +12,7 @@ const Banner = () => {
             <div className="absolute inset-0 bg-black/50"></div>
 
             {/* Content Wrapper */}
-            <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12">
+            <div className="relative z-10 w-full">
                 <div className="flex flex-col lg:flex-row lg:items-center">
                     {/* Left Content */}
                     <Container>
