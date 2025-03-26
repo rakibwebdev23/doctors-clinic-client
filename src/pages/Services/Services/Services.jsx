@@ -24,7 +24,7 @@ const Services = () => {
                     <div className="lg:w-1/2">
                         <img className="rounded-xl" src={doctorImg} alt="" />
                     </div>
-                    <div className="lg:w-1/2 space-y-4 lg:text-justify ">
+                    <div className="lg:w-1/2 space-y-4 lg:text-justify lg:pl-6">
                         <h2 className="text-4xl text-orange-500 font-bold mt-8 lg:mt-0">Our Services</h2>
                         <p className="leading-relaxed tracking-normal lg:text-justify text-left text-black">The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being.</p>
                         <div className="space-y-6 text-black">

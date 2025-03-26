@@ -9,6 +9,7 @@ import useAuth from "../../../../hooks/useAuth";
 import HelmetProvide from "../../../../component/HelmetProvide";
 import useAxiosSecure from "../../../../hooks/useAxiosSecure";
 import useAppointment from "../../../../hooks/useAppointment";
+import Container from "../../../../component/Container/Container";
 
 const DoctorProfileView = () => {
     const doctor = useLoaderData();
@@ -111,34 +112,36 @@ const DoctorProfileView = () => {
                 </div>
             </div>
 
-            <div className="lg:mt-16 mt-8 px-4 lg:px-16">
-                <h1 className="text-3xl text-orange-500 font-bold">About Me</h1>
-                <p className="text-justify leading-relaxed mt-4">{about}</p>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
-                    <div className="space-y-6 bg-orange-100 p-6 rounded-lg">
-                        <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Education</h2>
-                        <p>{education}</p>
+            <Container>
+                <div className="lg:mt-16 mt-8 px-4 lg:px-16">
+                    <h1 className="text-3xl text-orange-500 font-bold">About Me</h1>
+                    <p className="text-justify leading-relaxed mt-4">{about}</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
+                        <div className="space-y-6 bg-orange-100 p-6 rounded-lg">
+                            <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Education</h2>
+                            <p>{education}</p>
+                        </div>
+                        <div className="space-y-6 bg-gray-200 p-6 rounded-lg">
+                            <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Experience</h2>
+                            <p>{experience}</p>
+                        </div>
                     </div>
-                    <div className="space-y-6 bg-gray-200 p-6 rounded-lg">
-                        <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Experience</h2>
-                        <p>{experience}</p>
-                    </div>
-                </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
-                    <div className="space-y-6 bg-slate-200 p-6 rounded-lg">
-                        <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Contact & Address</h2>
-                        <p className="flex items-center gap-2"><IoLocationOutline className="text-xl text-orange-500" /> {chamberLocation}</p>
-                        <p className="flex items-center gap-2"><FaRegAddressBook className="text-xl text-orange-500" /> {email}</p>
-                        <p className="flex items-center gap-2"><FaPhone className="text-xl text-orange-500" /> {phone}</p>
-                        <p className="flex items-center gap-2"><AiOutlineDollarCircle className="text-xl text-orange-500" /> ${visitFee}</p>
-                    </div>
-                    <div className="space-y-6 bg-slate-100 p-6 rounded-lg">
-                        <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Overview</h2>
-                        <p>{overview}</p>
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
+                        <div className="space-y-6 bg-slate-200 p-6 rounded-lg">
+                            <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Contact & Address</h2>
+                            <p className="flex items-center gap-2"><IoLocationOutline className="text-xl text-orange-500" /> {chamberLocation}</p>
+                            <p className="flex items-center gap-2"><FaRegAddressBook className="text-xl text-orange-500" /> {email}</p>
+                            <p className="flex items-center gap-2"><FaPhone className="text-xl text-orange-500" /> {phone}</p>
+                            <p className="flex items-center gap-2"><AiOutlineDollarCircle className="text-xl text-orange-500" /> ${visitFee}</p>
+                        </div>
+                        <div className="space-y-6 bg-slate-100 p-6 rounded-lg">
+                            <h2 className="text-2xl text-orange-500 font-semibold border-b pb-2">Overview</h2>
+                            <p>{overview}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 };
