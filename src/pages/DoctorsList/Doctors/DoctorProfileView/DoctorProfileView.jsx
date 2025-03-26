@@ -113,7 +113,7 @@ const DoctorProfileView = () => {
             </div>
 
             <Container>
-                <div className="lg:mt-16 mt-8 px-4 lg:px-16">
+                <div className="lg:mt-16 mt-8">
                     <h1 className="text-3xl text-orange-500 font-bold">About Me</h1>
                     <p className="text-justify leading-relaxed mt-4">{about}</p>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 mt-12">
