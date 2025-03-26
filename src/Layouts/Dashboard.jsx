@@ -5,6 +5,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 import useAppointment from "../hooks/useAppointment";
 import useAdmin from "../hooks/useAdmin";
 import HelmetProvide from "../component/HelmetProvide";
+import Container from "../component/Container/Container";
 
 const Dashboard = () => {
     const [appointment] = useAppointment();
@@ -70,7 +71,9 @@ const Dashboard = () => {
                 </div>
                 {/* dashboard contet  */}
                 <div className="flex-1 p-10 bg-white">
-                    <Outlet></Outlet>
+                    <Container>
+                        <Outlet></Outlet>
+                    </Container>
                 </div>
             </div>
         </div>
