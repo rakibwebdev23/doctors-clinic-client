@@ -68,7 +68,7 @@ const AllUsers = () => {
     };
 
     return (
-        <div className="p-4 md:p-8">
+        <div>
             <div className="text-center mb-6">
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold uppercase text-slate-800">
                     Total Users: {users.length}

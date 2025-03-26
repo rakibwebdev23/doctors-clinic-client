@@ -50,7 +50,7 @@ const Review = () => {
     }
 
     return (
-        <div className="px-4 py-6 lg:px-8 lg:py-12">
+        <div>
             <SectionTitle heading="Please Add Your Comment" />
             <div className="card shrink-0 lg:mt-10 rounded-xl">
                 <form onSubmit={handleSubmit(onSubmit)} className="card-body max-w-full space-y-4 bg-green-300 p-4 rounded-lg">

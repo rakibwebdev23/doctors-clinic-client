@@ -41,7 +41,7 @@ const AllContact = () => {
     };
 
     return (
-        <div className="p-4 md:p-6">
+        <div>
             <h2 className="text-2xl md:text-3xl font-bold mb-4 text-center text-slate-800">
                 Total Contact: {contacts.length}
             </h2>

@@ -19,7 +19,7 @@ const UserHome = () => {
     const appointments = stats.reduce((total, appoint) => total + appoint.visitFee, 0);
 
     return (
-        <div className="container mx-auto px-6 py-8">
+        <div className="container mx-auto">
             <div className="lg:flex lg:justify-between items-center mb-8 flex-col lg:flex-row">
                 <h2 className="text-3xl font-bold text-center lg:text-left">
                     <span className='text-gray-700'>Hi, Welcome </span>

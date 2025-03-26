@@ -17,7 +17,7 @@ const AdminHome = () => {
     });
 
     return (
-        <div className="container mx-auto px-6 py-8">
+        <div className="container mx-auto">
             <div className="lg:flex lg:justify-between lg:items-center mb-10 flex-col lg:flex-row">
                 <h2 className="text-3xl font-bold text-center lg:text-left text-gray-700">
                     Hi, Welcome{" "}

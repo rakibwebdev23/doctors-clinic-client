@@ -36,7 +36,7 @@ const ManageDoctor = () => {
     };
 
     return (
-        <div className="p-2 md:p-6">
+        <div>
             <SectionTitle heading="Manage All Doctors"></SectionTitle>
             <h2 className="text-2xl md:text-3xl font-bold my-4 text-center text-black">
                 All Doctors: {doctors.length}

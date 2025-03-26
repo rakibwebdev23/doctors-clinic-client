@@ -56,7 +56,7 @@ const UpdateDoctor = () => {
     };
 
     return (
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="container mx-auto">
             <h2 className="text-2xl md:text-3xl font-bold my-4 text-center text-blue-600">Update Doctor Details</h2>
             <div className="card w-full bg-green-200 p-4 md:p-8 rounded-lg">
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">

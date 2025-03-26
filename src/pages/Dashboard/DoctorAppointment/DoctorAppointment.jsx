@@ -7,7 +7,7 @@ const DoctorAppointment = () => {
     const doctorFee = appointment.reduce((total, doctor) => total + doctor.visitFee, 0);
 
     return (
-        <div className="p-4 md:p-6 lg:p-8">
+        <div>
             <div className="flex flex-col lg:flex-row lg:justify-evenly items-center space-y-4 lg:space-y-0 lg:space-x-6 mb-8 font-bold text-center lg:text-left">
                 <h2 className="text-2xl md:text-3xl text-blue-600">Appointment: {appointment.length}</h2>
                 <h3 className="text-2xl md:text-3xl text-black">Doctor Visit Fee: ${doctorFee}</h3>

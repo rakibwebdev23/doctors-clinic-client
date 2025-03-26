@@ -15,7 +15,7 @@ const PaymentHistory = () => {
     });
 
     return (
-        <div className="p-4 md:p-6 lg:p-8">
+        <div>
             <h2 className="my-4 text-2xl md:text-3xl lg:text-4xl font-bold text-center lg:text-left text-black">
                 Total Payment: {payments.length}
             </h2>
