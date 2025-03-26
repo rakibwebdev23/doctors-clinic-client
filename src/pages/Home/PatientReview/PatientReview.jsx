@@ -22,7 +22,7 @@ const PatientReview = () => {
                     heading="What Our Patients Say"
                     subHeading="Discover the experiences and feedback from our patients."
                 />
-                <div className="mt-12">
+                <div>
                     <Swiper
                         rewind={true}
                         navigation={true}
@@ -36,7 +36,7 @@ const PatientReview = () => {
                     >
                         {reviews.map((item, index) => (
                             <SwiperSlide key={item._id || index}>
-                                <div className="bg-white shadow-lg rounded-xl p-8 mx-4 md:mx-8 transition-all duration-300 transform hover:scale-105">
+                                <div className="bg-[#F9F9F9] shadow-lg rounded-xl p-8 mx-4 md:mx-8 transition-all duration-300 transform hover:scale-105">
                                     <div className="grid lg:grid-cols-5 grid-cols-1 gap-6 items-center">
                                         {/* Patient Image and Info */}
                                         <div className="lg:col-span-2 flex items-center gap-6">
