@@ -1,5 +1,5 @@
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import useAdmin from '../../../hooks/useAdmin';
 import { MdDashboard, MdOutlineDashboardCustomize } from 'react-icons/md';
@@ -20,83 +20,122 @@ const Navbar = () => {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const NavItem = ({ to, children, activeClassName = '', mobileFullWidth = false }) => {
+        return (
+            <li className={`group relative ${mobileFullWidth ? 'w-full' : ''}`}>
+                <NavLink 
+                    to={to}
+                    className={({ isActive }) => `
+                        flex items-center gap-1 
+                        transition-colors duration-300 
+                        ${isActive ? `text-blue-400 ${activeClassName}` : 'text-white'}
+                        group-hover:text-blue-400 
+                        relative
+                        w-full
+                        text-center
+                    `}
+                >
+                    {children}
+                    <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full"></span>
+                </NavLink>
+            </li>
+        );
+    };
+
+    const DashboardLink = ({ to, icon: Icon, label, isVisible }) => {
+        if (!isVisible) return null;
+
+        return (
+            <li className="relative group">
+                <NavLink 
+                    to={to}
+                    className={({ isActive }) => `
+                        flex items-center gap-2 
+                        transition-colors duration-300
+                        ${isActive ? 'text-blue-400' : 'text-white'}
+                        group-hover:text-blue-400
+                    `}
+                >
+                    <Icon size={24} />
+                    <span className="lg:hidden">{label}</span>
+                    <div className="hidden lg:block">
+                        <span className="absolute left-1/2 -translate-x-1/2 top-full mt-2 scale-0 group-hover:scale-100 transition-all duration-200 text-sm bg-blue-600 text-white rounded px-4 py-1 whitespace-nowrap">
+                            {label}
+                        </span>
+                    </div>
+                </NavLink>
+            </li>
+        );
+    };
+
     const navLink = (
         <>
-            <li className="whitespace-nowrap">
-                <Link to="/" className="hover:text-orange-500 transition">Home</Link>
-            </li>
-            <li className="whitespace-nowrap">
-                <Link to="/about" className="hover:text-orange-500 transition">About</Link>
-            </li>
-            <li className="whitespace-nowrap">
-                <Link to="/service" className="hover:text-orange-500 transition">Services</Link>
-            </li>
-            <li className="whitespace-nowrap">
-                <Link to="/doctors" className="hover:text-orange-500 transition">Doctors</Link>
-            </li>
-            {user && isAdmin && (
-                <li className="relative group whitespace-nowrap">
-                    <Link to="/dashboard/adminHome" className="flex justify-center">
-                        <MdOutlineDashboardCustomize size={24} />
-                    </Link>
-                    <span className="absolute left-1/2 -translate-x-1/2 top-full mt-4 scale-0 group-hover:scale-100 transition-all duration-200 text-sm bg-blue-600 text-white rounded px-6 py-1">
-                        Admin Dashboard
-                    </span>
-                </li>
-            )}
-            {user && !isAdmin && (
-                <li className="relative group whitespace-nowrap">
-                    <Link to="/dashboard/userHome" className="flex justify-center">
-                        <MdDashboard size={24} />
-                    </Link>
-                    <span className="absolute left-1/2 -translate-x-1/2 top-full mt-4 scale-0 group-hover:scale-100 transition-all duration-200 text-sm bg-blue-600 text-white rounded px-6 py-1">
-                        User Dashboard
-                    </span>
-                </li>
-            )}
+            <NavItem to="/">Home</NavItem>
+            <NavItem to="/about">About</NavItem>
+            <NavItem to="/service">Services</NavItem>
+            <NavItem to="/doctors">Doctors</NavItem>
+            
+            <DashboardLink 
+                to="/dashboard/adminHome" 
+                icon={MdOutlineDashboardCustomize}
+                label="Admin Dashboard"
+                isVisible={user && isAdmin}
+            />
+            
+            <DashboardLink 
+                to="/dashboard/userHome" 
+                icon={MdDashboard}
+                label="User Dashboard"
+                isVisible={user && !isAdmin}
+            />
+            
             {user ? (
-                <li className="whitespace-nowrap">
-                    <Link onClick={handleLogout} className="hover:text-orange-500 transition">
-                        Sign Out
-                    </Link>
-                </li>
+                <NavItem 
+                    to="/signin" 
+                    activeClassName="text-red-400 hover:text-red-400"
+                    onClick={handleLogout}
+                >
+                    Sign Out
+                </NavItem>
             ) : (
-                <li className="whitespace-nowrap">
-                    <Link to="/signin" className="hover:text-orange-500 transition">
-                        Sign In
-                    </Link>
-                </li>
+                <NavItem 
+                    to="/signin" 
+                    activeClassName="text-green-400 hover:text-green-400"
+                >
+                    Sign In
+                </NavItem>
             )}
         </>
     );
 
     return (
-        <div className="z-40 fixed w-full text-white bg-black py-4">
+        <nav className="z-40 fixed w-full text-white bg-black/90 backdrop-blur-sm py-4 shadow-lg">
             <div className="mx-auto max-w-screen-xl px-4">
-                <div className='navbar'>
-                    <div className="navbar-start">
-                        <Link to="/" className="flex items-center">
-                            <img
-                                className="lg:w-12 md:w-10 w-8"
-                                src="https://i.ibb.co.com/jMYJMMz/logo4.png"
-                                alt="logo"
-                            />
-                            <h2 className="ml-2 text-blue-500 lg:text-lg md:text-base text-sm font-bold">
-                                Doctors <span className="text-orange-500">Clinic</span>
-                            </h2>
-                        </Link>
-                    </div>
+                <div className="flex items-center justify-between">
+                    <NavLink 
+                        to="/" 
+                        className="flex items-center"
+                    >
+                        <img
+                            className="lg:w-12 md:w-10 w-8 transition-transform hover:rotate-12"
+                            src="https://i.ibb.co.com/jMYJMMz/logo4.png"
+                            alt="logo"
+                        />
+                        <h2 className="ml-2 text-blue-500 lg:text-lg md:text-base text-sm font-bold">
+                            Doctors <span className="text-orange-500">Clinic</span>
+                        </h2>
+                    </NavLink>
 
                     {/* Mobile Dropdown Menu */}
-                    <div className="navbar-end lg:hidden">
+                    <div className="lg:hidden">
                         <button
                             role="button"
-                            className="btn btn-ghost bg-blue-600"
+                            className="btn btn-ghost bg-blue-600 rounded-full p-2 hover:bg-blue-700 transition-colors"
                             onClick={toggleMenu}
                         >
                             {isMenuOpen ? (
                                 <svg
-                                    className="h-4 w-4 text-black transition duration-100"
+                                    className="h-6 w-6 text-white transition duration-300"
                                     viewBox="0 0 24 24"
                                     fill="none"
                                     stroke="currentColor"
@@ -108,7 +147,7 @@ const Navbar = () => {
                                 </svg>
                             ) : (
                                 <svg
-                                    className="h-4 w-4 text-white transition duration-100"
+                                    className="h-6 w-6 text-white transition duration-300"
                                     viewBox="0 0 24 24"
                                     fill="currentColor"
                                 >
@@ -125,19 +164,19 @@ const Navbar = () => {
 
                         {/* Dropdown Menu */}
                         {isMenuOpen && (
-                            <ul className="absolute left-0 top-full h-screen w-full bg-black py-2 space-y-3 text-center font-bold shadow-lg transition-all duration-300">
+                            <ul className="fixed left-0 top-16 w-full bg-black/95 backdrop-blur-md py-6 space-y-4 text-center font-bold shadow-2xl animate-slide-in z-50">
                                 {navLink}
                             </ul>
                         )}
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="navbar-end hidden lg:flex font-bold">
-                        <ul className="menu menu-horizontal space-x-4">{navLink}</ul>
+                    <div className="hidden lg:flex font-bold">
+                        <ul className="flex items-center space-x-6">{navLink}</ul>
                     </div>
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
 
