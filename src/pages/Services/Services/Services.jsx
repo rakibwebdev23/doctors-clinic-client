@@ -20,11 +20,11 @@ const Services = () => {
                 description={"The Doctors Clinic offers a variety of healthcare services to cater to patients of all ages. Patients can receive general consultations, which include comprehensive health check-ups and personalized medical advice. The clinic also provides specialized care in pediatrics, focusing on the healthy growth and development of children."}
             ></BannerShared>
             <Container>
-                <div className="lg:flex gap-6 pt-10">
+                <div className="lg:flex gap-6 pt-10 w-full">
                     <div className="lg:w-1/2">
                         <img className="rounded-xl" src={doctorImg} alt="" />
                     </div>
-                    <div className="lg:w-1/2 space-y-4 lg:text-justify lg:pl-6">
+                    <div className="lg:w-1/2 space-y-4 lg:text-justify">
                         <h2 className="text-4xl text-orange-500 font-bold mt-8 lg:mt-0">Our Services</h2>
                         <p className="leading-relaxed tracking-normal lg:text-justify text-left text-black">The Doctors Clinic offers a wide range of healthcare services to meet the needs of patients of all ages. From general consultations, where patients receive comprehensive health check-ups and personalized medical advice, to specialized care in pediatrics, ensuring children’s healthy growth and development, the clinic prioritizes patient well-being.</p>
                         <div className="space-y-6 text-black">
