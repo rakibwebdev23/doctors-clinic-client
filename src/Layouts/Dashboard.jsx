@@ -11,7 +11,7 @@ const Dashboard = () => {
     const [appointment] = useAppointment();
     const [isAdmin] = useAdmin();
     return (
-        <div>
+        <Container>
             <HelmetProvide helmetTitle="Dashboard"></HelmetProvide>
             <div className="lg:flex">
                 {/* dashboard sidebar */}
@@ -71,12 +71,11 @@ const Dashboard = () => {
                 </div>
                 {/* dashboard contet  */}
                 <div className="flex-1 p-10 bg-white">
-                    <Container>
-                        <Outlet></Outlet>
-                    </Container>
+
+                    <Outlet></Outlet>
                 </div>
             </div>
-        </div>
+        </Container>
     );
 };
 

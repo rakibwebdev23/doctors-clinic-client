@@ -77,39 +77,41 @@ const DoctorProfileView = () => {
             <HelmetProvide helmetTitle={"Doctor Profile"} />
             <div className="bg-fixed hero relative" style={{ backgroundImage: `url("${img}")` }}>
                 <div className="hero-overlay bg-opacity-40 bg-orange-500"></div>
-                <div className="hero-content min-h-screen flex items-center justify-center lg:w-3/4 mx-auto">
-                    <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0 w-full">
-                        <div className="w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden">
-                            <img src={image} className="w-full h-full object-cover border-4 border-white rounded-full transition-transform duration-300 hover:scale-110" />
-                        </div>
-                        <div className="lg:ml-12 text-white w-full lg:w-2/3">
-                            <h2 className="text-3xl lg:text-4xl font-semibold">{name}</h2>
-                            <p className="text-lg">{specialist}</p>
-                            <div className="flex items-center gap-2 mt-3">
-                                <Rating style={{ maxWidth: 180 }} value={rating} readOnly />
+                <Container>
+                    <div className="hero-content min-h-screen flex items-center justify-center mx-auto lg:w-3/4">
+                        <div className="flex flex-col lg:flex-row items-center justify-between space-y-4 lg:space-y-0 w-full">
+                            <div className="w-48 h-48 md:w-72 md:h-72 rounded-full overflow-hidden">
+                                <img src={image} className="w-full h-full object-cover border-4 border-white rounded-full transition-transform duration-300 hover:scale-110" />
                             </div>
-                            <div className="mt-6">
-                                <p className="flex items-center gap-2 text-lg">
-                                    <IoLocationOutline className="text-xl text-orange-500" />
-                                    {chamberLocation}
-                                </p>
-                                <p className="flex items-center gap-2 text-lg">
-                                    <FaRegAddressBook className="text-xl text-orange-500" />
-                                    {email}
-                                </p>
-                                <p className="flex items-center gap-2 text-lg">
-                                    <AiOutlineDollarCircle className="text-xl text-orange-500" />
-                                    ${visitFee}
-                                </p>
-                            </div>
-                            <div className="mt-6">
-                                <button onClick={handleDoctorAppointment} className="btn btn-outline border-2 border-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300 w-full py-2 rounded-md">
-                                    Book Appointment
-                                </button>
+                            <div className="lg:ml-12 text-white w-full lg:w-2/3">
+                                <h2 className="text-3xl lg:text-4xl font-semibold">{name}</h2>
+                                <p className="text-lg">{specialist}</p>
+                                <div className="flex items-center gap-2 mt-3">
+                                    <Rating style={{ maxWidth: 180 }} value={rating} readOnly />
+                                </div>
+                                <div className="mt-6">
+                                    <p className="flex items-center gap-2 text-lg">
+                                        <IoLocationOutline className="text-xl text-orange-500" />
+                                        {chamberLocation}
+                                    </p>
+                                    <p className="flex items-center gap-2 text-lg">
+                                        <FaRegAddressBook className="text-xl text-orange-500" />
+                                        {email}
+                                    </p>
+                                    <p className="flex items-center gap-2 text-lg">
+                                        <AiOutlineDollarCircle className="text-xl text-orange-500" />
+                                        ${visitFee}
+                                    </p>
+                                </div>
+                                <div className="mt-6">
+                                    <button onClick={handleDoctorAppointment} className="btn btn-outline border-2 border-orange-500 hover:bg-orange-500 hover:text-white transition-all duration-300 w-full py-2 rounded-md">
+                                        Book Appointment
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </Container>
             </div>
 
             <Container>
