@@ -1,7 +1,7 @@
 import { FaHome, FaHospitalUser } from "react-icons/fa";
 import { FaUserDoctor } from "react-icons/fa6";
 import { MdOutlineDashboardCustomize, MdRateReview } from "react-icons/md";
-import { Link, NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import useAppointment from "../hooks/useAppointment";
 import useAdmin from "../hooks/useAdmin";
 import HelmetProvide from "../component/HelmetProvide";
@@ -71,7 +71,6 @@ const Dashboard = () => {
                 </div>
                 {/* dashboard contet  */}
                 <div className="flex-1 p-10 bg-white">
-
                     <Outlet></Outlet>
                 </div>
             </div>
