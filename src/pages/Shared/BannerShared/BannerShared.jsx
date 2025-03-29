@@ -1,6 +1,6 @@
 import Container from "../../../component/Container/Container";
 
-const BannerShared = ({ img, title, subTitle, description }) => {
+const BannerShared = ({ img, subTitle, description }) => {
     return (
         <div
             className="hero min-h-screen lg:bg-fixed md:bg-fixed bg-cover bg-center mb-16 font-poppins"
